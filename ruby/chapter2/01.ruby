@@ -34,5 +34,3 @@ puts Add.new(
   Multiply.new(Number.new(3), Number.new(4))
 )
 #=> 1 * 2 + 3 * 4
-
-puts Number.new(5)
