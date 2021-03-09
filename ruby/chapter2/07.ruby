@@ -173,7 +173,7 @@ class Assign < Struct.new(:name, :expression)
   end
 end
 
-###============================
+###
 
 puts statement = Assign.new(:x, Add.new(Variable.new(:x), Number.new(1)))
 # << x = (x + 1) >>
