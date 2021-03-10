@@ -4,7 +4,7 @@ class Number {
   constructor(value) {
     this.value = value
   }
-  do = () => {
+  getExpression = () => {
     return this.value;
   }
   isReducible = () => {
@@ -17,8 +17,8 @@ class Add {
     this.left = left;
     this.right = right;
   }
-  do = () => {
-    return this.left.do() + this.right.do()
+  getExpression = () => {
+    return `${this.left.getExpression()} + ${this.right.getExpression()}`
   }
   isReducible = () => {
     return true
@@ -29,7 +29,7 @@ class Add {
     } else if(this.right.isReducible()) {
       return new Add(this.left, this.right.reduce());
     } else {
-      return new Number(this.left.do() + this.right.do())
+      return new Number(this.left.getExpression() + this.right.getExpression())
     }
   }
 }
@@ -39,8 +39,8 @@ class Multiply {
     this.left = left;
     this.right = right;
   }
-  do = () => {
-    return this.left.do() * this.right.do()
+  getExpression = () => {
+    return `${this.left.getExpression()} * ${this.right.getExpression()}`
   }
   isReducible = () => {
     return true
@@ -51,7 +51,7 @@ class Multiply {
     } else if(this.right.isReducible()) {
       return new Add(this.left, this.right.reduce());
     } else {
-      return new Number(this.left.do() * this.right.do())
+      return new Number(this.left.getExpression() * this.right.getExpression())
     }
   }
 }
@@ -63,19 +63,41 @@ let result =
       new Number(5)
     ),
     new Multiply(
-      new Number(1),
+      new Number(2),
       new Number(5)
     ),
   )
 
-console.log(result.reduce())
+console.log(result.getExpression())
+//11 * 5 + 2 * 5
+
+console.log(result.isReducible())
+// true
 
 result = result.reduce();
 
-console.log(result.reduce())
+//-----
+
+console.log(result.getExpression())
+// 55 + 2 * 5
+
+console.log(result.isReducible())
+// true
 
 result = result.reduce();
 
-console.log(result.reduce())
+//-----
+console.log(result.getExpression())
+// 55 + 10
+
+console.log(result.isReducible())
+// true
 
 result = result.reduce();
+
+//-----
+console.log(result.getExpression())
+// 65
+
+console.log(result.isReducible())
+// false
