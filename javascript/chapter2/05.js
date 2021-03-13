@@ -83,7 +83,6 @@ class Boolean {
   getExpression = () => {
     return this.expression
   }
-
 }
 
 class LessThan {
@@ -91,66 +90,59 @@ class LessThan {
     this.left = left;
     this.right = right
   }
-
   getExpression = () => {
     return `${this.left} < ${this.right}`
   }
-
   isReducible = () =>{ 
     return true
   }
-
   reduce = () => {
+    console.log(`${this.left.getExpression()} < ${this.right.getExpression()} ?`)
     if(this.left.isReducible()) {
-      new LessThan(this.left.reduce(), this.right)
+      return new LessThan(this.left.reduce(), this.right)
     } else if (this.right.isReducible()) {
-      new LessThan(this.left, this.right.reduce())
+      return new LessThan(this.left, this.right.reduce())
     } else {
       return new Boolean(this.left.getExpression() < this.right.getExpression())
     }
   }
 }
 
-/*
-new Machine (
-  new LessThan(new Number(1), new Number(2))
-).run()
-//=> true
-
-new Machine (
-  new LessThan(new Number(3), new Number(2))
-).run()
-//=> false
-*/
-
-
 new Machine (
   new LessThan(
-    new Add(new Number(3), new Number(3)),
+    new Number(1),
     new Number(2))
 ).run()
-
-/*h
-
-let result2 = new Machine(
-  new LessThan(
-    new Number(1), new Number(2)
-  )
-).run()
+//=> 1 < 2 ?
 //=> true
-*/
 
-/*
-new Machine(
-  new Add(
-    new Multiply(
-      new Number(11),
-      new Number(5)
-    ),
-    new Multiply(
-      new Number(2),
-      new Number(5)
-    ),
+new Machine (
+  new LessThan(
+    new Add(new Number(1), new Number(3)),
+    new Number(5)
   )
 ).run();
-*/
+//=> 1 + 3 < 5 ?
+//=> 4 < 5 ?
+//=> true
+
+new Machine (
+  new LessThan(
+    new Add(new Number(4), new Number(3)),
+    new Number(5)
+  )
+).run();
+//=> 4 + 3 < 5 ?
+//=> 7 < 5 ?
+//=> false
+
+new Machine (
+  new LessThan(
+    new Multiply(new Number(2), new Number(3)),
+    new Multiply(new Number(10), new Number(3))
+  )
+).run();
+//=> 2 * 3 < 10 * 3 ?
+//=> 6 < 10 * 3 ?
+//=> 6 < 30 ?
+//=> true
