@@ -5,14 +5,12 @@ import styled from "styled-components"
 
 import * as Styles from "../styles/header.module.scss"
 
-/*
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart, faRedo } from "@fortawesome/free-solid-svg-icons"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
-*/
 
 const gradientColors = [
   "124deg, rgba(21, 87, 153, 0.8), rgba(21, 153, 87, 0.7)",
@@ -64,18 +62,11 @@ const Header = () => {
   return (
     <HeaderWrapper theme={theme}>
 
-      {/*
       <FontAwesomeIcon
         icon={faRedo}
         className={Styles.button}
         onClick={handleClick}
       />
-      */}
-
-      <button
-        onClick={handleClick}
-        style={{ "position": "fixed", "zIndex": "100"}}
-      >click</button>
 
       <div className={Styles.wrapper}>
         <h2 className={Styles.headerSubTitle}>toriwatari</h2>
@@ -94,4 +85,3 @@ const Header = () => {
 }
 
 export default Header
-
