@@ -1,0 +1,146 @@
+.button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 3.3rem !important;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 5%;
+}
+
+.header-title,
+.header-sub-title,
+.text,
+.my-skill {
+  font-family: "Open Sans", sans-serif;
+  animation-name: top-to-down;
+  animation-duration: 2s;
+}
+
+.header-title,
+.header-sub-title {
+  max-width: 80%;
+  font-weight: 500;
+  text-shadow: -1px 2px 0 rgba(100, 100, 100, 1);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.header-sub-title {
+  margin-bottom: 20px;
+  font-size: clamp(30px, 4vw, 45px);
+  letter-spacing: 2px;
+}
+
+.header-title {
+  margin-bottom: 30px;
+  font-size: clamp(50px, 5vw, 88px);
+  letter-spacing: 4px;
+}
+
+.message {
+  margin-bottom: 30px;
+  font-size: clamp(27px, 2.2vw, 38px);
+  letter-spacing: 1px;
+  text-align: center;
+  transition: 0.2s;
+
+  svg {
+    color: pink;
+  }
+}
+
+.text {
+  margin-bottom: 20px;
+  color: #ddd;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.time {
+  letter-spacing: 1px;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  width: 100px;
+
+  &:hover .arrow {
+    border-color: orange;
+  }
+}
+
+.arrow {
+  width: 35px;
+  height: 35px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: arrow-move 1.5s infinite;
+  transition: 0.5s;
+
+  &:not(:first-child) {
+    margin-top: -10px;
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.15 * $i + s;
+    }
+  }
+}
+
+@keyframes arrow-move {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(15px) rotate(45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow-container {
+    width: 50px;
+    margin-top: 20px;
+  }
+
+  .arrow {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.sa {
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.sa-up {
+  transform: translate(0, 200px);
+}
