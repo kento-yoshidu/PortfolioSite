@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen:scss": "typed-scss-modules pages"
   },
   "dependencies": {
     "@apollo/client": "^3.0.0",
@@ -28,6 +29,7 @@
     "@types/styled-components": "^5.1.26",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
+    "typed-scss-modules": "^7.0.1",
     "typescript": "4.9.3"
   }
 }

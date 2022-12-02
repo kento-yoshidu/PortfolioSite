@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import styled from "styled-components"
 
-import * as Styles from "../styles/header.module.scss"
+import Styles from "../styles/header.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart, faRedo } from "@fortawesome/free-solid-svg-icons"
