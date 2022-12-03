@@ -5,7 +5,9 @@ export type Styles = {
   'green3': string;
   'green4': string;
   'green5': string;
+  'info': string;
   'none': string;
+  'test': string;
   'wrapper': string;
 };
 
