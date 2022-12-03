@@ -9,15 +9,22 @@ import Card from "./components/Card"
 import Styles from "./styles/style.module.scss"
 import GithubStyles from "./styles/contribute.module.scss"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
+
 const Home: NextPage = ({ data }: any) => (
   <>
     <Header />
 
-    <section className={Styles.section}>
+    <section className={`${Styles.section} ${Styles.sec3}`}>
       <h2 className={Styles.sectionTitle}>GitHub Contributions</h2>
       
       <div className={GithubStyles.wrapper}>
-        {data.user.contributionsCollection.contributionCalendar.weeks.map((week: any, i: any) => (
+        {data.user.contributionsCollection.contributionCalendar.weeks.map((week: any, i: number) => (
           <div
             key={`week${i}`}
           >
@@ -73,10 +80,20 @@ const Home: NextPage = ({ data }: any) => (
           </div>
         ))}
       </div>
+
+      <a
+        href="https://github.com/kento-yoshidu"
+        className={Styles.link}
+      >
+        <FontAwesomeIcon
+          className={Styles.icon}
+          icon={faGithub}
+        />
+      </a>
     </section>
 
     <section
-      className={Styles.section}
+      className={`${Styles.section} ${Styles.sec4}`}
     >
       <h2 className={Styles.sectionTitle}>2022年度の個人タスク</h2>
 
@@ -90,13 +107,13 @@ const Home: NextPage = ({ data }: any) => (
           margin: "0 auto"
         }}
       >
+        <Card color="#fee800" num={55} text="最新のCSSを学習する" />
+
         <Card color="#04fc43" num={50} text="Jamstackサイトを10個作る" />
 
         <Card color="#06ccff" num={50} text="AWS認定資格を2つ以上取る" />
 
         <Card color="#ff00be" num={45} text="サンプルWebサイトを10個作る" />
-
-        <Card color="#fee800" num={45} text="最新のCSSを学習する" />
       </div>
     </section>
 

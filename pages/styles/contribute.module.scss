@@ -1,7 +1,7 @@
 .wrapper {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
-  margin: 100px auto;
 }
 
 .box {
@@ -13,22 +13,42 @@
 
 .green5 {
   background-color: rgba(0, 255, 0, 1);
+
+  &:hover {
+    background-color: rgba(0, 255, 0, 0.5);
+  }
 }
 
 .green4 {
   background-color: rgba(0, 200, 0, 1);
+
+  &:hover {
+    background-color: rgba(0, 200, 0, 0.5);
+  }
 }
 
 .green3 {
   background-color: rgba(0, 170, 0, 1);
+
+  &:hover {
+    background-color: rgba(0, 170, 0, 0.5);
+  }
 }
 
 .green2 {
   background-color: rgba(0, 110, 0, 1);
+
+  &:hover {
+    background-color: rgba(0, 110, 0, 0.5);
+  }
 }
 
 .green1 {
   background-color: rgba(0, 70, 0, 0.8);
+
+  &:hover {
+    background-color: rgba(0, 70, 0, 0.3);
+  }
 }
 
 .none {
