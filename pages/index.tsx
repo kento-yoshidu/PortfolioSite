@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client
 
 import Header from './components/Header';
 
-import * as Styles from "./styles/contribute.module.css"
+import * as Styles from "./styles/contribute.module.scss"
 
 const Home: NextPage = ({ data }: any) => (
   <>
