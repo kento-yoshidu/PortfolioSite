@@ -1,20 +1,37 @@
 .wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-.message {
+@media (max-width: 768px) {
+  .wrapper {
+    width: 95%;
+    justify-content: left;
+    align-items: stretch;
+  }  
+}
+
+.count {
   margin: 40px 0 20px;
   color: #444;
   font-size: 2rem;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .week {
+    margin-bottom: 3px;
+  } 
+}
+
 .box {
   position: relative;
   width: 18px;
   height: 18px;
   border: 1px solid #ddd;
-  border-radius: 2px;
+  border-radius: 4px;
 
   .info {
     padding: 5px 10px;
@@ -38,13 +55,23 @@
   }
 }
 
-.green5 {
-  background-color: rgba(0, 255, 0, 1);
+@media (max-width: 768px) {
+  .box {
+    width: 10px;
+    height: 10px;
+  } 
 }
 
+.green5 {
+  background-color: #39d353;
+
+  &:hover {
+    background-color: rgba(0, 255, 0, 0.5);
+  }
+}
 
 .green4 {
-  background-color: rgba(0, 200, 0, 1);
+  background-color: #26a641;
 
   &:hover {
     background-color: rgba(0, 200, 0, 0.5);
@@ -52,7 +79,7 @@
 }
 
 .green3 {
-  background-color: rgba(0, 170, 0, 1);
+  background-color: #006d32;
 
   &:hover {
     background-color: rgba(0, 170, 0, 0.5);
@@ -60,7 +87,7 @@
 }
 
 .green2 {
-  background-color: rgba(0, 110, 0, 0.9);
+  background-color: #0e4429;
 
   &:hover {
     background-color: rgba(0, 110, 0, 0.5);

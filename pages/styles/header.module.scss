@@ -1,8 +1,8 @@
 .button {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 3.3rem !important;
+  top: 40px;
+  left: 40px;
+  font-size: 5.8rem !important;
   z-index: 10;
   cursor: pointer;
 }
@@ -26,32 +26,32 @@
   animation-duration: 2s;
 }
 
-.header-title,
-.header-sub-title {
+.headerTitle,
+.name,
+.message,
+.text {
   max-width: 80%;
-  font-weight: 500;
+  font-weight: 400;
   text-shadow: -1px 2px 0 rgba(100, 100, 100, 1);
   text-align: center;
   letter-spacing: 2px;
 }
 
-.header-sub-title {
-  margin-bottom: 20px;
-  font-size: clamp(30px, 4vw, 45px);
+.name {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
   letter-spacing: 2px;
 }
 
-.header-title {
-  margin-bottom: 30px;
-  font-size: clamp(50px, 5vw, 88px);
+.headerTitle {
+  margin-bottom: 60px;
+  font-size: clamp(5rem, 5vw, 7.5rem);
   letter-spacing: 4px;
 }
 
 .message {
   margin-bottom: 30px;
-  font-size: clamp(27px, 2.2vw, 38px);
+  font-size: clamp(2.5rem, 2.2vw, 3.3rem);
   letter-spacing: 1px;
-  text-align: center;
   transition: 0.2s;
 
   svg {
@@ -63,7 +63,7 @@
   margin-bottom: 20px;
   color: #ddd;
   font-size: 2.2rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .time {

@@ -1,5 +1,4 @@
 import React from "react"
-import type { NextPage } from 'next'
 
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 
@@ -16,26 +15,37 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const Home: NextPage = ({ data }: any) => {
-  const contributions = data.user.contributionsCollection.contributionCalendar
+const Home = ({ data }: { data: any }) => {
+  const { weeks } = data.user.contributionsCollection.contributionCalendar
+  const { totalContributions } = data.user.contributionsCollection.contributionCalendar
 
   return (
     <>
       <Header />
 
+      <section className={`${Styles.section} ${Styles.sec1}`}>
+        <h2 className={Styles.sectionTitle}>Sample Pages</h2>
+      </section>
+
+      <section className={`${Styles.section} ${Styles.sec2}`}>
+        <h2 className={Styles.sectionTitle}>Apps</h2>
+      </section>
+
       <section className={`${Styles.section} ${Styles.sec3}`}>
         <h2 className={Styles.sectionTitle}>GitHub Contributions</h2>
+
+        <p className={GithubStyles.count}>Total {totalContributions} contributions 🎉</p>
         
-        <p className={GithubStyles.message}>Total {contributions.totalContributions} Contributions 🎉</p>
         <div className={GithubStyles.wrapper}>
-          {contributions.weeks.map((week: any, i: number) => (
+          {weeks.map((week: any, i: number) => (
             <div
               key={`week${i}`}
+              className={GithubStyles.week}
             >
               {week.contributionDays.map((day: any, i: number) => (
                 <div key={`key-day${i}`}>
                   {(() => {
-                    if (day.contributionCount >= 14) {
+                    if (day.contributionCount >= 12) {
                       return (
                         <div
                           key={`key-day5${i}`}
@@ -46,7 +56,7 @@ const Home: NextPage = ({ data }: any) => {
                           </div>
                         </div>
                       )
-                    } else if (day.contributionCount >= 10) {
+                    } else if (day.contributionCount >= 8) {
                       return (
                         <div
                           key={`key-day4${i}`}
@@ -57,7 +67,7 @@ const Home: NextPage = ({ data }: any) => {
                           </div>
                         </div>
                       )
-                    } else if (day.contributionCount >= 6) {
+                    } else if (day.contributionCount >= 4) {
                       return (
                         <div
                           key={`key-day3${i}`}
@@ -68,22 +78,11 @@ const Home: NextPage = ({ data }: any) => {
                           </div>
                         </div>
                       )
-                    } else if (day.contributionCount >= 2) {
+                    } else if (day.contributionCount >= 1) {
                       return (
                         <div
                           key={`key-day2${i}`}
                           className={`${GithubStyles.green2} ${GithubStyles.box}`}
-                        >
-                          <div className={GithubStyles.info}>
-                            <p>{day.contributionCount} contributions on {day.date}</p>
-                          </div>
-                        </div>
-                      )
-                    } else if (day.contributionCount === 1) {
-                      return (
-                        <div
-                          key={`key-day1${i}`}
-                          className={`${GithubStyles.green1} ${GithubStyles.box}`}
                         >
                           <div className={GithubStyles.info}>
                             <p>{day.contributionCount} contributions on {day.date}</p>
