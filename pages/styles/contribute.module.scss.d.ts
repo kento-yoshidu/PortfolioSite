@@ -8,6 +8,7 @@ export type Styles = {
   'green5': string;
   'info': string;
   'none': string;
+  'week': string;
   'wrapper': string;
 };
 

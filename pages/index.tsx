@@ -1,7 +1,5 @@
 import React from "react"
 
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
-
 import Header from './components/Header'
 import Card from "./components/Card"
 
@@ -15,7 +13,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 
-const Home = ({ data }: { data: any }) => {
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+
+const Home = ({ data }: any) => {
   const { weeks } = data.user.contributionsCollection.contributionCalendar
   const { totalContributions } = data.user.contributionsCollection.contributionCalendar
 
@@ -23,11 +23,11 @@ const Home = ({ data }: { data: any }) => {
     <>
       <Header />
 
-      <section className={`${Styles.section} ${Styles.sec1}`}>
+      <section className={`${Styles.section}`}>
         <h2 className={Styles.sectionTitle}>Sample Pages</h2>
       </section>
 
-      <section className={`${Styles.section} ${Styles.sec2}`}>
+      <section className={`${Styles.section}`}>
         <h2 className={Styles.sectionTitle}>Apps</h2>
       </section>
 
@@ -181,7 +181,7 @@ export const getServerSideProps = async () => {
             }
           }
         }
-      `,
+      `
     })
 
   return {
