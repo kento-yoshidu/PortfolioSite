@@ -1,1 +1,19 @@
 @import "./reset.scss";
+
+html {
+  font-size: 62.5%;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    "Segoe UI",
+    "Helvetica Neue",
+    HelveticaNeue,
+    YuGothic,
+    "Yu Gothic Medium",
+    "Yu Gothic",
+    Verdana,
+    Meiryo,
+    sans-serif;
+  scroll-behavior: smooth;
+}

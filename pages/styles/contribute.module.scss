@@ -1,13 +1,14 @@
 .wrapper {
   display: flex;
-}
-.week {
+  justify-content: center;
+  margin: 100px auto;
 }
 
 .box {
-  width: 15px;
-  height: 15px;
-  border: 1px solid #aaa;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
 }
 
 .green5 {
