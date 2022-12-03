@@ -1,82 +1,108 @@
 import React from "react"
 import type { NextPage } from 'next'
 
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 
-import Header from './components/Header';
+import Header from './components/Header'
+import Card from "./components/Card"
 
-import * as Styles from "./styles/contribute.module.scss"
+import Styles from "./styles/style.module.scss"
+import GithubStyles from "./styles/contribute.module.scss"
 
 const Home: NextPage = ({ data }: any) => (
   <>
     <Header />
 
-    {/*<div className={Styles.wrapper}>*/}
-    <div>
-      {data.user.contributionsCollection.contributionCalendar.weeks.map((week: any, i: any) => (
-        <div
-          key={`week${i}`}
-          /* @ts-ignore */
-          className={Styles.week}
-        >
-          {week.contributionDays.map((day: any, i: any) => (
-            <div key={`keyday${i}`}>
-              {(() => {
-                if (day.contributionCount >= 14) {
-                  return (
-                    <div
-                      key={`day5${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.green5} ${Styles.box}`}
-                    ></div>
-                  )
-                } else if (day.contributionCount >= 10) {
-                  return (
-                    <div
-                      key={`day4${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.green4} ${Styles.box}`}
-                    ></div>
-                  )
-                } else if (day.contributionCount >= 6) {
-                  return (
-                    <div
-                      key={`day3${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.green3} ${Styles.box}`}
-                    ></div>
-                  )
-                } else if (day.contributionCount >= 2) {
-                  return (
-                    <div
-                      key={`day2${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.green2} ${Styles.box}`}
-                    ></div>
-                  )
-                } else if (day.contributionCount === 1) {
-                  return (
-                    <div
-                      key={`day1${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.green1} ${Styles.box}`}
-                    ></div>
-                  )
-                } else {
-                  return (
-                    <div
-                      key={`day0${i}`}
-                      /* @ts-ignore */
-                      className={`${Styles.none} ${Styles.box}`}
-                    ></div>
-                  )
-                }
-              })()}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+    <section className={Styles.section}>
+      <h2 className={Styles.sectionTitle}>GitHub Contributions</h2>
+      
+      <div className={GithubStyles.wrapper}>
+        {data.user.contributionsCollection.contributionCalendar.weeks.map((week: any, i: any) => (
+          <div
+            key={`week${i}`}
+          >
+            {week.contributionDays.map((day: any, i: number) => (
+              <div key={`key-day${i}`}>
+                {(() => {
+                  if (day.contributionCount >= 14) {
+                    return (
+                      <div
+                        key={`key-day5${i}`}
+                        className={`${GithubStyles.green5} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  } else if (day.contributionCount >= 10) {
+                    return (
+                      <div
+                        key={`key-day4${i}`}
+                        className={`${GithubStyles.green4} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  } else if (day.contributionCount >= 6) {
+                    return (
+                      <div
+                        key={`key-day3${i}`}
+                        className={`${GithubStyles.green3} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  } else if (day.contributionCount >= 2) {
+                    return (
+                      <div
+                        key={`key-day2${i}`}
+                        className={`${GithubStyles.green2} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  } else if (day.contributionCount === 1) {
+                    return (
+                      <div
+                        key={`key-day1${i}`}
+                        className={`${GithubStyles.green1} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  } else {
+                    return (
+                      <div
+                        key={`key-day0${i}`}
+                        className={`${GithubStyles.none} ${GithubStyles.box}`}
+                      ></div>
+                    )
+                  }
+                })()}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section
+      className={Styles.section}
+    >
+      <h2 className={Styles.sectionTitle}>2022年度の個人タスク</h2>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "30px",
+          flexWrap: "wrap",
+          width: "80%",
+          margin: "0 auto"
+        }}
+      >
+        <Card color="#04fc43" num={50} text="Jamstackサイトを10個作る" />
+
+        <Card color="#06ccff" num={50} text="AWS認定資格を2つ以上取る" />
+
+        <Card color="#ff00be" num={45} text="サンプルWebサイトを10個作る" />
+
+        <Card color="#fee800" num={45} text="最新のCSSを学習する" />
+      </div>
+    </section>
+
+    <footer className={Styles.footer}>
+      <h2 className={Styles.footerTitle}>Developed by Gatsby</h2>
+    </footer>
   </>
 )
 
@@ -87,7 +113,6 @@ export const getServerSideProps = async () => {
 
   const client = new ApolloClient({
     uri: "https://api.github.com/graphql",
-    // uri: 'https://flyby-gateway.herokuapp.com/',
     headers: {authorization: `Bearer ${token}`},
     cache: new InMemoryCache(),
   });
@@ -96,7 +121,7 @@ export const getServerSideProps = async () => {
   const { data } = await client
     .query({
       query: gql`
-        query {
+        query getContribution {
           user(login: "kento-yoshidu") {
             contributionsCollection {
               contributionCalendar {
