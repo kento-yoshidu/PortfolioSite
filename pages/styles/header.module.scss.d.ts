@@ -7,6 +7,7 @@ export type Styles = {
   'headerTitle': string;
   'message': string;
   'mySkill': string;
+  'name': string;
   'sa': string;
   'saUp': string;
   'show': string;

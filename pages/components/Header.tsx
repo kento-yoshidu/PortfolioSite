@@ -66,12 +66,13 @@ const Header = () => {
         icon={faRedo}
         className={Styles.button}
         onClick={handleClick}
+        tabIndex={1}
       />
 
       <div className={Styles.wrapper}>
-        <h2 className={Styles.headerSubTitle}>toriwatari</h2>
+        <h2 className={Styles.name}>Kento Yoshizu</h2>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
-        <h3 className={Styles.message}>I HTML & CSS</h3>
+        <h3 className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</h3>
         <p className={Styles.text}>更新日 : <time className={Styles.time}>2022-10-18</time></p>
 
         <Link className={Styles.arrowContainer} href="#sec1">
