@@ -1,6 +1,7 @@
 import React from "react"
 
 import Header from './components/Header'
+import PageLink from "./components/PageLink"
 import Card from "./components/Card"
 
 import Styles from "./styles/style.module.scss"
@@ -23,8 +24,16 @@ const Home = ({ data }: any) => {
     <>
       <Header />
 
-      <section className={`${Styles.section}`}>
+      <section className={`${Styles.section} ${Styles.sec1}`}>
         <h2 className={Styles.sectionTitle}>Sample Pages</h2>
+
+        <div className={Styles.linkWrapper}>
+          <PageLink
+            url=""
+            title="Sample1"
+            text="サンプルページ1"
+          />
+        </div>
       </section>
 
       <section className={`${Styles.section}`}>

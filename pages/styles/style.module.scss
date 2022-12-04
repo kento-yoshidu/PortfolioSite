@@ -49,6 +49,16 @@
   }
 }
 
+.sec1 {
+  .linkWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px auto 30px;
+    width: min(1100px, 90%);
+  }
+}
+
 .sec3 {
   .link {
     margin-top: 50px;
