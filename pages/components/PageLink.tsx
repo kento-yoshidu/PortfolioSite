@@ -18,7 +18,7 @@ type Props = {
 }
 
 const PageLink = ({ url, title, text}: Props) => (
-  <Link
+  <a
     className={Styles.link}
     href={url}
   >
@@ -27,7 +27,7 @@ const PageLink = ({ url, title, text}: Props) => (
     <FontAwesomeIcon icon={faCode} className={Styles.icon}/>
 
     <p className={Styles.text}>{text}</p>
-  </Link>
+  </a>
 )
 
 export default PageLink

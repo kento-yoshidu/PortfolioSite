@@ -24,12 +24,15 @@ const Home = ({ data }: any) => {
     <>
       <Header />
 
-      <section className={`${Styles.section} ${Styles.sec1}`}>
+      <section
+        className={`${Styles.section} ${Styles.sec1}`}
+        id="sec1"
+      >
         <h2 className={Styles.sectionTitle}>Sample Pages</h2>
 
         <div className={Styles.linkWrapper}>
           <PageLink
-            url=""
+            url="https://blog.toriwatari.work/page/1/"
             title="Sample1"
             text="サンプルページ1"
           />
