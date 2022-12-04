@@ -4,7 +4,7 @@
 
 .sectionTitle {
   max-width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   color: #444;
   font-size: clamp(30px, 2.3vw, 38px);
   font-weight: 100;
@@ -46,6 +46,16 @@
         width: 80%;
       }
     }
+  }
+}
+
+.sec1 {
+  .linkWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px auto 30px;
+    width: min(1100px, 90%);
   }
 }
 

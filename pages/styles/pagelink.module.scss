@@ -1,0 +1,35 @@
+.link {
+  display: block;
+  width: unquote("max(30%, 270px)");
+  border: 2px solid rgb(190, 190, 190);
+  border-radius: 3px;
+  color: #444;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+
+  &:hover {
+    background: rgb(248, 248, 248);
+    color: orange;
+  }
+}
+
+.title {
+  margin: 50px 0 30px;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 2px;
+}
+
+.icon {
+  font-size: clamp(40px, 3vw, 60px);
+  margin: 0;
+}
+
+.text {
+  width: 80%;
+  margin: 40px auto 50px;
+  font-size: clamp(15px, 1.9vw, 18px);
+  font-family: "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  line-height: 1.6;
+}
+
