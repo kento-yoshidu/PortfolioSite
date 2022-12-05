@@ -3,6 +3,7 @@ import React from "react"
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
 import Card from "./components/Card"
+import Footer from "./components/Footer"
 
 import Styles from "./styles/style.module.scss"
 import GithubStyles from "./styles/contribute.module.scss"
@@ -156,9 +157,7 @@ const Home = ({ data }: any) => {
         </div>
       </section>
 
-      <footer className={Styles.footer}>
-        <h2 className={Styles.footerTitle}>Developed by Gatsby</h2>
-      </footer>
+      <Footer />
     </>
   )
 }

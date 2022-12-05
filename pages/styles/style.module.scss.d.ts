@@ -1,6 +1,4 @@
 export type Styles = {
-  'footer': string;
-  'footerTitle': string;
   'icon': string;
   'imgWrapper': string;
   'link': string;
