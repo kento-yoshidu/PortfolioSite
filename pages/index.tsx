@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
@@ -23,6 +24,9 @@ const Home = ({ data }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Kento Yoshizu Portfolio Site</title>
+      </Head>
       <Header />
 
       <section
