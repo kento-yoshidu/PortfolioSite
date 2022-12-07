@@ -1,4 +1,5 @@
 export type Styles = {
+  'details': string;
   'icon': string;
   'imgWrapper': string;
   'link': string;

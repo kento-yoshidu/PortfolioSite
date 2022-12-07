@@ -45,7 +45,35 @@ const Home = ({ data }: any) => {
       </section>
 
       <section className={`${Styles.section}`}>
-        <h2 className={Styles.sectionTitle}>Apps</h2>
+        <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
+
+        <details className={Styles.details}>
+          <summary>
+            <a href="https://blog.toriwatari.work/page/1/">鳥に生まれることができなかった人へ</a>
+          </summary>
+          <p>Gatsbyで作ったブログです。</p>
+          <ul>
+            <li>Gatsby</li>
+            <li>TypeScript</li>
+            <li>CSS Modules</li>
+            <li>AWS Amplify</li>
+          </ul>
+        </details>
+        <details className={Styles.details}>
+          <summary>
+            <a href="https://blog.toriwatari.work/page/1/">Books To Give</a>
+          </summary>
+          <p>読み終わって引き取り手を探している本をリストアップするサイトです。</p>
+          <ul>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Prisma</li>
+            <li>Supabase</li>
+            <li>Vercel</li>
+            <li>Google Books API</li>
+          </ul>
+        </details>
       </section>
 
       <section className={`${Styles.section} ${Styles.sec3}`}>
