@@ -1,5 +1,5 @@
 .section {
-  padding: 5% 0;
+  padding: 5% 0 2%;
 }
 
 .sectionTitle {
@@ -79,5 +79,39 @@
 .sec4 {
   background-color: #121212;
   padding: 50px 0 30px;
-  color: #fff;
+
+  .sectionTitle {
+    color: #ddd;
+  }
+}
+
+.details {
+  width: 45%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+
+  summary {
+    padding: 15px 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #eeffff;
+
+    a {
+      color: #444;
+    }
+  }
+
+  p {
+    margin-top: 15px;
+    font-size: 1.75rem;
+    padding-left: 20px;
+  }
+
+  ul {
+    margin: 10px 0;
+
+    li {
+      font-size: 1.75rem;
+    }
+  }
 }

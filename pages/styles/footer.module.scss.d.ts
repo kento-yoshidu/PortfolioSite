@@ -1,6 +1,8 @@
 export type Styles = {
   'footer': string;
   'footerTitle': string;
+  'icon': string;
+  'link': string;
 };
 
 export type ClassNames = keyof Styles;

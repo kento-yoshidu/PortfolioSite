@@ -1,7 +1,6 @@
 export type Styles = {
   'box': string;
   'count': string;
-  'green1': string;
   'green2': string;
   'green3': string;
   'green4': string;

@@ -3,10 +3,10 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: unquote("max(270px, 30%)");
-  height: unquote("min(400px, 45vh)");
+  width: max(270px, 25%);
+  height: min(350px, 45vh);
   background-color: #222;
-  color: #aaa;
+  color: #ddd;
   transition-duration: 0.5s;
   transition-delay: 0.5s;
 }
@@ -81,7 +81,9 @@
   top: 250px;
   width: 80%;
   font-size: 2rem;
+  font-weight: 400;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
@@ -144,4 +146,3 @@
     transition-delay: 2s;
   }
 }
-
