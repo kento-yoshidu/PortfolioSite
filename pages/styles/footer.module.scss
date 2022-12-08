@@ -3,10 +3,25 @@
   background-color: #222;
 }
 
-.footer-title {
+.footerTitle {
   color: #ddd;
-  font-size: clamp(16px, 3.4vw, 23px);
-  font-weight: 900;
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+  font-weight: 400;
   letter-spacing: 1px;
   text-align: center;
+}
+
+.link {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+
+  .icon {
+    color: #ddd;
+    font-size: 50px;
+
+    &:hover {
+      color: #888;
+    }
+  }
 }

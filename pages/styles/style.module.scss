@@ -1,5 +1,5 @@
 .section {
-  padding: 5% 0;
+  padding: 5% 0 2%;
 }
 
 .sectionTitle {
@@ -79,7 +79,10 @@
 .sec4 {
   background-color: #121212;
   padding: 50px 0 30px;
-  color: #fff;
+
+  .sectionTitle {
+    color: #ddd;
+  }
 }
 
 .details {
