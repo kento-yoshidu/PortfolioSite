@@ -165,8 +165,20 @@ const Home = ({ data }: any) => {
         </a>
       </section>
 
-      <section className={Styles.section}>
+      <section className={`${Styles.section} ${Styles.sec3}`}>
+        <h2 className={Styles.sectionTitle}>GitHub Contributions(その2)</h2>
+
         <Contributes />
+
+        <a
+          href="https://github.com/kento-yoshidu"
+          className={Styles.link}
+        >
+          <FontAwesomeIcon
+            className={Styles.icon}
+            icon={faGithub}
+          />
+        </a>
       </section>
 
       <section
