@@ -1,4 +1,5 @@
 import { useQuery, gql } from "@apollo/client"
+import Styles from "../styles/test.module.scss"
 
 const Query = gql`
   query getContribution {
@@ -29,12 +30,25 @@ const Contributes = () => {
 
   if (error) {
     return (
-      <h1>error has occurred</h1>
+      <div className={Styles.errorWrapper}>
+        <h3 className={Styles.errorMessage}>Error has occurred...🤔</h3>
+        <p className={Styles.errorText}>データ取得でエラーが発生しました。<br />GitHubのコントリビューション数を取得して表示する予定でした。<br />申し訳ありませんが、しばらく待ってからアクセスして下さい。</p>
+      </div>
     )
   }
 
   return (
-    <h1 style={{ "textAlign": "center" }}>成功！</h1>
+    <p style={{ "textAlign": "center", "fontSize": "2rem" }}>Total {data.user.contributionsCollection.contributionCalendar.totalContributions} contributions 🎉</p>
+    /*
+          weeks {
+            contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
+      }
+      */
   )
 }
 
