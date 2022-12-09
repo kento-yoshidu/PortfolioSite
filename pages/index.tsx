@@ -3,6 +3,7 @@ import Head from "next/head"
 
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
+import Contributes from "./components/Contributes"
 import Card from "./components/Card"
 import Footer from "./components/Footer"
 
@@ -54,7 +55,7 @@ const Home = ({ data }: any) => {
           <p>Gatsbyで作ったブログです。</p>
           <ul>
             <li>Gatsby</li>
-            <li>TypeScript</li>
+            <li>ypeScript</li>
             <li>CSS Modules</li>
             <li>AWS Amplify</li>
           </ul>
@@ -164,6 +165,10 @@ const Home = ({ data }: any) => {
         </a>
       </section>
 
+      <section className={Styles.section}>
+        <Contributes />
+      </section>
+
       <section
         className={`${Styles.section} ${Styles.sec4}`}
       >
@@ -197,11 +202,9 @@ const Home = ({ data }: any) => {
 export default Home
 
 export const getServerSideProps = async () => {
-  const token = process.env.GITHUB_API
-
   const client = new ApolloClient({
     uri: "https://api.github.com/graphql",
-    headers: {authorization: `Bearer ${token}`},
+    headers: {authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API}`},
     cache: new InMemoryCache(),
   });
 
