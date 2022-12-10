@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useQuery, gql } from "@apollo/client"
 import { EDGE_RUNTIME_WEBPACK } from "next/dist/shared/lib/constants"
 import { writer } from "repl"
@@ -21,7 +22,22 @@ const Query = gql`
   }
 `
 
+const green = {
+  "5": "0, 85, 0",
+  "4": "0, 120, 0",
+  "3": "0, 155, 0",
+  "2": "0, 190, 0"
+}
+
+const orange = {
+  "5": "238, 111, 0",
+  "4": "248, 122, 22",
+  "3": "255, 142, 35",
+  "2": "255, 160, 51"
+}
+
 const Contributes = () => {
+  const [theme, setTheme] = useState(orange)
   const { data, loading, error } = useQuery(Query)
 
   if (loading) {
@@ -57,7 +73,8 @@ const Contributes = () => {
                 {(() => {
                   if (day.contributionCount >= 12) {
                     return (
-                      <div className={`${Styles.box} ${Styles.green5}`}>
+                      /* @ts-ignore */
+                      <div className={`${Styles.box}`} style={{ "--color": theme["5"] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -65,7 +82,8 @@ const Contributes = () => {
                     )
                   } else if (day.contributionCount >= 8) {
                     return (
-                      <div className={`${Styles.box} ${Styles.green4}`}>
+                      /* @ts-ignore */
+                      <div className={`${Styles.box}`} style={{ "--color": theme["4"] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -73,7 +91,8 @@ const Contributes = () => {
                     )
                   } else if (day.contributionCount >= 4) {
                     return (
-                      <div className={`${Styles.box} ${Styles.green3}`}>
+                      /* @ts-ignore */
+                      <div className={`${Styles.box}`} style={{ "--color": theme["3"] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -81,7 +100,8 @@ const Contributes = () => {
                     )
                   } else if (day.contributionCount >= 1) {
                     return (
-                      <div className={`${Styles.box} ${Styles.green2}`}>
+                      /* @ts-ignore */
+                      <div className={`${Styles.box}`} style={{ "--color": theme["2"] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
