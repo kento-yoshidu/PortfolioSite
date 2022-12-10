@@ -1,13 +1,10 @@
 export type Styles = {
   'box': string;
+  'buttonWrapper': string;
   'count': string;
   'errorMessage': string;
   'errorText': string;
   'errorWrapper': string;
-  'green2': string;
-  'green3': string;
-  'green4': string;
-  'green5': string;
   'info': string;
   'loadingMessage': string;
   'none': string;

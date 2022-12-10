@@ -126,3 +126,22 @@
   background-color: #eee;
 }
 
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto 0;
+
+  button {
+    background-color: rgb(var(--color));
+    width: 90px;
+    height: 35px;
+    cursor: pointer;
+    border-color: #aaa;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: rgba(var(--color), 0.8);
+    }
+  }
+}
