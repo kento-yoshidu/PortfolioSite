@@ -1,4 +1,6 @@
 import { useQuery, gql } from "@apollo/client"
+import { EDGE_RUNTIME_WEBPACK } from "next/dist/shared/lib/constants"
+import { writer } from "repl"
 import Styles from "../styles/test.module.scss"
 
 const Query = gql`
@@ -37,18 +39,71 @@ const Contributes = () => {
     )
   }
 
+  const { weeks } = data.user.contributionsCollection.contributionCalendar
+  const { totalContributions } = data.user.contributionsCollection.contributionCalendar
+
   return (
-    <p style={{ "textAlign": "center", "fontSize": "2rem" }}>Total {data.user.contributionsCollection.contributionCalendar.totalContributions} contributions 🎉</p>
-    /*
-          weeks {
-            contributionDays {
-              date
-              contributionCount
-            }
-          }
-        }
-      }
-      */
+    <>
+      <p className={Styles.count}>Total {totalContributions} contributions 🎉</p>
+
+      <div className={Styles.wrapper}>
+        {weeks.map((week: any, i: number) => (
+          <div
+            key={`week${i}`}
+            className={Styles.week}
+          >
+            {week.contributionDays.map((day: any, i: number) => (
+              <>
+                {(() => {
+                  if (day.contributionCount >= 12) {
+                    return (
+                      <div className={`${Styles.box} ${Styles.green5}`}>
+                        <div className={Styles.info}>
+                          <p>{day.contributionCount} contributions on {day.date}</p>
+                        </div>
+                      </div>
+                    )
+                  } else if (day.contributionCount >= 8) {
+                    return (
+                      <div className={`${Styles.box} ${Styles.green4}`}>
+                        <div className={Styles.info}>
+                          <p>{day.contributionCount} contributions on {day.date}</p>
+                        </div>
+                      </div>
+                    )
+                  } else if (day.contributionCount >= 4) {
+                    return (
+                      <div className={`${Styles.box} ${Styles.green3}`}>
+                        <div className={Styles.info}>
+                          <p>{day.contributionCount} contributions on {day.date}</p>
+                        </div>
+                      </div>
+                    )
+                  } else if (day.contributionCount >= 1) {
+                    return (
+                      <div className={`${Styles.box} ${Styles.green2}`}>
+                        <div className={Styles.info}>
+                          <p>{day.contributionCount} contributions on {day.date}</p>
+                        </div>
+                      </div>
+                    )
+                  } else {
+                    return (
+                      <div className={`${Styles.box} ${Styles.none}`}>
+                        <div className={Styles.info}>
+                          <p>{day.contributionCount} contributions on {day.date}</p>
+                        </div>
+                      </div>
+                    )
+
+                  }
+                })()}
+              </>
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 

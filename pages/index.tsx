@@ -28,6 +28,7 @@ const Home = ({ data }: any) => {
       <Head>
         <title>Kento Yoshizu Portfolio Site</title>
       </Head>
+
       <Header />
 
       <section
