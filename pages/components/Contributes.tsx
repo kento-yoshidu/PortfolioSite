@@ -24,7 +24,7 @@ const Contributes = () => {
 
   if (loading) {
     return (
-      <h1>Loading...</h1>
+      <p className={Styles.loadingMessage}>Loading...</p>
     )
   }
 
