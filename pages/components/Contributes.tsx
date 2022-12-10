@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { useQuery, gql } from "@apollo/client"
-import { EDGE_RUNTIME_WEBPACK } from "next/dist/shared/lib/constants"
-import { writer } from "repl"
 import Styles from "../styles/test.module.scss"
 
 const Query = gql`
@@ -22,22 +20,29 @@ const Query = gql`
   }
 `
 
-const green = {
-  "5": "0, 85, 0",
-  "4": "0, 120, 0",
-  "3": "0, 155, 0",
-  "2": "0, 190, 0"
-}
+const green = [
+  "0, 85, 0",
+  "0, 120, 0",
+  "0, 155, 0",
+  "0, 190, 0"
+]
 
-const orange = {
-  "5": "238, 111, 0",
-  "4": "248, 122, 22",
-  "3": "255, 142, 35",
-  "2": "255, 160, 51"
-}
+const orange = [
+  "198, 71, 0",
+  "228, 102, 22",
+  "245, 132, 35",
+  "255, 160, 51"
+]
+
+const blue = [
+  "0, 53, 98",
+  "0, 80, 123",
+  "0, 103, 193",
+  "0, 129, 241"
+]
 
 const Contributes = () => {
-  const [theme, setTheme] = useState(orange)
+  const [theme, setTheme] = useState(green)
   const { data, loading, error } = useQuery(Query)
 
   if (loading) {
@@ -74,7 +79,7 @@ const Contributes = () => {
                   if (day.contributionCount >= 12) {
                     return (
                       /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme["5"] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[0] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -83,7 +88,7 @@ const Contributes = () => {
                   } else if (day.contributionCount >= 8) {
                     return (
                       /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme["4"] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[1] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -92,7 +97,7 @@ const Contributes = () => {
                   } else if (day.contributionCount >= 4) {
                     return (
                       /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme["3"] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[2] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -101,7 +106,7 @@ const Contributes = () => {
                   } else if (day.contributionCount >= 1) {
                     return (
                       /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme["2"] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[3] }}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -122,6 +127,29 @@ const Contributes = () => {
             ))}
           </div>
         ))}
+      </div>
+
+      <div className={Styles.buttonWrapper}>
+        <button
+          onClick={() => setTheme(green)}
+          /* @ts-ignore */
+          style={{ "--color": "0, 128, 0" }}
+        >
+        </button>
+
+        <button
+          onClick={() => setTheme(orange)}
+          /* @ts-ignore */
+          style={{ "--color": "255, 128, 0" }}
+        >
+        </button>
+
+        <button
+          onClick={() => setTheme(blue)}
+          /* @ts-ignore */
+          style={{ "--color": "0, 0, 255" }}
+        >
+        </button>
       </div>
     </>
   )
