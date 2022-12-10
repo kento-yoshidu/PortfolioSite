@@ -155,15 +155,17 @@ const Home = ({ data }: any) => {
           ))}
         </div>
 
-        <a
-          href="https://github.com/kento-yoshidu"
-          className={Styles.link}
-        >
-          <FontAwesomeIcon
-            className={Styles.icon}
-            icon={faGithub}
-          />
-        </a>
+        <div className={Styles.linkWrapper}>
+          <a
+            href="https://github.com/kento-yoshidu"
+            className={Styles.link}
+          >
+            <FontAwesomeIcon
+              className={Styles.icon}
+              icon={faGithub}
+            />
+          </a>
+        </div>
       </section>
 
       <section className={`${Styles.section} ${Styles.sec3}`}>
@@ -171,15 +173,17 @@ const Home = ({ data }: any) => {
 
         <Contributes />
 
-        <a
-          href="https://github.com/kento-yoshidu"
-          className={Styles.link}
-        >
-          <FontAwesomeIcon
-            className={Styles.icon}
-            icon={faGithub}
-          />
-        </a>
+        <div className={Styles.linkWrapper}>
+          <a
+            href="https://github.com/kento-yoshidu"
+            className={Styles.link}
+          >
+            <FontAwesomeIcon
+              className={Styles.icon}
+              icon={faGithub}
+            />
+          </a>
+        </div>
       </section>
 
       <section
