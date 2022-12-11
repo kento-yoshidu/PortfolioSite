@@ -41,6 +41,15 @@ const blue = [
   "0, 129, 241"
 ]
 
+type Week = {
+  contributionDays: Day[]
+}
+
+type Day = {
+  contributionCount: number
+  date: string
+}
+
 const Contributions = () => {
   const [theme, setTheme] = useState(green)
   const { data, loading, error } = useQuery(Query)
@@ -68,12 +77,12 @@ const Contributions = () => {
       <p className={Styles.count}>Total {totalContributions} contributions 🎉</p>
 
       <div className={Styles.wrapper}>
-        {weeks.map((week: any, i: number) => (
+        {weeks.map((week: Week, i: number) => (
           <div
             key={`week${i}`}
             className={Styles.week}
           >
-            {week.contributionDays.map((day: any, i: number) => (
+            {week.contributionDays.map((day: Day) => (
               <>
                 {(() => {
                   if (day.contributionCount >= 12) {
