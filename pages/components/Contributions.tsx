@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useQuery, gql } from "@apollo/client"
-import Styles from "../styles/test.module.scss"
+import Styles from "../styles/contributions.module.scss"
 
 const Query = gql`
   query getContribution {
@@ -41,7 +41,7 @@ const blue = [
   "0, 129, 241"
 ]
 
-const Contributes = () => {
+const Contributions = () => {
   const [theme, setTheme] = useState(green)
   const { data, loading, error } = useQuery(Query)
 
@@ -120,7 +120,6 @@ const Contributes = () => {
                         </div>
                       </div>
                     )
-
                   }
                 })()}
               </>
@@ -155,4 +154,4 @@ const Contributes = () => {
   )
 }
 
-export default Contributes
+export default Contributions
