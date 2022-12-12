@@ -3,6 +3,7 @@ import Head from "next/head"
 
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
+import AppsAndSites from "./components/AppsAndSites"
 import Contributes from "./components/Contributions"
 import Card from "./components/Card"
 import Footer from "./components/Footer"
@@ -14,6 +15,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
+
 config.autoAddCss = false
 
 const Home = () => (
@@ -42,33 +44,19 @@ const Home = () => (
     <section className={`${Styles.section}`}>
       <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
 
-      <details className={Styles.details}>
-        <summary>
-          <a href="https://blog.toriwatari.work/page/1/">鳥に生まれることができなかった人へ</a>
-        </summary>
-        <p>Gatsbyで作ったブログです。</p>
-        <ul>
-          <li>Gatsby</li>
-          <li>ypeScript</li>
-          <li>CSS Modules</li>
-          <li>AWS Amplify</li>
-        </ul>
-      </details>
-      <details className={Styles.details}>
-        <summary>
-          <a href="https://blog.toriwatari.work/page/1/">Books To Give</a>
-        </summary>
-        <p>読み終わって引き取り手を探している本をリストアップするサイトです。</p>
-        <ul>
-          <li>Next.js</li>
-          <li>TypeScript</li>
-          <li>Tailwind CSS</li>
-          <li>Prisma</li>
-          <li>Supabase</li>
-          <li>Vercel</li>
-          <li>Google Books API</li>
-        </ul>
-      </details>
+      <AppsAndSites
+        url="https://blog.toriwatari.work/page/1/"   
+        title="鳥に生まれることができなかった人へ"
+        text="Gatsbyで作ったブログです。"
+        technologies={["Gatsby", "TypeScript", "CSS Modules", "AWS Amplify"]}
+      />
+
+      <AppsAndSites
+        url="https://bookstogive-kento-yoshidu.vercel.app/"
+        title="Books To Give"
+        text="読み終わって引き取り手を探している本をリストアップするサイトです。"
+        technologies={["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Vercel", "Google Books API"]}
+      />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
