@@ -87,36 +87,3 @@
     color: #ddd;
   }
 }
-
-.details {
-  width: 45%;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  border: 1px solid #ccc;
-
-  summary {
-    padding: 15px 25px;
-    font-size: 2rem;
-    cursor: pointer;
-    background-color: #eee;
-
-    a {
-      color: #444;
-    }
-  }
-
-  p {
-    margin-top: 15px;
-    font-size: 1.75rem;
-    padding-left: 20px;
-  }
-
-  ul {
-    margin: 10px 0;
-    list-style: none;
-
-    li {
-      font-size: 1.75rem;
-    }
-  }
-}
