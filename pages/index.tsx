@@ -15,7 +15,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
-
 config.autoAddCss = false
 
 const Home = () => (
@@ -34,9 +33,9 @@ const Home = () => (
 
       <div className={Styles.linkWrapper}>
         <PageLink
-          url="https://blog.toriwatari.work/page/1/"
+          url="https://sample1.toriwatari.work/"
           title="Sample1"
-          text="サンプルページ1"
+          text="サンプルページ1（作成中）"
         />
       </div>
     </section>

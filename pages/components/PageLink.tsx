@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 import Styles from "../styles/pagelink.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -17,7 +15,7 @@ type Props = {
   text: string
 }
 
-const PageLink = ({ url, title, text}: Props) => (
+const PageLink = ({ url, title, text }: Props) => (
   <a
     className={Styles.link}
     href={url}
