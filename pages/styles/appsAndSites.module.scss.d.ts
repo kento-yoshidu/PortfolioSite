@@ -1,6 +1,7 @@
 export type Styles = {
   'details': string;
   'icon': string;
+  'listItem': string;
   'summary': string;
   'technologies': string;
   'text': string;

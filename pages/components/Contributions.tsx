@@ -1,24 +1,8 @@
-import { useState } from "react"
-import { useQuery, gql } from "@apollo/client"
-import Styles from "../styles/contributions.module.scss"
+import React, { useState } from "react"
 
-const Query = gql`
-  query getContribution {
-    user(login: "kento-yoshidu") {
-      contributionsCollection {
-        contributionCalendar {
-          totalContributions
-          weeks {
-            contributionDays {
-              date
-              contributionCount
-            }
-          }
-        }
-      }
-    }
-  }
-`
+import { useQuery, gql } from "@apollo/client"
+
+import Styles from "../styles/contributions.module.scss"
 
 const green = [
   "0, 85, 0",
@@ -40,6 +24,24 @@ const blue = [
   "0, 103, 193",
   "0, 129, 241"
 ]
+
+const Query = gql`
+  query getContribution {
+    user(login: "kento-yoshidu") {
+      contributionsCollection {
+        contributionCalendar {
+          totalContributions
+          weeks {
+            contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 type Week = {
   contributionDays: Day[]
@@ -87,8 +89,7 @@ const Contributions = () => {
                 {(() => {
                   if (day.contributionCount >= 12) {
                     return (
-                      /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme[0] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[0] } as React.CSSProperties}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -96,8 +97,7 @@ const Contributions = () => {
                     )
                   } else if (day.contributionCount >= 8) {
                     return (
-                      /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme[1] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[1] } as React.CSSProperties}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -105,8 +105,7 @@ const Contributions = () => {
                     )
                   } else if (day.contributionCount >= 4) {
                     return (
-                      /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme[2] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[2] } as React.CSSProperties}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -114,8 +113,7 @@ const Contributions = () => {
                     )
                   } else if (day.contributionCount >= 1) {
                     return (
-                      /* @ts-ignore */
-                      <div className={`${Styles.box}`} style={{ "--color": theme[3] }}>
+                      <div className={`${Styles.box}`} style={{ "--color": theme[3] } as React.CSSProperties}>
                         <div className={Styles.info}>
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
@@ -140,22 +138,19 @@ const Contributions = () => {
       <div className={Styles.buttonWrapper}>
         <button
           onClick={() => setTheme(green)}
-          /* @ts-ignore */
-          style={{ "--color": "0, 128, 0" }}
+          style={{ "--color": "0, 128, 0" } as React.CSSProperties}
         >
         </button>
 
         <button
           onClick={() => setTheme(orange)}
-          /* @ts-ignore */
-          style={{ "--color": "255, 128, 0" }}
+          style={{ "--color": "255, 128, 0" } as React.CSSProperties}
         >
         </button>
 
         <button
           onClick={() => setTheme(blue)}
-          /* @ts-ignore */
-          style={{ "--color": "0, 0, 255" }}
+          style={{ "--color": "0, 0, 255" } as React.CSSProperties}
         >
         </button>
       </div>

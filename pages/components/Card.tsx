@@ -16,8 +16,7 @@ const Card = ({ color, num, text }: Props) => {
 
   return (
     <div className={Styles.card}>
-      {/* @ts-ignore */}
-      <div className={Styles.percent} style={{ "--color": color, "--num": num }}>
+      <div className={Styles.percent} style={{ "--color": color, "--num": num } as React.CSSProperties}>
 
         <div className={Styles.dot}></div>
         <svg className={Styles.svg}>

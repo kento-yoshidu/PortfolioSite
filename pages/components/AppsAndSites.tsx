@@ -5,6 +5,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 type Props = {
   url: string
@@ -34,7 +35,12 @@ const AppsAndSites = ({ url, title, text, technologies }: Props) => (
 
     <ul className={Styles.technologies}>
       {technologies?.map((tec) => (
-        <li key={tec}>⚙ {tec}</li>
+        <li
+          key={tec}
+          className={Styles.listItem}
+        >
+          ⚙ {tec}
+        </li>
       ))}
     </ul>
   </details>
