@@ -13,7 +13,7 @@
 }
 
 .count {
-  margin: 40px 0 20px;
+  margin: min(40px, 3vw) 0 20px;
   color: #444;
   font-size: 2rem;
   text-align: center;
@@ -32,22 +32,28 @@
 
 .errorWrapper {
   margin: 10px auto;
-  width: 50%;
+  width: max(324px, 50%);
   color: #444;
   text-align: center;
 }
 
 .errorMessage {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 100;
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .errorMessage {
+    font-weight: 400;
+  } 
+}
+
 .errorText {
   margin: 30px auto;
-  width: 80%;
-  font-size: 1.6rem;
-  line-height: 2;
+  width: max(315px, 80%);
+  font-size: clamp(1.48rem, 2vw, 1.6rem);
+  line-height: 1.95;
 }
 
 .box {
