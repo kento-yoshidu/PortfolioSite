@@ -1,6 +1,5 @@
 export type Styles = {
   'icon': string;
-  'imgWrapper': string;
   'link': string;
   'linkWrapper': string;
   'sec1': string;
@@ -8,7 +7,6 @@ export type Styles = {
   'sec4': string;
   'section': string;
   'sectionTitle': string;
-  'sectionWrapper': string;
 };
 
 export type ClassNames = keyof Styles;
