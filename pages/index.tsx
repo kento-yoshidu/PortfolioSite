@@ -1,6 +1,7 @@
 import React from "react"
 import Head from "next/head"
 
+import Loading from "./components/Loading"
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
@@ -22,6 +23,8 @@ const Home = () => (
     <Head>
       <title>Kento Yoshizu Portfolio Site</title>
     </Head>
+
+    <Loading />
 
     <Header />
 
