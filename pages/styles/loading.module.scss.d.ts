@@ -1,4 +1,5 @@
 export type Styles = {
+  'hide': string;
   'wrapper': string;
 };
 
