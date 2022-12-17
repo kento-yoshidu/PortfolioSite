@@ -1,5 +1,8 @@
 export type Styles = {
+  'animate': string;
+  'container': string;
   'hide': string;
+  'loader': string;
   'wrapper': string;
 };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import { ServerStyleSheet } from "styled-components"
 
 import Styles from "../styles/loading.module.scss"
 
@@ -8,7 +9,7 @@ const Loading = () => {
   useEffect(() => {
     setTimeout(() => {
       ref.current?.classList.add(Styles.hide)
-    }, 1000)
+    }, 1500)
   })
 
   return (
@@ -16,7 +17,12 @@ const Loading = () => {
       className={Styles.wrapper}
       ref={ref}
     >
-      <h1>Loading</h1>
+      <div className={Styles.container}>
+        <div className={Styles.loader}><span></span></div>
+        <div className={Styles.loader}><span></span></div>
+        <div className={Styles.loader}><i></i></div>
+        <div className={Styles.loader}><i></i></div>
+      </div>
     </div>
   )
 }
