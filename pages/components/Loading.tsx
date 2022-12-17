@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
-import { ServerStyleSheet } from "styled-components"
+import React, { useEffect, useRef } from "react"
 
 import Styles from "../styles/loading.module.scss"
 
