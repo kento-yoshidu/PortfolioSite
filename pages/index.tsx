@@ -59,6 +59,13 @@ const Home = () => (
         text="読み終わって引き取り手を探している本をリストアップするサイトです。"
         technologies={["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Vercel", "Google Books API"]}
       />
+
+      <AppsAndSites
+        url="https://snipet.gatsbyjs.io/"
+        title="スニペット置き場（作成中）"
+        text="ちょっとしたコードスニペットを置いています。言語は主にJavaScriptとRustです。"
+        technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Gatsby Cloud"]}
+      />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
