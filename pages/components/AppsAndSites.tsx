@@ -39,7 +39,7 @@ const AppsAndSites = ({ url, title, text, technologies }: Props) => (
           key={tec}
           className={Styles.listItem}
         >
-          ⚙ {tec}
+          <span>⚙</span> {tec}
         </li>
       ))}
     </ul>

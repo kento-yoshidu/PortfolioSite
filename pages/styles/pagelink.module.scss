@@ -6,11 +6,11 @@
   color: #444;
   text-decoration: none;
   text-align: center;
-  transition: 0.2s;
+  transition: 0.15s;
 
   &:hover {
-    background: rgb(248, 248, 248);
-    color: orange;
+    background: rgb(252, 252, 252);
+    color: #00aaa9;
   }
 }
 
@@ -32,4 +32,3 @@
   font-family: "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   line-height: 1.6;
 }
-
