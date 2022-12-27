@@ -38,7 +38,7 @@ const Home = () => (
         <PageLink
           url="https://sample1.toriwatari.work/"
           title="Sample1"
-          text="サンプルページ1（作成中）"
+          text="サンプルページ1(作成中)"
         />
       </div>
     </section>
@@ -89,7 +89,7 @@ const Home = () => (
     <section
       className={`${Styles.section} ${Styles.sec4}`}
     >
-      <h2 className={Styles.sectionTitle}>2022年度の個人タスク</h2>
+      <h2 className={Styles.sectionTitle}>個人タスク</h2>
 
       <div
         style={{
@@ -103,11 +103,13 @@ const Home = () => (
       >
         <Card color="#fee800" num={55} text="最新のCSSを学習する" />
 
-        <Card color="#04fc43" num={50} text="Jamstackサイトを10個作る" />
+        <Card color="#0113f9" num={45} text="サンプルサイトを10個作る" />
 
-        <Card color="#06ccff" num={50} text="AWS認定資格を2つ以上取る" />
+        <Card color="#04fc43" num={30} text="Jamstackサイトを10個作る" />
 
-        <Card color="#ff00be" num={45} text="サンプルWebサイトを10個作る" />
+        <Card color="#06ccff" num={8} text="AWS認定資格を全て取得する" />
+
+        <Card color="#ff00be" num={1} text="低レイヤーを理解する" />
       </div>
     </section>
 
