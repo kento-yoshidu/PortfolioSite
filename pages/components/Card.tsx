@@ -37,10 +37,10 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks }: Props) => {
         <summary>詳細</summary>
 
         <ul>
-          {completedTasks!.map((task) => (
+          {completedTasks?.map((task) => (
             <li key={`completed${task}`}>✅ {task}</li>
           ))}
-          {incompleteTasks!.map((task) => (
+          {incompleteTasks?.map((task) => (
             <li key={`incomplete${task}`}>⬜️ {task}</li>
           ))}
         </ul>
