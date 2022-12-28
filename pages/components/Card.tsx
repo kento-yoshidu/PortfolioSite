@@ -30,6 +30,12 @@ const Card = ({ color, num, text }: Props) => {
       </div>
 
       <h2 className={Styles.text}>{text}</h2>
+
+      {/*
+      <details>
+        <summary>詳細</summary>
+      </details>
+      */}
     </div>
   )
 }
