@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 30px;
   width: max(280px, 28%);
@@ -87,14 +87,15 @@
 }
 
 .details {
-  width: 60%;
+  width: 80%;
   font-size: 1.65rem;
 
   summary {
-    text-align: left;
+    text-align: center;
   }
 
   ul {
+    margin-top: 15px;
     padding-left: 5px;
     list-style: none;
 

@@ -7,8 +7,8 @@ type Props = {
   color: string
   num: number
   text: string
-  completedTasks: string[]
-  incompleteTasks: string[]
+  completedTasks?: string[]
+  incompleteTasks?: string[]
 }
 
 const Card = ({ color, num, text, completedTasks, incompleteTasks }: Props) => {
@@ -33,18 +33,20 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks }: Props) => {
 
       <h2 className={Styles.text}>{text}</h2>
 
-      <details className={Styles.details}>
-        <summary>詳細</summary>
+      {(completedTasks || incompleteTasks) && (
+        <details className={Styles.details}>
+          <summary>詳細</summary>
 
-        <ul>
-          {completedTasks?.map((task) => (
-            <li key={`completed${task}`}>✅ {task}</li>
-          ))}
-          {incompleteTasks?.map((task) => (
-            <li key={`incomplete${task}`}>⬜️ {task}</li>
-          ))}
-        </ul>
-      </details>
+          <ul>
+            {completedTasks && completedTasks.map((task) => (
+              <li key={`completed${task}`}>✅ {task}</li>
+            ))}
+            {incompleteTasks && incompleteTasks.map((task) => (
+              <li key={`incomplete${task}`}>⬜️ {task}</li>
+            ))}
+          </ul>
+        </details>
+      )}
     </div>
   )
 }
