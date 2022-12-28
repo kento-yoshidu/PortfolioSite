@@ -95,7 +95,6 @@ const Home = () => (
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "flex-start",
           gap: "30px",
           flexWrap: "wrap",
           width: "80%",
@@ -103,22 +102,51 @@ const Home = () => (
         }}
       >
         <Card
-          color="#fee800"
-          num={55}
-          text="最新のCSSを学習する"
-          completedTasks={["新しい疑似要素"]}
-          incompleteTasks={["and more..."]}
+          color="#189200"
+          num={50}
+          text="OSS-DB認定資格を取得する"
+          completedTasks={["OSS-DB Silver"]}
+          incompleteTasks={["OSS-DB Gold"]}
         />
 
-            {/*
-        <Card color="#0113f9" num={45} text="サンプルサイトを10個作る" />
+        <Card
+          color="#fee800"
+          num={30}
+          text="最新のCSSを学習する"
+          completedTasks={[":has()、 :is()、 :where()、 etc..."]}
+          incompleteTasks={["@layer", "@container", "CSS Houdini", "and more..."]}
+        />
 
-        <Card color="#04fc43" num={30} text="Jamstackサイトを10個作る" />
 
-        <Card color="#06ccff" num={8} text="AWS認定資格を全て取得する" />
+        <Card color="#04fc43" num={20} text="Jamstackサイトを10個作る" />
 
-        <Card color="#ff00be" num={1} text="低レイヤーを理解する" />
-      */}
+        <Card color="#0113f9" num={10} text="サンプルサイトを10個作る" />
+
+        <Card
+          color="#06ccff"
+          num={8}
+          text="AWS認定資格を取得する"
+          completedTasks={["Solutions Architect Associate"]}
+          incompleteTasks={["Cloud Practitioner",
+            "Developer Associate",
+            "SysOps Administrator Associate",
+            "Advanced Networking Specialty",
+            "Data Analytics Specialty",
+            "Database Specialty",
+            "Machine Learning Specialty",
+            "Security Specialty",
+            "SAP on AWS Specialty",
+            "Solutions Architect Professional",
+            "DevOps Engineer Professional"
+          ]}
+        />
+
+        <Card
+          color="#ff00be"
+          num={1}
+          text="低レイヤーを理解する"
+          incompleteTasks={["C、C++", "Rust", "CPU", "OS"]}
+        />
       </div>
     </section>
 
