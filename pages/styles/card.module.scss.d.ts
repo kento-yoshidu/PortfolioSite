@@ -1,6 +1,7 @@
 export type Styles = {
   'animateDot': string;
   'card': string;
+  'details': string;
   'dot': string;
   'number': string;
   'percent': string;
