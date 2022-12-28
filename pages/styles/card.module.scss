@@ -6,7 +6,7 @@
   justify-content: start;
   align-items: center;
   gap: 30px;
-  width: max(270px, 25%);
+  width: max(280px, 28%);
   padding: 40px 0 30px;
   background-color: #222;
   color: #ddd;
@@ -84,6 +84,24 @@
   font-weight: 400;
   text-align: center;
   letter-spacing: 1px;
+}
+
+.details {
+  width: 60%;
+  font-size: 1.65rem;
+
+  summary {
+    text-align: left;
+  }
+
+  ul {
+    padding-left: 5px;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+  }
 }
 
 .card.show {

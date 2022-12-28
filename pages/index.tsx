@@ -95,14 +95,22 @@ const Home = () => (
         style={{
           display: "flex",
           justifyContent: "center",
+          alignItems: "flex-start",
           gap: "30px",
           flexWrap: "wrap",
           width: "80%",
           margin: "0 auto"
         }}
       >
-        <Card color="#fee800" num={55} text="最新のCSSを学習する" />
+        <Card
+          color="#fee800"
+          num={55}
+          text="最新のCSSを学習する"
+          completedTasks={["新しい疑似要素"]}
+          incompleteTasks={["and more..."]}
+        />
 
+            {/*
         <Card color="#0113f9" num={45} text="サンプルサイトを10個作る" />
 
         <Card color="#04fc43" num={30} text="Jamstackサイトを10個作る" />
@@ -110,6 +118,7 @@ const Home = () => (
         <Card color="#06ccff" num={8} text="AWS認定資格を全て取得する" />
 
         <Card color="#ff00be" num={1} text="低レイヤーを理解する" />
+      */}
       </div>
     </section>
 
