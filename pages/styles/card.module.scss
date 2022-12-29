@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  width: max(280px, 28%);
+  width: max(280px, 31%);
   padding: 40px 0 30px;
   background-color: #222;
   color: #ddd;
@@ -99,8 +99,21 @@
     padding-left: 5px;
     list-style: none;
 
+    .linkListItem {
+      a {
+        color: #fff;
+
+        &:hover {
+          color: orange;
+        }
+      }
+      svg {
+        margin-left: 8px;
+      }
+    }
+
     li {
-      margin: 0;
+      margin-bottom: 5px;
     }
   }
 }
