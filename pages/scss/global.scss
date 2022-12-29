@@ -18,3 +18,7 @@ html {
     sans-serif;
   scroll-behavior: smooth;
 }
+
+@media (hover: hover) {
+  a:hover { color: orange; }
+}

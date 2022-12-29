@@ -113,7 +113,7 @@ const Home = () => (
           color="#fee800"
           num={30}
           text="最新のCSSを学習する"
-          completedTasks={[":has()、 :is()、 :where()、 etc..."]}
+          completedTasks={["CSS変数", ":has()、 :is()、 :where()、 etc..."]}
           incompleteTasks={["@layer", "@container", "CSS Houdini", "and more..."]}
         />
 

@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  width: max(280px, 31%);
+  width: max(280px, 29%);
   padding: 40px 0 30px;
   background-color: #222;
   color: #ddd;
@@ -87,11 +87,17 @@
 }
 
 .details {
-  width: 80%;
+  opacity: 0;
+  max-width: 90%;
   font-size: 1.65rem;
 
   summary {
     text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      color: orange;
+    }
   }
 
   ul {
@@ -102,11 +108,8 @@
     .linkListItem {
       a {
         color: #fff;
-
-        &:hover {
-          color: orange;
-        }
       }
+
       svg {
         margin-left: 8px;
       }
@@ -170,5 +173,11 @@
     opacity: 1;
     transition-duration: 1.2s;
     transition-delay: 2s;
+  }
+
+  .details {
+    opacity: 1;
+    transition-duration: 1.2s;
+    transition-delay: 3s;
   }
 }
