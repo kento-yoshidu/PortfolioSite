@@ -117,8 +117,15 @@ const Home = () => (
           incompleteTasks={["@layer", "@container", "CSS Houdini", "and more..."]}
         />
 
-
-        <Card color="#04fc43" num={20} text="Jamstackサイトを10個作る" />
+        <Card
+          color="#04fc43"
+          num={20}
+          text="Jamstackサイトを10個作る"
+          links={[
+            ["鳥に生まれることが出来なかった人へ", "https://blog.toriwatari.work/page/1/"],
+            ["スニペット置き場", "https://snipestrageplace.gatsbyjs.io/"]
+          ]}
+        />
 
         <Card color="#0113f9" num={10} text="サンプルサイトを10個作る" />
 

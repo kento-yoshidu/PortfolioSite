@@ -3,6 +3,7 @@ export type Styles = {
   'card': string;
   'details': string;
   'dot': string;
+  'linkListItem': string;
   'number': string;
   'percent': string;
   'show': string;
