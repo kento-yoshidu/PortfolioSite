@@ -104,6 +104,10 @@
     .linkListItem {
       a {
         color: #fff;
+
+        &:hover {
+          color: orange;
+        }
       }
 
       svg {
