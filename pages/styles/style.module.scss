@@ -4,7 +4,7 @@
 
 .sectionTitle {
   max-width: 80%;
-  margin: 0 auto min(50px, 10vw);
+  margin: 0 auto min(40px, 5vw);
   color: #444;
   font-size: clamp(2.5rem, 2.3vw, 38px);
   font-weight: 100;
@@ -21,6 +21,8 @@
 }
 
 .sec1 {
+  padding-top: 15%;
+
   .linkWrapper {
     display: flex;
     flex-wrap: wrap;

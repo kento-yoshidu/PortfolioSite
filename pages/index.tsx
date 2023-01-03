@@ -122,7 +122,7 @@ const Home = () => (
           num={20}
           text="Jamstackサイトを10個作る"
           links={[
-            ["鳥に生まれることが出来なかった人へ", "https://blog.toriwatari.work/page/1/"],
+            ["鳥に生まれることができなかった人へ", "https://blog.toriwatari.work/page/1/"],
             ["スニペット置き場", "https://snipestrageplace.gatsbyjs.io/"]
           ]}
         />

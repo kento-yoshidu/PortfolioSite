@@ -15,7 +15,7 @@
 .count {
   margin: min(40px, 3vw) 0 20px;
   color: #444;
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 3vw, 2rem);
   text-align: center;
 }
 
