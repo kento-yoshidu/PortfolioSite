@@ -14,13 +14,13 @@ config.autoAddCss = false
 
 const gradientColors = [
   "124deg, rgba(21, 87, 153, 0.8), rgba(21, 153, 87, 0.7)",
-  "270deg, rgba(18, 194, 233, 0.7), rgba(196, 113, 237, 0.9), rgba(246, 79, 89, 0.7)",
-  "15deg, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7)",
-  "90deg, rgba(131, 58, 180, 0.7), rgba(253, 29, 29, 0.7), rgba(252, 176, 69, 0.7)",
+  "202deg, rgba(18, 194, 233, 0.7), rgba(196, 113, 237, 0.9), rgba(246, 79, 89, 0.7)",
+  "135deg, rgba(131, 58, 180, 0.7), rgba(253, 29, 29, 0.7), rgba(252, 176, 69, 0.7)",
   "45deg, rgba(247, 183, 51, 0.7), rgba(252, 74, 26, 0.77)",
   "35deg, rgba(36, 11, 54, 0.7), rgba(195, 20, 50, 0.7)",
   "320deg, rgba(241, 23, 18, 0.7), rgba(0, 153, 247, 0.77)",
   "rgba(185, 29, 115, 0.7), rgba(249, 83, 198, 0.7)",
+  "15deg, rgba(5, 117, 230, 0.7), rgba(0, 242, 96, 0.7)",
   "180deg, rgba(41, 72, 255, 0.7), rgba(57, 106, 252, 0.7)"
 ]
 
@@ -73,7 +73,7 @@ const Header = () => {
         <h2 className={Styles.name}>Kento Yoshizu</h2>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
         <h3 className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</h3>
-        <p className={Styles.text}>更新日 : <time className={Styles.time}>2022-12-27</time></p>
+        <p className={Styles.text}>更新日 : <time className={Styles.time}>2023-01-03</time></p>
 
         <Link className={Styles.arrowContainer} href="#sec1">
           <div className={Styles.arrow}></div>

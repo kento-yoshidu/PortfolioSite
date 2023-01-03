@@ -1,6 +1,6 @@
 .wrapper {
   position: fixed;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   background-color: #222;
   z-index: 100;
@@ -92,4 +92,11 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media (max-width: 768px) {
+  .loader {
+    width: 175px;
+    height: 175px;
+  } 
 }
