@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
 import client from '../apollo-client'
 
-import "./scss/global.css"
+import "./css/global.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
