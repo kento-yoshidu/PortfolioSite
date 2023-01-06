@@ -15,13 +15,13 @@
   display: block;
   margin-bottom: 10px;
   text-align: center;
+}
 
-  .icon {
-    color: #ddd;
-    font-size: clamp(38px, 3vw, 50px);
+.link .icon {
+  color: #ddd;
+  font-size: clamp(38px, 3vw, 50px);
+}
 
-    &:hover {
-      color: #888;
-    }
-  }
+.link .icon:hover {
+  color: #888;
 }
