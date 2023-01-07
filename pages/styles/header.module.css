@@ -61,10 +61,10 @@
   font-size: clamp(2.5rem, 2.2vw, 3.3rem);
   letter-spacing: 1px;
   transition: 0.2s;
+}
 
-  svg {
-    color: pink;
-  }
+.message svg {
+  color: pink;
 }
 
 .text {
@@ -85,10 +85,10 @@
   align-items: center;
   margin-top: 25px;
   width: 100px;
+}
 
-  &:hover .arrow {
-    border-color: orange;
-  }
+.arrow-container:hover .arrow {
+  border-color: orange;
 }
 
 .arrow {
@@ -99,16 +99,22 @@
   transform: rotate(45deg);
   animation: arrow-move 1.5s infinite;
   transition: 0.5s;
+}
 
-  &:not(:first-child) {
-    margin-top: -10px;
-  }
+.arrow:not(:first-child) {
+  margin-top: -10px;
+}
 
-  @for $i from 1 through 3 {
-    &:nth-child(#{$i}) {
-      animation-delay: 0.15 * $i + s;
-    }
-  }
+.arrow:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 1.15s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 1.3s;
 }
 
 @keyframes arrow-move {
