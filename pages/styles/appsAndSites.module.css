@@ -11,25 +11,25 @@
   font-size: 2rem;
   cursor: pointer;
   transition: 0.15s;
+}
 
-  &:hover {
-    background-color: rgba(#eee, 0.5);
-  }
+.summary:hover {
+  background-color: rgba(#eee, 0.5);
+}
 
-  a {
-    color: #444;
-    font-size: clamp(1.32rem, 3vw, 1.95rem);
-    transition: 0.2s;
+.link {
+  color: #444;
+  font-size: clamp(1.32rem, 3vw, 1.95rem);
+  transition: 0.2s;
+}
 
-    &:hover {
-      color: orange;
-    }
+.link:hover {
+  color: orange;
+}
 
-    .icon {
-      margin-left: 10px;
-      font-size: clamp(1.45rem, 2.7vw, 1.65rem);
-    }
-  }
+.icon {
+  margin-left: 10px;
+  font-size: clamp(1.45rem, 2.7vw, 1.65rem);
 }
 
 .text {
@@ -48,8 +48,8 @@
   margin-bottom: 5px;
   font-size: clamp(1.5rem, 2.2vw, 1.75rem);
   letter-spacing: 0.5px;
+}
 
-  span {
-    font-family: Color Emoji,Segoe UI Emoji;
-  }
+.listItem span {
+  font-family: Color Emoji,Segoe UI Emoji;
 }

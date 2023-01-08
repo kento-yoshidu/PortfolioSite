@@ -34,10 +34,9 @@
   padding-top: 5%;
 }
 
-.header-title,
-.header-sub-title,
-.text,
-.my-skill {
+.headerTitle,
+.headerSubTitle,
+.update {
   font-family: "Open Sans", sans-serif;
   animation-name: top-to-down;
   animation-duration: 2s;
@@ -46,7 +45,7 @@
 .headerTitle,
 .name,
 .message,
-.text {
+.update {
   max-width: 80%;
   font-weight: 400;
   text-shadow: -1px 2px 0 rgba(100, 100, 100, 1);
@@ -76,18 +75,18 @@
   color: pink;
 }
 
-.text {
+.update {
   margin-bottom: 20px;
   color: #ddd;
   font-size: 2.2rem;
   font-weight: 400;
 }
 
-.time {
+.date {
   letter-spacing: 1px;
 }
 
-.arrow-container {
+.arrowContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,7 +95,7 @@
   width: 100px;
 }
 
-.arrow-container:hover .arrow {
+.arrowContainer:hover .arrow {
   border-color: orange;
 }
 
@@ -110,19 +109,17 @@
   transition: 0.5s;
 }
 
-.arrow:not(:first-child) {
-  margin-top: -10px;
-}
-
 .arrow:nth-child(1) {
   animation-delay: 1s;
 }
 
 .arrow:nth-child(2) {
+  margin-top: -10px;
   animation-delay: 1.15s;
 }
 
 .arrow:nth-child(3) {
+  margin-top: -10px;
   animation-delay: 1.3s;
 }
 
@@ -138,12 +135,12 @@
 
   100% {
     opacity: 0;
-    transform: translateY(15px) rotate(45deg);
+    transform: translateY(25px) rotate(45deg);
   }
 }
 
 @media (max-width: 768px) {
-  .arrow-container {
+  .arrowContainer {
     width: 50px;
     margin-top: 20px;
   }

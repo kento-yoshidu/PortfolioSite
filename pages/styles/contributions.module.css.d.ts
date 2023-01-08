@@ -1,19 +1,15 @@
-export type Styles = {
-  'box': string;
-  'buttonWrapper': string;
-  'count': string;
-  'errorMessage': string;
-  'errorText': string;
-  'errorWrapper': string;
-  'info': string;
-  'loadingMessage': string;
-  'none': string;
-  'week': string;
-  'wrapper': string;
+declare const styles: {
+  readonly "wrapper": string;
+  readonly "count": string;
+  readonly "week": string;
+  readonly "loadingMessage": string;
+  readonly "errorWrapper": string;
+  readonly "errorMessage": string;
+  readonly "errorText": string;
+  readonly "box": string;
+  readonly "info": string;
+  readonly "none": string;
+  readonly "buttonWrapper": string;
 };
+export = styles;
 
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
