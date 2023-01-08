@@ -9,7 +9,7 @@ import Contributes from "./components/Contributions"
 import Card from "./components/Card"
 import Footer from "./components/Footer"
 
-import Styles from "./styles/style.module.scss"
+import Styles from "./styles/style.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
