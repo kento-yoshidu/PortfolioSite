@@ -6,12 +6,12 @@
   color: #444;
   text-decoration: none;
   text-align: center;
-  transition: 0.15s;
+  transition: 0.1s;
+}
 
-  &:hover {
-    background: rgb(252, 252, 252);
-    color: #00aaa9;
-  }
+.link:hover {
+  background: rgb(252, 252, 252);
+  color: orange;
 }
 
 .title {
