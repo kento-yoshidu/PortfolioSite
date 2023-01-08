@@ -2,17 +2,26 @@
   position: absolute;
   top: 40px;
   left: 40px;
-  font-size: 5.8rem !important;
+  background-color: transparent;
+  border: none;
   z-index: 10;
   cursor: pointer;
+}
+
+.button svg {
+  color: #fff;
+  font-size: 5.8rem !important;
 }
 
 @media (max-width: 768px) {
   .button {
     top: 20px;
     left: 20px;
-    font-size: 4.5rem !important;
   } 
+
+  .button svg {
+    font-size: 4.5rem !important;
+  }
 }
 
 .wrapper {
