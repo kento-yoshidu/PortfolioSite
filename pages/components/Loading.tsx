@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 
-import Styles from "../styles/loading.module.scss"
+import Styles from "../styles/loading.module.css"
 
 const Loading = () => {
   const ref = useRef<HTMLDivElement | null>(null)
