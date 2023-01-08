@@ -1,0 +1,178 @@
+.card {
+  opacity: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  width: max(280px, 29%);
+  padding: 40px 0 30px;
+  background-color: #222;
+  color: #ddd;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.percent {
+  opacity: 0;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transition-duration: 1.5s;
+  transition-delay: 0.5s;
+}
+
+.dot {
+  opacity: 0;
+  position: absolute;
+  inset: 5px;
+  transform: rotate(calc(3.6deg * var(--num)));
+  z-index: 2;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color);
+  box-shadow: 0 0 1px var(--color), 0 0 1px var(--color);
+}
+
+.circleLine {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.circleLine circle {
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #191919;
+  transform: translate(5px, 5px);
+}
+
+.circleLine circle:nth-child(2) {
+  opacity: 0;
+  stroke: var(--color);
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+}
+
+.number {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+}
+
+.taskName {
+  opacity: 0;
+  width: 80%;
+  font-size: clamp(1.8rem, 3vw, 2rem);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.details {
+  opacity: 0;
+  max-width: 90%;
+  font-size: 1.65rem;
+}
+
+.summary {
+  text-align: center;
+  cursor: pointer;
+}
+
+.taskList {
+  margin-top: 15px;
+  padding-left: 5px;
+  list-style: none;
+}
+
+.linkListItem,
+.taskListItem {
+  margin-bottom: 5px;
+}
+
+.linkListItem a {
+  color: #fff;
+}
+
+.linkListItem a:hover {
+  color: orange;
+}
+
+.linkListItem svg {
+  margin-left: 8px;
+}
+
+.card.show {
+  opacity: 1;
+}
+
+.card.show .percent {
+  opacity: 1;
+}
+
+.card.card.show .dot {
+  animation: animateDot 1.4s linear 0.5s forwards;
+}
+
+.card.card.show .dot::before {
+  box-shadow: 0 0 1px var(--color), 0 0 20px 6px var(--color);
+}
+
+@keyframes animateDot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.card.show .circleLine circle:nth-child(2) {
+  animation: svgAnime 1.3s linear 1.6s forwards;
+}
+
+@keyframes svgAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card.show .number {
+  opacity: 1;
+  transition-duration: 1.2s;
+  transition-delay: 2s;
+}
+
+.card.show .taskName {
+  opacity: 1;
+  transition-duration: 1.2s;
+  transition-delay: 2s;
+}
+
+.card.show .details {
+  opacity: 1;
+  transition-duration: 1.2s;
+  transition-delay: 3.15s;
+}
