@@ -62,12 +62,14 @@ const Header = () => {
   return (
     <HeaderWrapper theme={theme}>
 
-      <FontAwesomeIcon
-        icon={faRedo}
-        className={Styles.button}
+      <button
         onClick={handleClick}
-        tabIndex={1}
-      />
+        className={Styles.button}
+      >
+        <FontAwesomeIcon
+          icon={faRedo}
+        />
+      </button>
 
       <div className={Styles.wrapper}>
         <h2 className={Styles.name}>Kento Yoshizu</h2>

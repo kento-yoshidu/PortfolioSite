@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { useQuery, gql } from "@apollo/client"
 
-import Styles from "../styles/contributions.module.scss"
+import Styles from "../styles/contributions.module.css"
 
 const green = [
   "0, 85, 0",

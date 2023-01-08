@@ -63,42 +63,40 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: rgb(var(--color));
+}
 
-  .info {
-    display: none;
-    position: absolute;
-    top: -40px;
-    left: -500%;
-    padding: 5px 10px;
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    background-color: #ddd;
-    font-size: 1.4rem;
-    font-weight: 500;
-    z-index: 1;
-    white-space: nowrap;
-  }
+.box .info {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: -500%;
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #ddd;
+  font-size: 1.4rem;
+  font-weight: 500;
+  z-index: 1;
+  white-space: nowrap;
+}
 
-  &:hover {
-    background-color: rgba(var(--color), 0.6);
+.box:hover {
+  background-color: rgba(var(--color), 0.6);
+}
 
-    .info {
-      display: block;
-    }
-  }
+.box:hover .info {
+  display: block;
 }
 
 @media (max-width: 768px) {
   .box {
     width: 12px;
     height: 12px;
+  }
 
-    &:hover {
-      .info {
-        display: none;
-      }
-    }
-  } 
+  .box:hover .info {
+    display: none;
+  }
 }
 
 .none {
@@ -110,29 +108,30 @@
   justify-content: center;
   gap: 30px;
   margin: 30px auto 0;
+}
 
-  button {
-    background-color: rgb(var(--color));
-    width: 90px;
-    height: 35px;
-    cursor: pointer;
-    border-color: #aaa;
-    border-radius: 2px;
+.buttonWrapper button {
+  background-color: rgb(var(--color));
+  width: 90px;
+  height: 35px;
+  cursor: pointer;
+  border-color: #aaa;
+  border-radius: 2px;
+}
 
-    &:hover {
-      background-color: rgba(var(--color), 0.8);
-    }
-  }
+.buttonWrapper button:hover {
+  background-color: rgba(var(--color), 0.8);
 }
 
 @media (max-width: 768px) {
   .buttonWrapper {
     gap: 10px;
+  }
 
-    button {
-      width: 70px;
-      height: 30px;
-      border-radius: 0px;
-    }
-  } 
+  .buttonWrapper button {
+    width: 70px;
+    height: 30px;
+    margin-bottom: 30px;
+    border-radius: 0px;
+  }
 }
