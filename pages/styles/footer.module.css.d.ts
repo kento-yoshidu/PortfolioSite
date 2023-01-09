@@ -1,12 +1,8 @@
-export type Styles = {
-  'footer': string;
-  'footerTitle': string;
-  'icon': string;
-  'link': string;
+declare const styles: {
+  readonly "footer": string;
+  readonly "footerTitle": string;
+  readonly "link": string;
+  readonly "icon": string;
 };
+export = styles;
 
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;

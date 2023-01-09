@@ -1,24 +1,19 @@
-export type Styles = {
-  'arrow': string;
-  'arrowContainer': string;
-  'arrowMove': string;
-  'button': string;
-  'headerSubTitle': string;
-  'headerTitle': string;
-  'message': string;
-  'mySkill': string;
-  'name': string;
-  'sa': string;
-  'saUp': string;
-  'show': string;
-  'text': string;
-  'time': string;
-  'topToDown': string;
-  'wrapper': string;
+declare const styles: {
+  readonly "button": string;
+  readonly "wrapper": string;
+  readonly "headerTitle": string;
+  readonly "headerSubTitle": string;
+  readonly "update": string;
+  readonly "top-to-down": string;
+  readonly "name": string;
+  readonly "message": string;
+  readonly "date": string;
+  readonly "arrowContainer": string;
+  readonly "arrow": string;
+  readonly "arrow-move": string;
+  readonly "sa": string;
+  readonly "show": string;
+  readonly "sa-up": string;
 };
+export = styles;
 
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;

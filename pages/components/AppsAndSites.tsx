@@ -1,4 +1,4 @@
-import Styles from "../styles/appsAndSites.module.scss"
+import Styles from "../styles/appsAndSites.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons" 
@@ -18,6 +18,7 @@ const AppsAndSites = ({ url, title, text, technologies }: Props) => (
   <details className={Styles.details}>
     <summary className={Styles.summary}>
       <a
+        className={Styles.link}
         href={url}
         target="_blank"
         rel="noreferrer"
