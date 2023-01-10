@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 import cardIntersectionObserver from "../../lib/cardIntersectionObserver"
-import Styles from "../styles/card.module.scss"
+import Styles from "../styles/card.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -29,7 +29,7 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks, links }: Prop
       <div className={Styles.percent} style={{ "--color": color, "--num": num } as React.CSSProperties}>
 
         <div className={Styles.dot}></div>
-        <svg className={Styles.svg}>
+        <svg className={Styles.circleLine}>
           <circle cx="70" cy="70" r="70"></circle>
           <circle cx="70" cy="70" r="70"></circle>
         </svg>
@@ -39,13 +39,13 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks, links }: Prop
         </div>
       </div>
 
-      <h2 className={Styles.text}>{text}</h2>
+      <h2 className={Styles.taskName}>{text}</h2>
 
       {(completedTasks || incompleteTasks || links) && (
         <details className={Styles.details}>
-          <summary>詳細</summary>
+          <summary className={Styles.summary}>詳細</summary>
 
-          <ul>
+          <ul className={Styles.taskList}>
             {links ? links.map((link) => (
               <li
                 className={Styles.linkListItem}
@@ -66,10 +66,20 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks, links }: Prop
             )) : (
               <>
                 {completedTasks && completedTasks.map((task) => (
-                  <li key={`completed${task}`}>✅ {task}</li>
+                  <li
+                    key={`completed${task}`}
+                    className={Styles.taskListItem}
+                  >
+                    ✅ {task}
+                  </li>
                 ))}
                 {incompleteTasks && incompleteTasks.map((task) => (
-                  <li key={`incomplete${task}`}>⬜️ {task}</li>
+                  <li
+                    key={`incomplete${task}`}
+                    className={Styles.taskListItem}
+                  >
+                    ⬜️ {task}
+                  </li>
                 ))}
               </>
             )}
