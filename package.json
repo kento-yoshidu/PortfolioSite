@@ -1,13 +1,11 @@
 {
-  "name": "under",
-  "version": "0.1.0",
-  "private": true,
+  "name": "kento yoshizu",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "typegen:scss": "typed-scss-modules pages"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.0.0",
@@ -20,7 +18,6 @@
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.56.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -31,7 +28,6 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
     "typed-css-modules": "^0.7.2",
-    "typed-scss-modules": "^7.0.1",
     "typescript": "4.9.3"
   }
 }

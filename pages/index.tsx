@@ -102,19 +102,19 @@ const Home = () => (
         }}
       >
         <Card
-          color="#189200"
+          color="#ffee00"
+          num={60}
+          text="最新のCSSを学習する"
+          completedTasks={["CSS変数", ":has()、:is()、:where()、etc..."]}
+          incompleteTasks={["@layer、@container、etc...", "CSS Houdini", "and more..."]}
+        />
+
+        <Card
+          color="#ff9f39"
           num={50}
           text="OSS-DB認定資格を取得する"
           completedTasks={["OSS-DB Silver"]}
           incompleteTasks={["OSS-DB Gold"]}
-        />
-
-        <Card
-          color="#fee800"
-          num={30}
-          text="最新のCSSを学習する"
-          completedTasks={["CSS変数", ":has()、 :is()、 :where()、 etc..."]}
-          incompleteTasks={["@layer", "@container", "CSS Houdini", "and more..."]}
         />
 
         <Card
