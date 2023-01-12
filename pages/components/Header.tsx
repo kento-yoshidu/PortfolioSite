@@ -65,6 +65,7 @@ const Header = () => {
       <button
         onClick={handleClick}
         className={Styles.button}
+        aria-label="背景色を変更"
       >
         <FontAwesomeIcon
           icon={faRedo}
@@ -72,12 +73,16 @@ const Header = () => {
       </button>
 
       <div className={Styles.wrapper}>
-        <h2 className={Styles.name}>Kento Yoshizu</h2>
+        <p className={Styles.name}>Kento Yoshizu</p>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
-        <h3 className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</h3>
+        <p className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</p>
         <p className={Styles.update}>更新日 : <time className={Styles.date}>2023-01-06</time></p>
 
-        <Link className={Styles.arrowContainer} href="#sec1">
+        <Link
+          className={Styles.arrowContainer}
+          href="#sec1"
+          aria-label="次のセクションへ移動"
+        >
           <div className={Styles.arrow}></div>
           <div className={Styles.arrow}></div>
           <div className={Styles.arrow}></div>
