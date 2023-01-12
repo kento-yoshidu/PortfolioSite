@@ -36,6 +36,7 @@
   margin-top: 25px;
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
   padding-left: 20px;
+  width: 90%;
 }
 
 .technologies {

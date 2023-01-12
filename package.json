@@ -1,7 +1,6 @@
 {
-  "name": "under",
-  "version": "0.1.0",
-  "private": true,
+  "name": "kento yoshizu",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
