@@ -139,20 +139,20 @@ const Contributions = () => {
         <button
           onClick={() => setTheme(green)}
           style={{ "--color": "0, 128, 0" } as React.CSSProperties}
-        >
-        </button>
+          aria-label="グラフの色を緑色に変更"
+        />
 
         <button
           onClick={() => setTheme(orange)}
           style={{ "--color": "255, 128, 0" } as React.CSSProperties}
-        >
-        </button>
+          aria-label="グラフの色をオレンジ色に変更"
+        />
 
         <button
           onClick={() => setTheme(blue)}
           style={{ "--color": "0, 0, 255" } as React.CSSProperties}
-        >
-        </button>
+          aria-label="グラフの色を青色に変更"
+        />
       </div>
     </>
   )
