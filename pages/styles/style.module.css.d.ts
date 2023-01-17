@@ -1,16 +1,13 @@
-export type Styles = {
-  'icon': string;
-  'link': string;
-  'linkWrapper': string;
-  'sec1': string;
-  'sec3': string;
-  'sec4': string;
-  'section': string;
-  'sectionTitle': string;
+declare const styles: {
+  readonly "section": string;
+  readonly "sectionTitle": string;
+  readonly "sec1": string;
+  readonly "message": string;
+  readonly "linkWrapper": string;
+  readonly "sec3": string;
+  readonly "link": string;
+  readonly "icon": string;
+  readonly "sec4": string;
 };
+export = styles;
 
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;

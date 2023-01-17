@@ -1,13 +1,9 @@
-export type Styles = {
-  'animate': string;
-  'container': string;
-  'hide': string;
-  'loader': string;
-  'wrapper': string;
+declare const styles: {
+  readonly "wrapper": string;
+  readonly "container": string;
+  readonly "loader": string;
+  readonly "animate": string;
+  readonly "hide": string;
 };
+export = styles;
 
-export type ClassNames = keyof Styles;
-
-declare const styles: Styles;
-
-export default styles;
