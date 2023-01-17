@@ -34,6 +34,8 @@ const Home = () => (
     >
       <h2 className={Styles.sectionTitle}>Sample Pages</h2>
 
+      <p className={Styles.message}>デザインセンスはありませんが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したり、<b>ヘッドレスCMS</b>と組み合わせたりの工夫をしています。</p>
+
       <div className={Styles.linkWrapper}>
         <PageLink
           url="https://sample1.toriwatari.work/"

@@ -20,6 +20,20 @@
   } 
 }
 
+.sec1 .message {
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 1.7;
+}
+
+@media (width < 768px) {
+  .sec1 .message {
+    width: 80%;
+  } 
+}
+
 .sec1 .linkWrapper {
   display: flex;
   flex-wrap: wrap;
