@@ -22,7 +22,7 @@
 
 .sec1 .message {
   width: 50%;
-  margin: 30px auto;
+  margin: 10px auto;
   text-align: center;
   font-size: 1.75rem;
   line-height: 1.7;
@@ -38,6 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
   margin: 40px auto 30px;
   width: min(1100px, 90%);
 }

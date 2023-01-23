@@ -34,6 +34,7 @@ const Home = () => (
     >
       <h2 className={Styles.sectionTitle}>Sample Pages</h2>
 
+      <p className={Styles.message}>HTMLとCSSの練習でサンプルWebサイトを作成しました。</p>
       <p className={Styles.message}>デザインセンスはありませんが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したり、<b>ヘッドレスCMS</b>と組み合わせたりの工夫をしています。</p>
 
       <div className={Styles.linkWrapper}>
@@ -41,6 +42,11 @@ const Home = () => (
           url="https://sample1.toriwatari.work/"
           title="Sample1"
           text="サンプルページ1(作成中)"
+        />
+        <PageLink
+          url="https://sample2.toriwatari.work/"
+          title="Sample2"
+          text="サンプルページ2(作成中)"
         />
       </div>
     </section>
