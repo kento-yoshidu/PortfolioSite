@@ -54,6 +54,8 @@ const Home = () => (
     <section className={`${Styles.section}`}>
       <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
 
+      <p className={Styles.message}>作りこんだものから簡単なものまで、色々なアプリケーションやサイトです。</p>
+
       <AppsAndSites
         url="https://blog.toriwatari.work/page/1/"   
         title="鳥に生まれることができなかった人へ"
@@ -73,6 +75,13 @@ const Home = () => (
         title="スニペット置き場（作成中）"
         text="ちょっとしたコードスニペットを置いています。言語は主にJavaScriptとRustです。"
         technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Gatsby Cloud"]}
+      />
+
+      <AppsAndSites
+        url="https://github.com/kento-yoshidu/js-lambda/tree/main/aws-cost-notifier"
+        title="AWS Cost Notifier"
+        text="AWSの使用量を毎日Slackに通知します。"
+        technologies={["Serverless Framework", "AWS Lambda", "Amazon EventBridge"]}
       />
     </section>
 

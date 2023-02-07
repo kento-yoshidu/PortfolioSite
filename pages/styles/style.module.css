@@ -20,7 +20,7 @@
   } 
 }
 
-.sec1 .message {
+.message {
   width: 50%;
   margin: 10px auto;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 @media (width < 768px) {
-  .sec1 .message {
+  .message {
     width: 80%;
   } 
 }
