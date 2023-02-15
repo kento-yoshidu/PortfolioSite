@@ -1,0 +1,41 @@
+.wrapper {
+  text-align: center;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 12px 55px;
+  color: #888;
+  font-size: 1.95rem;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  right: -2em;
+  transform: translateY(calc(-50% - 2px)) rotate(30deg);
+  width: 12px;
+  height: 1px;
+  background-color: #aaa;
+  transition: 0.3s;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -2em;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 1px;
+  background-color: #aaa;
+  transition: 0.3s;
+}
+
+.button:hover {
+  color: orange;
+}
