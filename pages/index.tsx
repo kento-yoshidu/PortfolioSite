@@ -51,7 +51,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="/sitemap#samplepages" text="more" />
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <section className={`${Styles.section}`}>
@@ -87,7 +87,7 @@ const Home = () => (
         technologies={["Serverless Framework", "AWS Lambda", "Amazon EventBridge"]}
       />
 
-      <LinkButton path="/sitemap#apps" text="more" />
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
@@ -186,7 +186,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="/sitemap#tasks" text="more" />
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <Footer />

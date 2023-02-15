@@ -10,7 +10,7 @@ type Props = {
 const LinkButton = ({ path, text }: Props) => {
   return (
     <div className={Styles.wrapper}>
-      <Link href={path} className={Styles.button}>
+      <Link href={path ?? ""} className={Styles.button}>
         {text}
       </Link>
     </div>
