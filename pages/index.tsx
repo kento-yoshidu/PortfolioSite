@@ -7,6 +7,7 @@ import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
 import Contributes from "./components/Contributions"
 import Card from "./components/Card"
+import LinkButton from "./components/LinkButton"
 import Footer from "./components/Footer"
 
 import Styles from "./styles/style.module.css"
@@ -49,6 +50,8 @@ const Home = () => (
           text="サンプルページ2(作成中)"
         />
       </div>
+
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <section className={`${Styles.section}`}>
@@ -83,6 +86,8 @@ const Home = () => (
         text="AWSの使用量を毎日Slackに通知します。"
         technologies={["Serverless Framework", "AWS Lambda", "Amazon EventBridge"]}
       />
+
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
@@ -180,6 +185,8 @@ const Home = () => (
           incompleteTasks={["C、C++", "Rust", "CPU", "アセンブリ", "コンパイラー", "OS"]}
         />
       </div>
+
+      <LinkButton path="sitemap" text="more" />
     </section>
 
     <Footer />
