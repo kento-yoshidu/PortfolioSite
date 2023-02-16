@@ -81,10 +81,10 @@ const Home = () => (
       />
 
       <AppsAndSites
-        url="https://github.com/kento-yoshidu/js-lambda/tree/main/aws-cost-notifier"
-        title="AWS Cost Notifier"
-        text="AWSの使用量を毎日Slackに通知します。"
-        technologies={["Serverless Framework", "AWS Lambda", "Amazon EventBridge"]}
+        url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
+        title="AWS Cost Notifier(GitHub)"
+        text="AWSの使用料を毎日Slackに通知します。"
+        technologies={["Serverless Framework", "TypeScript", "AWS Lambda", "Amazon EventBridge"]}
       />
 
       <LinkButton path="sitemap" text="more" />
