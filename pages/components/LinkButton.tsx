@@ -5,7 +5,7 @@ import Styles from "../styles/linkButton.module.css"
 type Props = {
   path: string,
   text: string
-} 
+}
 
 const LinkButton = ({ path, text }: Props) => {
   return (
