@@ -60,7 +60,7 @@ const Home = () => (
       <p className={Styles.message}>作りこんだものから簡単なものまで、色々なアプリケーションやサイトです。</p>
 
       <AppsAndSites
-        url="https://blog.toriwatari.work/page/1/"   
+        url="https://blog.toriwatari.work/page/1/"
         title="鳥に生まれることができなかった人へ"
         text="Gatsbyで作ったブログです。"
         technologies={["Gatsby", "TypeScript", "CSS Modules", "AWS Amplify"]}

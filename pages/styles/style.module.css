@@ -17,7 +17,7 @@
   .sectionTitle {
     font-weight: 400;
     letter-spacing: 1px;
-  } 
+  }
 }
 
 .message {
@@ -31,7 +31,7 @@
 @media (width < 768px) {
   .message {
     width: 80%;
-  } 
+  }
 }
 
 .sec1 .linkWrapper {
