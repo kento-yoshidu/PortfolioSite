@@ -87,6 +87,13 @@ const Home = () => (
         technologies={["Serverless Framework", "TypeScript", "AWS Lambda", "Amazon EventBridge"]}
       />
 
+      <AppsAndSites
+        url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
+        title="AWS Todo App(GitHub)"
+        text="AWSを利用してTodoAppを作成しました。タスクは毎日Slackに通知します。"
+        technologies={["React", "TypeScript", "Tailwind css", "Amazon S3", "AWS Lambda", "Amazon DynamoDB", "Amazon EventBridge"]}
+      />
+
       <LinkButton path="sitemap" text="more" />
     </section>
 
