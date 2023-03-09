@@ -76,7 +76,7 @@ const Header = () => {
         <p className={Styles.name}>Kento Yoshizu</p>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
         <p className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</p>
-        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2023-02-16">2023年2月16日</time></p>
+        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2023-03-08">2023年3月8日</time></p>
 
         <Link
           className={Styles.arrowContainer}
