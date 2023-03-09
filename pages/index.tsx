@@ -84,14 +84,14 @@ const Home = () => (
         url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
         title="AWS Cost Notifier(GitHub)"
         text="AWSの使用料を毎日Slackに通知します。"
-        technologies={["Serverless Framework", "TypeScript", "AWS Lambda", "Amazon EventBridge"]}
+        technologies={["Serverless Framework", "TypeScript", "AWS Lambda"]}
       />
 
       <AppsAndSites
         url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
         title="AWS Todo App(GitHub)"
         text="AWSを利用してTodoAppを作成しました。タスクは毎日Slackに通知します。"
-        technologies={["React", "TypeScript", "Tailwind css", "Amazon S3", "AWS Lambda", "Amazon DynamoDB", "Amazon EventBridge"]}
+        technologies={["Serverless Framework", "React", "TypeScript", "Tailwind css", "Amazon S3", "AWS Lambda", "Amazon DynamoDB"]}
       />
 
       <LinkButton path="sitemap" text="more" />
