@@ -51,7 +51,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="summary" text="more" />
+      <LinkButton path="summary#sample" text="more" />
     </section>
 
     <section className={`${Styles.section}`}>
@@ -101,7 +101,7 @@ const Home = () => (
         technologies={["Serverless Framework", "React", "TypeScript", "Tailwind CSS", "Amazon S3", "AWS Lambda", "Amazon DynamoDB"]}
       />
 
-      <LinkButton path="summary" text="more" />
+      <LinkButton path="summary#apps" text="more" />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
@@ -200,7 +200,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="summary" text="more" />
+      <LinkButton path="summary#task" text="more" />
     </section>
 
     <Footer />
