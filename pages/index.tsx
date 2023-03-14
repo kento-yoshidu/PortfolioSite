@@ -36,7 +36,7 @@ const Home = () => (
       <h2 className={Styles.sectionTitle}>Sample Pages</h2>
 
       <p className={Styles.message}>HTMLとCSSの練習でサンプルWebサイトを作成しました。</p>
-      <p className={Styles.message}>デザインセンスはありませんが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したり、<b>ヘッドレスCMS</b>と組み合わせたりの工夫をしています。</p>
+      <p className={Styles.message}>デザインセンスはありませんが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したりの工夫をしています。</p>
 
       <div className={Styles.linkWrapper}>
         <PageLink
@@ -51,7 +51,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="sitemap" text="more" />
+      <LinkButton path="summary" text="more" />
     </section>
 
     <section className={`${Styles.section}`}>
@@ -64,6 +64,13 @@ const Home = () => (
         title="鳥に生まれることができなかった人へ"
         text="Gatsbyで作ったブログです。"
         technologies={["Gatsby", "TypeScript", "CSS Modules", "AWS Amplify"]}
+      />
+
+      <AppsAndSites
+        url="https://diary.toriwatari.work"
+        title="日記"
+        text="ただの日記（技術以外）です。"
+        technologies={["Next.js", "TypeScript", "microCMS", "AWS Amplify"]}
       />
 
       <AppsAndSites
@@ -91,10 +98,10 @@ const Home = () => (
         url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
         title="AWS Todo App(GitHub)"
         text="AWSを利用してTodoAppを作成しました。タスクは毎日Slackに通知します。"
-        technologies={["Serverless Framework", "React", "TypeScript", "Tailwind css", "Amazon S3", "AWS Lambda", "Amazon DynamoDB"]}
+        technologies={["Serverless Framework", "React", "TypeScript", "Tailwind CSS", "Amazon S3", "AWS Lambda", "Amazon DynamoDB"]}
       />
 
-      <LinkButton path="sitemap" text="more" />
+      <LinkButton path="summary" text="more" />
     </section>
 
     <section className={`${Styles.section} ${Styles.sec3}`}>
@@ -193,7 +200,7 @@ const Home = () => (
         />
       </div>
 
-      <LinkButton path="sitemap" text="more" />
+      <LinkButton path="summary" text="more" />
     </section>
 
     <Footer />
