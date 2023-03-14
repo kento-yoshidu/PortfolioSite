@@ -1,0 +1,43 @@
+.wrapper {
+  margin: 0 auto 30px;
+  width: 60%;
+}
+
+.pageTitle {
+  margin-bottom: 20px;
+  font-size: 4.2rem;
+  font-weight: normal;
+}
+
+.section {
+  padding: 40px 0 10px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 3.2rem;
+  font-weight: normal;
+}
+
+.section p {
+  width: 90%;
+  font-size: 1.65rem;
+  line-height: 1.75;
+}
+
+.section ul {
+  width: 85%;
+  margin: 20px 0;
+  padding-left: 15px;
+  list-style: none;
+}
+
+.section li {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.section li::before {
+  content: "✔";
+  margin-right: 10px;
+}
