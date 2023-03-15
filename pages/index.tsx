@@ -25,7 +25,7 @@ const Home = () => (
       <title>Kento Yoshizu Portfolio Site</title>
     </Head>
 
-    <Loading />
+    {/*<Loading />*/}
 
     <Header />
 

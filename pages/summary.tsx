@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Footer from "./components/Footer"
 import styles from "./styles/summary.module.css"
 
@@ -6,6 +7,8 @@ const Sitemap = () => {
     <>
       <div className={styles.wrapper}>
         <section className={styles.section} id="sample">
+          <Link href="/" style={{ fontSize: "1.6rem", display: "block", marginBottom: "20px" }}>← Home</Link>
+
           <h1 className={styles.pageTitle}>✨ Site Summary</h1>
 
           <h2>📸 Sample Pages</h2>
@@ -18,7 +21,7 @@ const Sitemap = () => {
             <li>モダンなCSSの機能の利用</li>
             <li>CSS ModulesやTailwind CSSの使用</li>
             <li>Sassは使用しない</li>
-            <li>ReactやTypeScriptを使用し、適宜モジュール分割</li>
+            <li>ReactやTypeScriptを使用したコンポーネント分割</li>
             <li>StorybookによるUIテスト💯</li>
             <li>React Testing Libraryによるテスト💯</li>
             <li>Github Actions、TerraformによるAWSへの自動デプロイ(挑戦中)</li>
@@ -59,6 +62,19 @@ const Sitemap = () => {
         <section className={styles.section} id="task">
           <h2>🎅 個人タスク</h2>
         </section>
+
+        <section className={styles.section} id="task">
+          <h2>😸 その他</h2>
+
+          <ul>
+            <li>I 💖 HTML & CSS</li>
+            <li>I 💖 VSCode & Vim</li>
+            <li>I 💖 sed & awk</li>
+            <li>I 💖 PostgreSQL</li>
+          </ul>
+        </section>
+
+        <Link href="/" style={{ fontSize: "1.6rem", display: "block", marginBottom: "20px" }}>← Home</Link>
       </div>
 
       <Footer />
