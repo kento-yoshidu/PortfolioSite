@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Head from "next/head"
 import Footer from "./components/Footer"
 import styles from "./styles/summary.module.css"
 
@@ -6,14 +7,18 @@ const Sitemap = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <section className={styles.section} id="sample">
+        <Head>
+          <title>Summary | Kento Yoshizu Portfolio Site</title>
+        </Head>
+
+        <section className={styles.section}>
           <Link href="/" style={{ fontSize: "1.6rem", display: "block", marginBottom: "20px" }}>← Home</Link>
 
           <h1 className={styles.pageTitle}>✨ Site Summary</h1>
 
-          <h2>📸 Sample Pages</h2>
+          <h2 id="sample">📸 Sample Pages</h2>
 
-          <p>HTMLとCSSの練習でサンプルWebサイトを作成しました。デザインセンスはありませんが、以下の点について工夫しました。</p>
+          <p>HTMLとCSSの学習でサンプルWebサイトを作成しました。デザインセンスがないので書籍を参考にしたものが多いですが、以下の点について工夫しました。</p>
 
           <ul>
             <li>ページの表示速度の向上(GoogleのPageSpeed Insightsで90点以上を獲得できるくらい)</li>
@@ -45,8 +50,8 @@ const Sitemap = () => {
           </ul>
         </section>
 
-        <section className={styles.section} id="apps">
-          <h2>🍜 Apps & Sites</h2>
+        <section className={styles.section}>
+          <h2 id="apps">🍜 Apps & Sites</h2>
 
           <p>作りこんだものから簡単なものまで、色々なアプリケーションやサイトです。Vue.jsとSvelteとかもやりたかったのですが、結局React一辺倒になってしまいました。</p>
 
@@ -59,11 +64,11 @@ const Sitemap = () => {
           </ul>
         </section>
 
-        <section className={styles.section} id="task">
-          <h2>🎅 個人タスク</h2>
+        <section className={styles.section}>
+          <h2 id="task">🎅 個人タスク</h2>
         </section>
 
-        <section className={styles.section} id="task">
+        <section className={styles.section}>
           <h2>😸 その他</h2>
 
           <ul>
@@ -71,6 +76,7 @@ const Sitemap = () => {
             <li>I 💖 VSCode & Vim</li>
             <li>I 💖 sed & awk</li>
             <li>I 💖 PostgreSQL</li>
+            <li>I 💖 Roger Federer 🎾</li>
           </ul>
         </section>
 

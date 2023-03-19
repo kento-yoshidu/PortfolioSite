@@ -43,7 +43,7 @@ const HeaderWrapper = styled.header<CustomProps>`
       content: "";
       height: 100%;
       width: 100%;
-      background-image: linear-gradient(${({ theme }) => typeof theme === "object" ? `${gradientColors[0]}` : `${gradientColors[theme]}`});
+      background-image: linear-gradient(${({ theme }) => typeof theme === "object" ? `124deg, rgba(21, 87, 153, 0.8), rgba(21, 153, 87, 0.7)` : `${gradientColors[theme]}`});
       background-color: transparent;
     }
 
