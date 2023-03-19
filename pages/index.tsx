@@ -35,8 +35,8 @@ const Home = () => (
     >
       <h2 className={Styles.sectionTitle}>Sample Pages</h2>
 
-      <p className={Styles.message}>HTMLとCSSの練習でサンプルWebサイトを作成しました。</p>
-      <p className={Styles.message}>デザインセンスはありませんが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したりの工夫をしています。</p>
+      <p className={Styles.message}>HTMLとCSSの学習でサンプルWebサイトを作成しました。</p>
+      <p className={Styles.message}>デザインセンスがないので書籍を参考にしたものが多いですが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したりの工夫をしています。</p>
 
       <div className={Styles.linkWrapper}>
         <PageLink
