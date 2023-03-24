@@ -1,4 +1,6 @@
 declare const styles: {
+  readonly "header": string;
+  readonly "bgScrollingReverse": string;
   readonly "button": string;
   readonly "wrapper": string;
   readonly "headerTitle": string;
