@@ -8,7 +8,7 @@ const Sitemap = () => {
     <>
       <div className={styles.wrapper}>
         <Head>
-          <title>Summary | Kento Yoshizu Portfolio Site</title>
+          <title>Site Summary | Kento Yoshizu Portfolio Site</title>
         </Head>
 
         <section className={styles.section}>
@@ -57,7 +57,9 @@ const Sitemap = () => {
 
           <ul>
             <li>
-              <a>
+              <a
+                href="https://blog.toriwatari.work/page/1/"
+              >
                 鳥に生まれることができなかった人へ
               </a>
             </li>

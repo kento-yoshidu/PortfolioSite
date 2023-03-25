@@ -172,17 +172,3 @@
     height: 25px;
   }
 }
-
-.sa {
-  opacity: 0;
-  transition: all 0.9s ease;
-}
-
-.sa.show {
-  opacity: 1;
-  transform: none;
-}
-
-.sa-up {
-  transform: translate(0, 200px);
-}
