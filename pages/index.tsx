@@ -1,7 +1,6 @@
 import React from "react"
 import Head from "next/head"
 
-import Loading from "./components/Loading"
 import Header from './components/Header'
 import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
@@ -65,17 +64,17 @@ const Home = () => (
       />
 
       <AppsAndSites
-        url="https://diary.toriwatari.work"
+        url="https://toriwataridiary.vercel.app/"
         title="日記"
         text="ただの日記（技術以外）です。"
-        technologies={["Next.js", "TypeScript", "microCMS", "AWS Amplify"]}
+        technologies={["Next.js", "TypeScript", "microCMS", "Vercel"]}
       />
 
       <AppsAndSites
         url="https://myforms.toriwatari.work/"
         title="My Forms"
         text="フォームをたくさん作成します。"
-        technologies={["Next.js", "TypeScript", "CSS Modules", "React Hook Forms", "Zod", "MSW"]}
+        technologies={["Next.js", "TypeScript", "CSS Modules", "React Hook Forms", "Zod", "MSW", "AWS Amplify"]}
       />
 
       <AppsAndSites
