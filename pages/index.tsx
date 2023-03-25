@@ -25,8 +25,6 @@ const Home = () => (
       <title>Kento Yoshizu Portfolio Site</title>
     </Head>
 
-    {/*<Loading />*/}
-
     <Header />
 
     <section
@@ -74,6 +72,13 @@ const Home = () => (
       />
 
       <AppsAndSites
+        url="https://myforms.toriwatari.work/"
+        title="My Forms"
+        text="フォームをたくさん作成します。"
+        technologies={["Next.js", "TypeScript", "CSS Modules", "React Hook Forms", "Zod", "MSW"]}
+      />
+
+      <AppsAndSites
         url="https://bookstogive-kento-yoshidu.vercel.app/"
         title="BooksToGive"
         text="読み終わって引き取り手を探している本をリストアップするサイトです。"
@@ -85,13 +90,6 @@ const Home = () => (
         title="スニペット置き場（作成中）"
         text="ちょっとしたコードスニペットを置いています。言語は主にJavaScriptとRustです。"
         technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Gatsby Cloud"]}
-      />
-
-      <AppsAndSites
-        url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
-        title="AWS Cost Notifier(GitHub)"
-        text="AWSの使用料を毎日Slackに通知します。"
-        technologies={["Serverless Framework", "TypeScript", "AWS Lambda"]}
       />
 
       <AppsAndSites

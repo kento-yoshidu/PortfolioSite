@@ -38,7 +38,7 @@
 
 .text {
   margin-top: 25px;
-  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   padding-left: 20px;
   width: 90%;
 }
@@ -51,7 +51,7 @@
 
 .listItem {
   margin-bottom: 5px;
-  font-size: clamp(1.5rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
   letter-spacing: 0.5px;
 }
 
