@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import AppsAndSites from './AppsAndSites'
+import AppsAndSites from '../pages/components/AppsAndSites'
 
 export default {
   title: 'Example/AppsAndSites',
