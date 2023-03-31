@@ -16,7 +16,6 @@
 
 .title {
   margin: 50px 0 30px;
-  font-size: clamp(18px, 2vw, 22px);
   letter-spacing: 2px;
 }
 
@@ -28,7 +27,6 @@
 .text {
   width: 80%;
   margin: 40px auto 50px;
-  font-size: clamp(15px, 1.9vw, 18px);
   font-family: "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   line-height: 1.6;
 }
