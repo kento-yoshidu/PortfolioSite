@@ -12,7 +12,7 @@ const Sitemap = () => {
         </Head>
 
         <section className={styles.section}>
-          <Link href="/" style={{ fontSize: "1.6rem", display: "block", marginBottom: "20px" }}>← Home</Link>
+          <Link href="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
 
           <h1 className={styles.pageTitle}>✨ Site Summary</h1>
 
@@ -82,7 +82,7 @@ const Sitemap = () => {
           </ul>
         </section>
 
-        <Link href="/" style={{ fontSize: "1.6rem", display: "block", marginBottom: "20px" }}>← Home</Link>
+        <Link href="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
       </div>
 
       <Footer />
