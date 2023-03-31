@@ -20,32 +20,6 @@
   100% { background-position: 50px 50px; }
 }
 
-.button {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  background-color: transparent;
-  border: none;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.button svg {
-  color: #fff;
-  font-size: 5.8rem !important;
-}
-
-@media (max-width: 768px) {
-  .button {
-    top: 20px;
-    left: 20px;
-  }
-
-  .button svg {
-    font-size: 4.5rem !important;
-  }
-}
-
 .wrapper {
   position: relative;
   display: flex;
@@ -76,19 +50,19 @@
 }
 
 .name {
-  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   letter-spacing: 2px;
 }
 
 .headerTitle {
   margin-bottom: 60px;
-  font-size: clamp(5rem, 5vw, 7.5rem);
+  font-size: clamp(3rem, 5.2vw, 4.5rem);
   letter-spacing: 4px;
 }
 
 .message {
   margin-bottom: 30px;
-  font-size: clamp(2.5rem, 2.2vw, 3.3rem);
+  font-size: clamp(1.25rem, 2.2vw, 2.3rem);
   letter-spacing: 1px;
   transition: 0.2s;
 }
@@ -100,7 +74,7 @@
 .update {
   margin-bottom: 20px;
   color: #ddd;
-  font-size: 2.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
 }
 
