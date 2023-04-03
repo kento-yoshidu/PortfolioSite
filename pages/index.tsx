@@ -41,11 +41,6 @@ const Home = () => (
           title="Sample1"
           text="サンプルページ1(作成中)"
         />
-        <PageLink
-          url="https://sample2.toriwatari.work/"
-          title="Sample2"
-          text="サンプルページ2(作成中)"
-        />
       </div>
 
       <LinkButton path="summary#sample" text="more" />

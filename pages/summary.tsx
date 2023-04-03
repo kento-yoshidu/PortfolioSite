@@ -41,12 +41,6 @@ const Sitemap = () => {
                 Sample Page1
               </a>
             </li>
-
-            <li>
-              <a href="https://sample2.toriwatari.work/">
-                Sample Page2
-              </a>
-            </li>
           </ul>
         </section>
 
