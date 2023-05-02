@@ -37,3 +37,29 @@
   content: "✔";
   margin-right: 10px;
 }
+
+.section li a {
+  display: inline-block;
+}
+
+.siteList > li {
+  margin-bottom: 50px;
+}
+
+.siteList li a {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.siteList li p {
+  margin-left: 20px;
+}
+
+.techList li {
+  margin-bottom: 5px;
+}
+.techList li:before {
+  font-family: Color Emoji,Segoe UI Emoji;
+  content: "⚙";
+}

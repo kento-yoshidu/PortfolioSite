@@ -68,7 +68,7 @@ const Home = () => (
       <AppsAndSites
         url="https://myforms.toriwatari.work/"
         title="My Forms"
-        text="フォームをたくさん作成します。"
+        text="フォームの作成を通して、UI/UXやアクセシビリティについて考えます。"
         technologies={["Next.js", "TypeScript", "CSS Modules", "React Hook Forms", "Zod", "MSW", "AWS Amplify"]}
       />
 

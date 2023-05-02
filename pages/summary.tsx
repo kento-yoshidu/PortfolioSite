@@ -1,5 +1,7 @@
 import Link from "next/link"
 import Head from "next/head"
+
+import AppsAndSites from "./components/AppsAndSites"
 import Footer from "./components/Footer"
 import styles from "./styles/summary.module.css"
 
@@ -49,13 +51,36 @@ const Sitemap = () => {
 
           <p>作りこんだものから簡単なものまで、色々なアプリケーションやサイトです。Vue.jsとSvelteとかもやりたかったのですが、結局React一辺倒になってしまいました。</p>
 
-          <ul>
+          <ul className={styles.siteList}>
             <li>
               <a
                 href="https://blog.toriwatari.work/page/1/"
               >
                 鳥に生まれることができなかった人へ
               </a>
+              <a
+                href="https://github.com/kento-yoshidu/GatsbyBlog"
+              >
+                （Github）
+              </a>
+
+              <p>Gatsbyで作ったブログです。一番コミット数の多いサイトです。</p>
+
+              <ul className={styles.techList}>
+                <li>Gatsby</li>
+                <li>TypeScript</li>
+                <li>CSS Modules</li>
+                <li>AWS Amplify</li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="https://blog.toriwatari.work/page/1/"
+              >
+                鳥に生まれることができなかった人へ
+              </a>
+              <p>Gatsbyで作ったブログです。</p>
             </li>
           </ul>
         </section>
