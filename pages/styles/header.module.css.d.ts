@@ -1,7 +1,6 @@
 declare const styles: {
   readonly "header": string;
   readonly "bgScrollingReverse": string;
-  readonly "button": string;
   readonly "wrapper": string;
   readonly "headerTitle": string;
   readonly "headerSubTitle": string;
@@ -13,9 +12,6 @@ declare const styles: {
   readonly "arrowContainer": string;
   readonly "arrow": string;
   readonly "arrow-move": string;
-  readonly "sa": string;
-  readonly "show": string;
-  readonly "sa-up": string;
 };
 export = styles;
 
