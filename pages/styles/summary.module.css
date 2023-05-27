@@ -59,6 +59,7 @@
 .techList li {
   margin-bottom: 5px;
 }
+
 .techList li:before {
   font-family: Color Emoji,Segoe UI Emoji;
   content: "⚙";
