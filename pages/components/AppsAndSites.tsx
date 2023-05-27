@@ -1,3 +1,5 @@
+import { useRef } from "react"
+
 import Styles from "../styles/appsAndSites.module.css"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -14,37 +16,102 @@ type Props = {
   technologies: string[]
 }
 
-const AppsAndSites = ({ url, title, text, technologies }: Props) => (
-  <details className={Styles.details}>
-    <summary className={Styles.summary}>
-      <a
-        className={Styles.link}
-        href={url}
-        target="_blank"
-        rel="noreferrer"
+const animeTiming = {
+  duration: 800,
+  easing: "ease"
+}
+
+const closingAnimeKeyframes = (content: HTMLDivElement) => [
+  {
+    height: content.offsetHeight + "px",
+    opacity: 1
+  },
+  {
+    height: 0,
+    opacity: 0
+  }
+]
+
+const openingAnimeKeyframes = (content: HTMLDivElement) => [
+  {
+    height: 0,
+    opacity: 0
+  },
+  {
+    height: content.offsetHeight + "px",
+    opacity: 1
+  }
+]
+
+const AppsAndSites = ({ url, title, text, technologies }: Props) => {
+  const refContent = useRef<HTMLDivElement>(null)
+
+  const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault()
+
+    const detailsElement = refContent.current?.parentNode as HTMLDialogElement
+
+    if (detailsElement.dataset.animeStatus === "running") {
+      return
+    }
+
+    if (detailsElement.open) {
+      detailsElement.dataset.animeStatus = "running"
+
+      refContent.current!.animate(closingAnimeKeyframes(refContent.current!), animeTiming).onfinish = () => {
+        detailsElement.removeAttribute("open")
+        detailsElement.dataset.animeStatus = ""
+      }
+    } else {
+      detailsElement.setAttribute("open", "true")
+
+      const openAnimation = refContent.current?.animate(openingAnimeKeyframes(refContent.current), animeTiming)
+
+      detailsElement.dataset.animeStatus = "running"
+
+      openAnimation!.onfinish = () => {
+        detailsElement.dataset.animeStatus = ""
+      }
+    }
+  }
+
+  return (
+    <details className={Styles.details}>
+      <summary
+        className={Styles.summary}
+        onClick={handleClick}
       >
-        {title}
-
-        <FontAwesomeIcon
-          icon={faArrowUpRightFromSquare}
-          className={Styles.icon}
-        />
-      </a>
-    </summary>
-
-    <p className={Styles.text}>{text}</p>
-
-    <ul className={Styles.technologies}>
-      {technologies?.map((tec) => (
-        <li
-          key={tec}
-          className={Styles.listItem}
+        <a
+          className={Styles.link}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
         >
-          <span>⚙</span> {tec}
-        </li>
-      ))}
-    </ul>
-  </details>
-)
+          {title}
+
+          <FontAwesomeIcon
+            icon={faArrowUpRightFromSquare}
+            className={Styles.icon}
+          />
+        </a>
+      </summary>
+
+      <div ref={refContent}>
+        <p className={Styles.text}>{text}</p>
+
+        <ul className={Styles.technologies}>
+          {technologies?.map((tec) => (
+            <li
+              key={tec}
+              className={Styles.listItem}
+            >
+              <span>⚙</span> {tec}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+  )
+}
 
 export default AppsAndSites
