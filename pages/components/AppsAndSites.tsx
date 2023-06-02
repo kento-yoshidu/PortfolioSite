@@ -81,22 +81,26 @@ const AppsAndSites = ({ url, title, text, technologies }: Props) => {
         className={Styles.summary}
         onClick={handleClick}
       >
-        <a
-          className={Styles.link}
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {title}
-
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            className={Styles.icon}
-          />
-        </a>
+        {title}
       </summary>
 
       <div ref={refContent}>
+        <p className={Styles.text}>
+          <a
+            className={Styles.link}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {title}
+
+            <FontAwesomeIcon
+              icon={faArrowUpRightFromSquare}
+              className={Styles.icon}
+            />
+          </a>
+        </p>
+
         <p className={Styles.text}>{text}</p>
 
         <ul className={Styles.technologies}>
