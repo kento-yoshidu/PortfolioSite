@@ -87,10 +87,10 @@ const Home = () => (
       />
 
       <AppsAndSites
-        url="https://github.com/kento-yoshidu/Serverless-TypeScript/tree/main/aws-cost-notifier"
-        title="AWS Todo App(GitHub)"
-        text="AWSを利用してTodoAppを作成しました。タスクは毎日Slackに通知します。"
-        technologies={["Serverless Framework", "React", "TypeScript", "Tailwind CSS", "Amazon S3", "AWS Lambda", "Amazon DynamoDB"]}
+        url="https://tennis-chart.toriwatari.work"
+        title="Tennis Chart(仮)"
+        text="BIG4と呼ばれる彼らががいかに男子テニス界を支配していたか、グラフを用いて振り返ります。"
+        technologies={["Next.js", "TypeScript", "Recharts"]}
       />
 
       <LinkButton path="summary#apps" text="more" />
