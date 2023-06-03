@@ -80,10 +80,10 @@ const Home = () => (
       />
 
       <AppsAndSites
-        url="https://snipestrageplace.gatsbyjs.io/"
-        title="スニペット置き場（作成中）"
-        text="ちょっとしたコードスニペットを置いています。言語は主にJavaScriptとRustです。"
-        technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Gatsby Cloud"]}
+        url="https://snipet-storage-place.netlify.app/"
+        title="スニペット置き場"
+        text="ちょっとしたコードスニペットを置いています。言語は主にRustとJavaScriptです。"
+        technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Netlify"]}
       />
 
       <AppsAndSites
