@@ -23,3 +23,24 @@ body {
 }
 
 a:hover { color: orange; }
+
+.inter {
+  opacity: 0;
+}
+
+.inter.show {
+  animation: ani 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
