@@ -13,7 +13,7 @@ config.autoAddCss = false
 const Header = () => {
   return (
     <header className={Styles.header}>
-      <div className={Styles.wrapper}>
+      <div className={`${Styles.wrapper} inter`}>
         <p className={Styles.name}>Kento Yoshizu</p>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
         <p className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</p>
