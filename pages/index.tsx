@@ -96,8 +96,8 @@ const Home = () => {
         <AppsAndSites
           url="https://tennis-chart.toriwatari.work"
           title="Tennis Chart(仮)"
-          text="BIG4と呼ばれる彼らががいかに男子テニス界を支配していたか、グラフを用いて振り返ります。"
-          technologies={["Next.js", "TypeScript", "React Query", "Recharts"]}
+          text="BIG4と呼ばれる存在がいかに男子テニス界を支配していたか、チャートを用いて振り返ります。バックエンドはRustです。"
+          technologies={["Next.js", "TypeScript", "React Query", "Recharts", "Rust", "Actix Web", "PostgreSQL"]}
         />
 
         <LinkButton path="summary#apps" text="more" />
