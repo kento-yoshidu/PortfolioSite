@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import Head from "next/head"
 
 import Header from './components/Header'
+import Container from "./components/container"
 import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
 import Contributes from "./components/Contributions"
@@ -124,84 +125,85 @@ const Home = () => {
       <section
         className={`${Styles.section} ${Styles.sec4}`}
       >
-        <div className="inter">
-          <h2 className={Styles.sectionTitle}>個人タスク</h2>
+        <Container>
+          <div className="inter">
+            <h2 className={Styles.sectionTitle}>個人タスク</h2>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "30px",
-              flexWrap: "wrap",
-              width: "80%",
-              margin: "0 auto"
-            }}
-          >
-            <Card
-              color="#ffee00"
-              num={60}
-              text="最新のCSSを学習する"
-              completedTasks={["CSS変数", ":has()、:is()、:where()、etc..."]}
-              incompleteTasks={["@layer、@container、etc...", "CSS Houdini", "and more..."]}
-            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "30px",
+                flexWrap: "wrap",
+                margin: "0 auto"
+              }}
+            >
+              <Card
+                color="#ffee00"
+                num={60}
+                text="最新のCSSを学習する"
+                completedTasks={["CSS変数", ":has()、:is()、:where()、etc..."]}
+                incompleteTasks={["@layer、@container、etc...", "CSS Houdini", "and more..."]}
+              />
 
-            <Card
-              color="#ff9f39"
-              num={50}
-              text="OSS-DB認定資格を取得する"
-              completedTasks={["OSS-DB Silver"]}
-              incompleteTasks={["OSS-DB Gold"]}
-            />
+              <Card
+                color="#ff9f39"
+                num={50}
+                text="OSS-DB認定資格を取得する"
+                completedTasks={["OSS-DB Silver"]}
+                incompleteTasks={["OSS-DB Gold"]}
+              />
 
-            <Card
-              color="#04fc43"
-              num={20}
-              text="Jamstackサイトを10個作る"
-              links={[
-                ["鳥に生まれることができなかった人へ", "https://blog.toriwatari.work/page/1/"],
-                ["スニペット置き場", "https://snipestrageplace.gatsbyjs.io/"]
-              ]}
-            />
+              <Card
+                color="#04fc43"
+                num={20}
+                text="Jamstackサイトを10個作る"
+                links={[
+                  ["鳥に生まれることができなかった人へ", "https://blog.toriwatari.work/page/1/"],
+                  ["スニペット置き場", "https://snipestrageplace.gatsbyjs.io/"]
+                ]}
+              />
 
-            <Card
-              color="#0113f9"
-              num={10}
-              text="サンプルサイトを10個作る"
-              links={[
-                ["Sample Page1", "https://sample1.toriwatari.work"]
-              ]}
-            />
+              <Card
+                color="#0113f9"
+                num={10}
+                text="サンプルサイトを10個作る"
+                links={[
+                  ["Sample Page1", "https://sample1.toriwatari.work"]
+                ]}
+              />
 
-            <Card
-              color="#06ccff"
-              num={8}
-              text="AWS認定資格を取得する"
-              completedTasks={["Solutions Architect Associate"]}
-              incompleteTasks={[
-                "Cloud Practitioner",
-                "Developer Associate",
-                "SysOps Administrator Associate",
-                "Advanced Networking Specialty",
-                "Data Analytics Specialty",
-                "Database Specialty",
-                "Machine Learning Specialty",
-                "Security Specialty",
-                "SAP on AWS Specialty",
-                "Solutions Architect Professional",
-                "DevOps Engineer Professional"
-              ]}
-            />
+              <Card
+                color="#06ccff"
+                num={8}
+                text="AWS認定資格を取得する"
+                completedTasks={["Solutions Architect Associate"]}
+                incompleteTasks={[
+                  "Cloud Practitioner",
+                  "Developer Associate",
+                  "SysOps Administrator Associate",
+                  "Advanced Networking Specialty",
+                  "Data Analytics Specialty",
+                  "Database Specialty",
+                  "Machine Learning Specialty",
+                  "Security Specialty",
+                  "SAP on AWS Specialty",
+                  "Solutions Architect Professional",
+                  "DevOps Engineer Professional"
+                ]}
+              />
 
-            <Card
-              color="#ff00be"
-              num={1}
-              text="低レイヤーを理解する"
-              incompleteTasks={["C、C++", "Rust", "CPU", "アセンブリ", "コンパイラー", "OS"]}
-            />
+              <Card
+                color="#ff00be"
+                num={1}
+                text="低レイヤーを理解する"
+                incompleteTasks={["C、C++", "Rust", "CPU", "アセンブリ", "コンパイラー", "OS"]}
+              />
+            </div>
+
+            <LinkButton path="summary#task" text="more" />
           </div>
-
-          <LinkButton path="summary#task" text="more" />
-        </div>
+        </Container>
       </section>
 
       <Footer />
