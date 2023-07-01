@@ -24,7 +24,8 @@ const Ac = () => {
       <div>
         {data && (
           <ul>
-            {data.map((d) => {
+            {/* @ts-ignore */}
+            {data.map((d: any) => {
               console.log(d)
               return (
                 <>
