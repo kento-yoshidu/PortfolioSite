@@ -25,15 +25,9 @@ const Ac = () => {
         {data && (
           <ul>
             {/* @ts-ignore */}
-            {data.map((d: any) => {
-              console.log(d)
-              return (
-                <>
-                  <li>{d.epoch_second * 1000}</li>
-                  <li>{new Date(d.epoch_second * 1000).toLocaleDateString()}</li>
-                </>
-              )
-            })}
+            {data.map((d: any) => (
+              <li key={d.id}>{new Date(d.epoch_second * 1000).toLocaleDateString()}</li>
+            ))}
           </ul>
         )}
       </div>

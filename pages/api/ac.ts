@@ -6,14 +6,14 @@ type Data = {
 }
 
 export default async function handler(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   try {
-    // const time = 	1560046356 - 31536000;
-    const time = 1669424304000 / 1000;
-    //const response = await fetch(`https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=kento_0225&from_second=${time}`);
-    const response = await fetch(`https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=kento_0225&from_second=${time}`);
+    const time = new Date()
+    const unix = Math.floor(time.getTime() / 1000) - 31536000
+
+    const response = await fetch(`https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=kento_0225&from_second=${unix}`);
 
     const data = await response.json()
 
