@@ -101,6 +101,13 @@ const Home = () => {
           technologies={["Next.js", "TypeScript", "React Query", "Recharts", "Rust", "Actix Web", "PostgreSQL"]}
         />
 
+        <AppsAndSites
+          url="https://github.com/kento-yoshidu/Rust_algorithm"
+          title="Rust_algorithm(GitHub)"
+          text="Rustで様々なアルゴリズムを実装したり、競技プログラミングに挑みます。"
+          technologies={["Rust"]}
+        />
+
         <LinkButton path="summary#apps" text="more" />
       </section>
 
