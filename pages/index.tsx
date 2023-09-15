@@ -84,7 +84,7 @@ const Home = () => {
           url="https://bookstogive-kento-yoshidu.vercel.app/"
           title="BooksToGive"
           text="読み終わって引き取り手を探している本をリストアップするサイトです。"
-          technologies={["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Supabase", "Vercel", "Google Books API"]}
+          technologies={["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Prisma", "Supabase", "Vercel", "Google Books API"]}
         />
 
         <AppsAndSites

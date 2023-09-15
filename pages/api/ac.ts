@@ -13,11 +13,17 @@ export default async function handler(
     const time = new Date()
     const unix = Math.floor(time.getTime() / 1000) - 31536000
 
-    const response = await fetch(`https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=kento_0225&from_second=${unix}`);
+    const response = await fetch(`${process.env.ATCODER_PROBLEMS_API}&from_second=${unix}`);
 
     const data = await response.json()
 
-    res.status(200).json({ data: data })
+    const acData = data.filter((d: any) => {
+      return d.result === "AC"
+    })
+
+    console.log(acData)
+
+    res.status(200).json({ data: acData })
   } catch (e) {
     res.status(500)
   }
