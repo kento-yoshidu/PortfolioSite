@@ -88,6 +88,13 @@ const Home = () => {
         />
 
         <AppsAndSites
+          url="https://ingredients-list-frontend.vercel.app/"
+          title="食材メモアプリ(仮)"
+          text="冷蔵庫にストックしていない食材をメモしておくアプリです。"
+          technologies={["React", "TypeScript", "CSS Modules", "React Query", "Go", "Echo", "gorm", "Render" ]}
+        />
+
+        <AppsAndSites
           url="https://snipet-storage-place.netlify.app/"
           title="スニペット置き場"
           text="ちょっとしたコードスニペットを置いています。言語は主にRustとJavaScriptです。"
