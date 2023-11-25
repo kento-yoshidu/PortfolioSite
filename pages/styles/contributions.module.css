@@ -59,29 +59,29 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: rgb(var(--color));
-}
 
-.box .info {
-  display: none;
-  position: absolute;
-  top: -40px;
-  left: -500%;
-  padding: 5px 10px;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  background-color: #ddd;
-  font-size: 0.9rem;
-  font-weight: 500;
-  z-index: 1;
-  white-space: nowrap;
+  .info {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: -500%;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background-color: #ddd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1;
+    white-space: nowrap;
+  }
 }
 
 .box:hover {
   background-color: rgba(var(--color), 0.6);
-}
 
-.box:hover .info {
-  display: block;
+  .info {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
