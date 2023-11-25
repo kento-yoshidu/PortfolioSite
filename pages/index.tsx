@@ -154,10 +154,10 @@ const Home = () => {
             >
               <Card
                 color="#ffee00"
-                num={60}
+                num={75}
                 text="最新のCSSを学習する"
-                completedTasks={["CSS変数", ":has()、:is()、:where()、etc..."]}
-                incompleteTasks={["@layer、@container、etc...", "CSS Houdini", "and more..."]}
+                completedTasks={["CSS変数", "CSS Nesting", ":has()、:is()、:where()、etc..."]}
+                incompleteTasks={["@layer、@container、etc..."]}
               />
 
               <Card

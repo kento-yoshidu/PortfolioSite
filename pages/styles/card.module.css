@@ -121,18 +121,40 @@
 
 .card.show {
   opacity: 1;
-}
 
-.card.show .percent {
-  opacity: 1;
-}
+  .percent {
+    opacity: 1;
+  }
 
-.card.card.show .dot {
-  animation: animateDot 1.4s linear 0.5s forwards;
-}
+  .dot {
+    animation: animateDot 1.4s linear 0.5s forwards;
+  }
 
-.card.card.show .dot::before {
-  box-shadow: 0 0 1px var(--color), 0 0 20px 6px var(--color);
+  .dot::before {
+    box-shadow: 0 0 1px var(--color), 0 0 20px 6px var(--color);
+  }
+
+  .circleLine circle:nth-child(2) {
+    animation: svgAnime 1.3s linear 1.6s forwards;
+  }
+
+  .number {
+    opacity: 1;
+    transition-duration: 1.2s;
+    transition-delay: 2s;
+  }
+
+  .taskName {
+    opacity: 1;
+    transition-duration: 1.2s;
+    transition-delay: 2s;
+  }
+
+  .details {
+    opacity: 1;
+    transition-duration: 1.2s;
+    transition-delay: 3.15s;
+  }
 }
 
 @keyframes animateDot {
@@ -145,10 +167,6 @@
   }
 }
 
-.card.show .circleLine circle:nth-child(2) {
-  animation: svgAnime 1.3s linear 1.6s forwards;
-}
-
 @keyframes svgAnime {
   0% {
     opacity: 0;
@@ -156,22 +174,4 @@
   100% {
     opacity: 1;
   }
-}
-
-.card.show .number {
-  opacity: 1;
-  transition-duration: 1.2s;
-  transition-delay: 2s;
-}
-
-.card.show .taskName {
-  opacity: 1;
-  transition-duration: 1.2s;
-  transition-delay: 2s;
-}
-
-.card.show .details {
-  opacity: 1;
-  transition-duration: 1.2s;
-  transition-delay: 3.15s;
 }
