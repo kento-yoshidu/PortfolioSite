@@ -87,26 +87,14 @@ const Home = () => {
           technologies={["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Prisma", "Supabase", "Vercel", "Google Books API"]}
         />
 
-        <AppsAndSites
-          url="https://ingredients-list-frontend.vercel.app/"
-          title="食材メモアプリ(仮)"
-          text="冷蔵庫にストックしていない食材をメモしておくアプリです。"
-          technologies={["React", "TypeScript", "CSS Modules", "React Query", "Go", "Echo", "gorm", "Render" ]}
-        />
-
-        <AppsAndSites
-          url="https://snipet-storage-place.netlify.app/"
-          title="スニペット置き場"
-          text="ちょっとしたコードスニペットを置いています。言語は主にRustとJavaScriptです。"
-          technologies={["Gatsby", "TypeScript", "Tailwind CSS", "Netlify"]}
-        />
-
+        {/*
         <AppsAndSites
           url="https://tennis-chart.toriwatari.work"
           title="Tennis Chart(仮)"
           text="BIG4と呼ばれる存在がいかに男子テニス界を支配していたか、チャートを用いて振り返ります。バックエンドはRustです。"
           technologies={["Next.js", "TypeScript", "React Query", "Recharts", "Rust", "Actix Web", "PostgreSQL"]}
         />
+        */}
 
         <AppsAndSites
           url="https://github.com/kento-yoshidu/Rust_algorithm"
