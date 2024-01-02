@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
 
 import Styles from "../styles/header.module.css"
@@ -17,7 +17,7 @@ const Header = () => {
         <p className={Styles.name}>Kento Yoshizu</p>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
         <p className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</p>
-        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2023-12-27">2023年12月27日</time></p>
+        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2024-01-02">2024年1月2日</time></p>
 
         <Link
           className={Styles.arrowContainer}

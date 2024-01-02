@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Head from "next/head"
 
-import AppsAndSites from "./components/AppsAndSites"
 import Footer from "./components/Footer"
 import styles from "./styles/summary.module.css"
 
