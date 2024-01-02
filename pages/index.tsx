@@ -67,13 +67,6 @@ const Home = () => {
         />
 
         <AppsAndSites
-          url="https://toriwataridiary.vercel.app/"
-          title="日記"
-          text="ただの日記（技術以外）です。"
-          technologies={["Next.js", "TypeScript", "microCMS", "Vercel"]}
-        />
-
-        <AppsAndSites
           url="https://myforms.toriwatari.work/"
           title="My Forms"
           text="フォームの作成を通して、UI/UXやアクセシビリティについて考えます。"
