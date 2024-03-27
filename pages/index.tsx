@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import Head from "next/head"
 
 import Header from './components/Header'
+import Ac from "./components/ac"
 import Container from "./components/container"
 import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
@@ -33,6 +34,8 @@ const Home = () => {
       </Head>
 
       <Header />
+
+      <Ac />
 
       <section
         className={`${Styles.section} ${Styles.sec1} inter`}

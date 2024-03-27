@@ -23,9 +23,10 @@ const Ac = () => {
     setData(data)
   }
 
+  /*
   // 1年前から今日までの日付
   function displayDates(startDate: any) {
-    const currentDate = new Date("2022-07-01");
+    const currentDate = new Date("2023-04-01");
     const today = new Date();
 
     const tmp = [];
@@ -42,6 +43,7 @@ const Ac = () => {
 
     setBox(tmp)
   }
+  */
 
   return (
     <Container>
@@ -51,12 +53,6 @@ const Ac = () => {
         onClick={handleClick}
       >
         click me
-      </button>
-
-      <button
-        onClick={displayDates}
-      >
-        1年間の日付
       </button>
 
       <div>
@@ -70,16 +66,18 @@ const Ac = () => {
         )}
       </div>
 
-      {box && (
+      {/*box && (
         <>
-          {box.map((b: any) => (
-            <>
-              <p key={`date=${b}`}>{b.date}</p>
-              <p key={`date=${b}`}>{b.status}</p>
-            </>
-          ))}
+          {box.map((b: any) => {
+            return (
+              <>
+                <p key={`date=${b}`}>{b.date}</p>
+              </>
+            )
+          }
+          )}
         </>
-      )}
+        )*/}
     </Container>
   )
 }
