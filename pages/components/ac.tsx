@@ -1,84 +1,59 @@
 import { useState } from "react"
 import Container from "./container"
 
+import Styles from "../styles/contributions.module.css"
+
 const Ac = () => {
-  const [data, setData] = useState(null);
-  const [box, setBox] = useState<any>(null);
+  const [data, setData] = useState<Map<string, number> | null>(null);
 
   const handleClick = async () => {
     const res = await fetch("/api/ac");
 
-    const  { data } = await res.json();
-
-    formatData(data)
+    setData(await res.json())
   }
 
-  const formatData = (data: any) => {
-    const today = new Date()
+  const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
-    const firstDate = today.getFullYear()-1
+  // 7個ごとに分割して格納する配列
+  const dividedArray = [];
 
-    // console.log(today.toLocaleDateString(), firstDate.toLocaleString())
-
-    setData(data)
+  // 7個ごとに分割して格納
+  for (let i = 0; i < myArray.length; i += 7) {
+      const chunk = myArray.slice(i, i + 7);
+      dividedArray.push(chunk);
   }
 
-  /*
-  // 1年前から今日までの日付
-  function displayDates(startDate: any) {
-    const currentDate = new Date("2023-04-01");
-    const today = new Date();
+  // 各要素を <div> 要素に格納
+  const result = dividedArray.map((chunk, index) => {
+      const innerDivs = chunk.map((item) => `<div>${item}</div>`).join('');
+      return `<div class="outer-div">${innerDivs}</div>`;
+  });
 
-    const tmp = [];
-
-    while (currentDate <= today) {
-      const obj = {
-        date: currentDate.toLocaleDateString(),
-        status: "none"
-      }
-
-      tmp.push(obj);
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-
-    setBox(tmp)
-  }
-  */
+  // console.log(result)
 
   return (
-    <Container>
-      <h1>AC Test</h1>
+    <>
+      <p className={Styles.count}>過去4ヵ月間のAtCoderのAC数を表示します ※工事中👷‍♂️</p>
 
-      <button
-        onClick={handleClick}
-      >
-        click me
-      </button>
+      <div className={Styles.wrapper}>
 
-      <div>
+        <button
+          onClick={handleClick}
+        >
+          click me
+        </button>
+
+        {data && Object.entries(data).map(([k, v]) => {
+          return (
+            <p key="k">{k}: {v}</p>
+          )
+        })}
+
         {data && (
-          <ul>
-            {/* @ts-ignore */}
-            {data.map((d: any) => (
-              <li key={d.id}>{new Date(d.epoch_second * 1000).toLocaleDateString()}</li>
-            ))}
-          </ul>
+          <button onClick={() => setData(null)}>閉じる</button>
         )}
       </div>
-
-      {/*box && (
-        <>
-          {box.map((b: any) => {
-            return (
-              <>
-                <p key={`date=${b}`}>{b.date}</p>
-              </>
-            )
-          }
-          )}
-        </>
-        )*/}
-    </Container>
+    </>
   )
 }
 
