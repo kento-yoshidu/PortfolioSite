@@ -109,11 +109,13 @@ const Home = () => {
         </div>
       </section>
 
+      {/*
       <section className={`${Styles.section} ${Styles.sec3} inter`}>
         <h2 className={Styles.sectionTitle}>AtCoder Heatmap</h2>
 
         <Ac />
       </section>
+      */}
 
       <section
         className={`${Styles.section} ${Styles.sec4}`}
