@@ -85,6 +85,14 @@ const Sitemap = () => {
         </section>
 
         <section className={styles.section}>
+          <h2 id="task">🌱 資格・認定</h2>
+
+          <ul>
+            <li>2025年7月21日: JSTQB認定 Foundation Level試験 V2023</li>
+          </ul>
+        </section>
+
+        <section className={styles.section}>
           <h2 id="task">🎅 個人タスク</h2>
         </section>
 
@@ -93,9 +101,6 @@ const Sitemap = () => {
 
           <ul>
             <li>I 💖 HTML & CSS</li>
-            <li>I 💖 VSCode & Vim</li>
-            <li>I 💖 sed & awk</li>
-            <li>I 💖 PostgreSQL</li>
             <li>I 💖 Roger Federer 🎾</li>
           </ul>
         </section>

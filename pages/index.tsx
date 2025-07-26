@@ -143,22 +143,21 @@ const Home = () => {
 
               <Card
                 color="#ff9f39"
-                num={50}
-                text="OSS-DB認定資格を取得する"
-                completedTasks={["OSS-DB Silver"]}
-                incompleteTasks={["OSS-DB Gold"]}
+                num={100}
+                text="テスト関連の資格を取得する"
+                completedTasks={["JSTQB認定試験 Foundation Level"]}
               />
 
-              <Card
+              {/* <Card
                 color="#0113f9"
                 num={10}
                 text="サンプルサイトを10個作る"
                 links={[
                   ["Sample Page1", "https://sample1.toriwatari.work"]
                 ]}
-              />
+              /> */}
 
-              <Card
+              {/* <Card
                 color="#06ccff"
                 num={8}
                 text="AWS認定資格を取得する"
@@ -176,14 +175,14 @@ const Home = () => {
                   "Solutions Architect Professional",
                   "DevOps Engineer Professional"
                 ]}
-              />
+              /> */}
 
-              <Card
+              {/* <Card
                 color="#ff00be"
                 num={1}
                 text="低レイヤーを理解する"
                 incompleteTasks={["C、C++", "Rust", "CPU", "アセンブリ", "コンパイラー", "OS"]}
-              />
+              /> */}
             </div>
 
             <LinkButton path="summary#task" text="more" />
