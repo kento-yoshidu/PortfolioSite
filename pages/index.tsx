@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import Head from "next/head"
 
 import Header from './components/Header'
-import Ac from "./components/ac"
 import Container from "./components/container"
 import PageLink from "./components/PageLink"
 import AppsAndSites from "./components/AppsAndSites"
@@ -103,14 +102,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/*
-      <section className={`${Styles.section} ${Styles.sec3} inter`}>
-        <h2 className={Styles.sectionTitle}>AtCoder Heatmap</h2>
-
-        <Ac />
-      </section>
-      */}
-
       <section
         className={`${Styles.section} ${Styles.sec4}`}
       >
@@ -129,54 +120,11 @@ const Home = () => {
             >
               <Card
                 color="#ffee00"
-                num={75}
-                text="最新のCSSを学習する"
-                completedTasks={["CSS変数", "CSS Nesting", ":has()、:is()、:where()、etc..."]}
-                incompleteTasks={["@layer、@container、etc..."]}
+                num={50}
+                text="UFDB v0を完成させる"
+                completedTasks={["コアロジック実装", "コマンド実装"]}
+                incompleteTasks={["DB分割機能", "HTML出力機能"]}
               />
-
-              <Card
-                color="#ff9f39"
-                num={100}
-                text="テスト関連の資格を取得する"
-                completedTasks={["JSTQB認定試験 Foundation Level"]}
-              />
-
-              {/* <Card
-                color="#0113f9"
-                num={10}
-                text="サンプルサイトを10個作る"
-                links={[
-                  ["Sample Page1", "https://sample1.toriwatari.work"]
-                ]}
-              /> */}
-
-              {/* <Card
-                color="#06ccff"
-                num={8}
-                text="AWS認定資格を取得する"
-                completedTasks={["Solutions Architect Associate"]}
-                incompleteTasks={[
-                  "Cloud Practitioner",
-                  "Developer Associate",
-                  "SysOps Administrator Associate",
-                  "Advanced Networking Specialty",
-                  "Data Analytics Specialty",
-                  "Database Specialty",
-                  "Machine Learning Specialty",
-                  "Security Specialty",
-                  "SAP on AWS Specialty",
-                  "Solutions Architect Professional",
-                  "DevOps Engineer Professional"
-                ]}
-              /> */}
-
-              {/* <Card
-                color="#ff00be"
-                num={1}
-                text="低レイヤーを理解する"
-                incompleteTasks={["C、C++", "Rust", "CPU", "アセンブリ", "コンパイラー", "OS"]}
-              /> */}
             </div>
 
             <LinkButton path="summary#task" text="more" />
