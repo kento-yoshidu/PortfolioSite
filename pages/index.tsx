@@ -63,30 +63,24 @@ const Home = () => {
         <AppsAndSites
           url="https://blog.toriwatari.work/page/1/"
           title="鳥に生まれることができなかった人へ"
-          text="Gatsbyで作ったブログです。"
+          text="Gatsbyで作ったブログ"
           technologies={["Gatsby", "TypeScript", "CSS Modules", "AWS Amplify"]}
-        />
-
-        <AppsAndSites
-          url="https://myforms.toriwatari.work/"
-          title="My Forms"
-          text="フォームの作成を通して、UI/UXやアクセシビリティについて考えます。"
-          technologies={["Next.js", "TypeScript", "CSS Modules", "React Hook Forms", "Zod", "MSW", "AWS Amplify"]}
-        />
-
-        <AppsAndSites
-          url="https://bookstogive-kento-yoshidu.vercel.app/"
-          title="BooksToGive"
-          text="読み終わって引き取り手を探している本をリストアップするサイトです。"
-          technologies={["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Prisma", "Supabase", "Vercel", "Google Books API"]}
         />
 
         <AppsAndSites
           url="https://github.com/kento-yoshidu/Rust_algorithm"
           title="Rust_algorithm(GitHub)"
-          text="Rustで様々なアルゴリズムを実装したり、競技プログラミングに挑みます。"
+          text="Rustで様々なアルゴリズムの勉強"
           technologies={["Rust"]}
         />
+
+        <AppsAndSites
+          url="https://github.com/kento-yoshidu/toy_ufdb_v0"
+          title="Toy UFDB v0"
+          text="Union Findをコアロジックにしたデータベースを作成している"
+          technologies={["Rust", "Union Find"]}
+        />
+
 
         <LinkButton path="summary#apps" text="more" />
       </section>
