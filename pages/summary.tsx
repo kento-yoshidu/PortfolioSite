@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Head from "next/head"
-
 import Footer from "./components/Footer"
 import styles from "./styles/summary.module.css"
 
@@ -93,16 +92,87 @@ const Sitemap = () => {
         </section>
 
         <section className={styles.section}>
-          <h2 id="task">🎅 個人タスク</h2>
-        </section>
+          <h2 id="task">🎅 やりたいこと</h2>
 
-        <section className={styles.section}>
-          <h2>😸 その他</h2>
+          <h3>放送大学を卒業する</h3>
 
-          <ul>
-            <li>I 💖 HTML & CSS</li>
-            <li>I 💖 Roger Federer 🎾</li>
-          </ul>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>分類A</th>
+                <th>分類B</th>
+                <th>科目名</th>
+                <th>評定</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th>1</th>
+                <th>基盤科目</th>
+                <th>-</th>
+                <th>身近な統計（’１８）</th>
+                <th>A</th>
+              </tr>
+              <tr>
+                <th>2</th>
+                <th>基盤科目</th>
+                <th>-</th>
+                <th>情報学へのとびら（’２２）</th>
+                <th>A</th>
+              </tr>
+              <tr>
+                <th>3</th>
+                <th>基盤科目</th>
+                <th>-</th>
+                <th>遠隔学習のためのパソコン活用（’２５）</th>
+                <th>Ⓐ</th>
+              </tr>
+              <tr>
+                <th>4</th>
+                <th>基盤科目</th>
+                <th>-</th>
+                <th>より良い思考の技法（’２３）</th>
+                <th>-</th>
+              </tr>
+              <tr>
+                <th>5</th>
+                <th>基盤科目</th>
+                <th>外国語科目</th>
+                <th>ビートルズ de 英文法（’２１）</th>
+                <th>A</th>
+              </tr>
+              <tr>
+                <th>6</th>
+                <th>情報コース</th>
+                <th>導入科目</th>
+                <th>日常生活のデジタルメディア（’２２）</th>
+                <th>Ⓐ</th>
+              </tr>
+              <tr>
+                <th>7</th>
+                <th>情報コース</th>
+                <th>導入科目</th>
+                <th>情報セキュリティと倫理・心得（’２６）</th>
+                <th>-</th>
+              </tr>
+              <tr>
+                <th>8</th>
+                <th>情報コース</th>
+                <th>専門科目</th>
+                <th>Ｗｅｂのしくみと応用（’１９）</th>
+                <th>Ⓐ</th>
+              </tr>
+              <tr>
+                <th>9</th>
+                <th>情報コース</th>
+                <th>専門科目</th>
+                <th>Ｃ言語基礎演習（’２０）</th>
+                <th>Ⓐ</th>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <Link href="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
