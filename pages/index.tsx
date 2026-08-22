@@ -31,6 +31,7 @@ const Home = () => {
 
       <Header />
 
+      {/*
       <section
         className={`${Styles.section} ${Styles.sec1} inter`}
         id="sec1"
@@ -50,6 +51,7 @@ const Home = () => {
 
         <LinkButton path="summary#sample" text="more" />
       </section>
+      */}
 
       <section className={`${Styles.section} inter`}>
         <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
@@ -60,43 +62,37 @@ const Home = () => {
           url="https://blog.toriwatari.work/page/1/"
           title="鳥に生まれることができなかった人へ"
           text="Gatsbyで作ったブログ"
-          technologies={["Gatsby", "TypeScript", "CSS Modules", "AWS Amplify"]}
+          technologies={["Gatsby", "TypeScript"]}
         />
 
         <AppsAndSites
           url="https://github.com/kento-yoshidu/Rust_algorithm"
           title="Rust_algorithm(GitHub)"
-          text="Rustで様々なアルゴリズムの勉強"
+          text="Rustで様々なアルゴリズムの実装"
           technologies={["Rust"]}
         />
 
         <AppsAndSites
-          url="https://github.com/kento-yoshidu/toy_ufdb_v0"
-          title="Toy UFDB v0"
-          text="Union Findをコアロジックにしたデータベースを作成している"
-          technologies={["Rust", "Union Find"]}
+          url="https://cp-tracker.toriwatari.work/"
+          title="CP Tracker"
+          text="競技プログラミング精進記録用サイト"
+          technologies={["Next.js", "TypeSccript", "Rust", "Actix Web"]}
         />
 
+        <AppsAndSites
+          url="https://github.com/kento-yoshidu/toy_ufdb_v0"
+          title="UFO-DB v0"
+          text="Union Findをコアロジックにしたデータベース"
+          technologies={["Rust"]}
+        />
 
         <LinkButton path="summary#apps" text="more" />
       </section>
 
-      <section className={`${Styles.section} ${Styles.sec3} inter`}>
+      <section className={`${Styles.section} inter`}>
         <h2 className={Styles.sectionTitle}>GitHub Contributions</h2>
 
         <Contributes />
-
-        <div className={Styles.linkWrapper}>
-          <a
-            href="https://github.com/kento-yoshidu"
-            className={Styles.link}
-          >
-            <FontAwesomeIcon
-              className={Styles.icon}
-              icon={faGithub}
-            />
-          </a>
-        </div>
       </section>
 
       <section

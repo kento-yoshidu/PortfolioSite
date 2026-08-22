@@ -111,8 +111,8 @@
   width: 90px;
   height: 35px;
   cursor: pointer;
-  border-color: #aaa;
-  border-radius: 2px;
+  border: none;
+  box-shadow: 0 0 4px 1px #bbb;
 }
 
 .buttonWrapper button:hover {
