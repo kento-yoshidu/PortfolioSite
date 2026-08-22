@@ -1,14 +1,6 @@
 .footer {
-  padding: max(1.5vw, 25px) 0;
+  padding: 24px 0;
   background-color: #222;
-}
-
-.footerTitle {
-  color: #ddd;
-  font-size: clamp(1.05rem, 2.2vw, 1.18rem);
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
 }
 
 .link {
@@ -18,10 +10,6 @@
 
   .icon {
     color: #ddd;
-    font-size: clamp(38px, 3vw, 50px);
-  }
-
-  .icon:hover {
-    color: #888;
+    font-size: 48px;
   }
 }

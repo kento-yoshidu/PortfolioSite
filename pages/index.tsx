@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import Head from "next/head"
-
 import Header from './components/Header'
 import Container from "./components/container"
 import PageLink from "./components/PageLink"
@@ -9,15 +8,13 @@ import Contributes from "./components/Contributions"
 import Card from "./components/Card"
 import LinkButton from "./components/LinkButton"
 import Footer from "./components/Footer"
-
 import elementIntersectionObserver from "../lib/elementIntersectionObserver"
 import Styles from "./styles/style.module.css"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
+
 config.autoAddCss = false
 
 const Home = () => {
@@ -107,7 +104,7 @@ const Home = () => {
       >
         <Container>
           <div className="inter">
-            <h2 className={Styles.sectionTitle}>個人タスク</h2>
+            <h2 className={Styles.sectionTitle}>やりたいこと</h2>
 
             <div
               style={{
@@ -121,9 +118,16 @@ const Home = () => {
               <Card
                 color="#ffee00"
                 num={50}
-                text="UFDB v0を完成させる"
-                completedTasks={["コアロジック実装", "コマンド実装"]}
-                incompleteTasks={["DB分割機能", "HTML出力機能"]}
+                text="UFO-DB v0を完成させる"
+                completedTasks={["コアロジック実装", "コマンド実装", "DB分割機能", "HTML出力機能"]}
+                incompleteTasks={["ストレージ実装", "TCP接続", "ユーザー管理", "configファイル対応"]}
+              />
+
+              <Card
+                color="#339909"
+                num={11}
+                text="放送大学を卒業する"
+                incompleteTasks={["13/124単位"]}
               />
             </div>
 

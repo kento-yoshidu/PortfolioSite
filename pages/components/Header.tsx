@@ -1,11 +1,8 @@
 import React from "react"
 import Link from "next/link"
-
 import Styles from "../styles/header.module.css"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
-
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
@@ -17,7 +14,7 @@ const Header = () => {
         <p className={Styles.name}>Kento Yoshizu</p>
         <h1 className={Styles.headerTitle}>Portfolio Website</h1>
         <p className={Styles.message}>I <FontAwesomeIcon icon={faHeart} /> HTML & CSS</p>
-        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2026-7-18">2026年7月18日</time></p>
+        <p className={Styles.update}>更新日 : <time className={Styles.date} dateTime="2026-8-22">2026年8月22日</time></p>
 
         <Link
           className={Styles.arrowContainer}
