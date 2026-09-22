@@ -16,6 +16,7 @@ const Sitemap = () => {
 
           <h1 className={styles.pageTitle}>✨ Site Summary</h1>
 
+          {/*
           <h2 id="sample">📸 Sample Pages</h2>
 
           <p>HTMLとCSSの学習でサンプルWebサイトを作成しました。デザインセンスがないので書籍を参考にしたものが多いですが、以下の点について工夫しました。</p>
@@ -42,6 +43,7 @@ const Sitemap = () => {
               </a>
             </li>
           </ul>
+          */}
         </section>
 
         <section className={styles.section}>
