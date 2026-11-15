@@ -12,14 +12,14 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   try {
-    const today = new Date()
-    const unix = Math.floor(today.getTime() / 1000) - (31536000 / 4)
+    const today = new Date();
+    const unix = Math.floor(today.getTime() / 1000) - (31536000 / 4);
 
     const response = await fetch(`${process.env.ATCODER_PROBLEMS_API}&from_second=${unix}`);
 
-    const data = await response.json()
+    const data = await response.json();
 
-    const map = new Map<string, number>()
+    const map = new Map<string, number>();
 
     // 4か月前の日付を計算
     const fourMonthsAgo = new Date();
@@ -37,18 +37,18 @@ export default async function handler(
       if (d.result === "AC") {
         const date = new Date(d.epoch_second * 1000); // タイムスタンプをミリ秒に変換
         const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // 月は0から始まるため+1する
-        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // 月は0から始まるため+1する
+        const day = String(date.getDate()).padStart(2, "0");
 
-        const key = `${year}-${month}-${day}`
+        const key = `${year}-${month}-${day}`;
 
         const currentValue = map.get(key);
         map.set(key, currentValue! + 1);
       }
     }
 
-    return res.status(200).json(Object.fromEntries(map))
+    return res.status(200).json(Object.fromEntries(map));
   } catch (e) {
-    return res.status(500)
+    return res.status(500);
   }
 }

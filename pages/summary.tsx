@@ -1,7 +1,7 @@
-import Link from "next/link"
-import Head from "next/head"
-import Footer from "./components/Footer"
-import styles from "./styles/summary.module.css"
+import Link from "next/link";
+import Head from "next/head";
+import Footer from "./components/Footer";
+import styles from "./styles/summary.module.css";
 
 const Sitemap = () => {
   return (
@@ -182,7 +182,7 @@ const Sitemap = () => {
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Sitemap
+export default Sitemap;

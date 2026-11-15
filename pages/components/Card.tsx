@@ -1,28 +1,29 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
-import cardIntersectionObserver from "../../lib/cardIntersectionObserver"
-import Styles from "../styles/card.module.css"
+import cardIntersectionObserver from "../../lib/cardIntersectionObserver";
+import Styles from "../styles/card.module.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { config } from "@fortawesome/fontawesome-svg-core"
-config.autoAddCss = false
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 type Props = {
-  color: string
-  num: number
-  text: string
-  completedTasks?: string[]
-  incompleteTasks?: string[]
-  links?: string[][]
-}
+  color: string;
+  num: number;
+  text: string;
+  completedTasks?: string[];
+  incompleteTasks?: string[];
+  links?: string[][];
+};
 
 const Card = ({ color, num, text, completedTasks, incompleteTasks, links }: Props) => {
   useEffect(() => {
-    cardIntersectionObserver()
-  }, [])
+    cardIntersectionObserver();
+  }, []);
 
   return (
     <div className={Styles.card}>
@@ -87,8 +88,8 @@ const Card = ({ color, num, text, completedTasks, incompleteTasks, links }: Prop
         </details>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
 

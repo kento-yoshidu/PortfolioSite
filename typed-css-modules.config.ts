@@ -1,4 +1,4 @@
 export const config = {
-  exportType: 'default',
-  nameFormat: 'camel'
-}
+  exportType: "default",
+  nameFormat: "camel"
+};

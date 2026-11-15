@@ -1,11 +1,11 @@
-import React from "react"
-import Link from "next/link"
-import Styles from "../styles/header.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart } from "@fortawesome/free-solid-svg-icons"
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { config } from "@fortawesome/fontawesome-svg-core"
-config.autoAddCss = false
+import React from "react";
+import Link from "next/link";
+import Styles from "../styles/header.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const Header = () => {
   return (
@@ -27,7 +27,7 @@ const Header = () => {
         </Link>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

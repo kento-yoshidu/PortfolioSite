@@ -1,11 +1,11 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import Styles from "../styles/linkButton.module.css"
+import Styles from "../styles/linkButton.module.css";
 
 type Props = {
-  path: string,
-  text: string
-}
+  path: string;
+  text: string;
+};
 
 const LinkButton = ({ path, text }: Props) => {
   return (
@@ -14,7 +14,7 @@ const LinkButton = ({ path, text }: Props) => {
         {text}
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default LinkButton
+export default LinkButton;

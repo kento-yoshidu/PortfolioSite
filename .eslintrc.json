@@ -2,5 +2,10 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "jsx-quotes": ["error", "prefer-double"]
+  }
 }

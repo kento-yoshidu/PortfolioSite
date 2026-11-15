@@ -1,25 +1,26 @@
-import { useRef } from "react"
+import { useRef } from "react";
 
-import Styles from "../styles/appsAndSites.module.css"
+import Styles from "../styles/appsAndSites.module.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { config } from "@fortawesome/fontawesome-svg-core"
-config.autoAddCss = false
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 type Props = {
-  url: string
-  title: string
-  text: string
-  technologies: string[]
-}
+  url: string;
+  title: string;
+  text: string;
+  technologies: string[];
+};
 
 const animeTiming = {
   duration: 800,
   easing: "ease"
-}
+};
 
 const closingAnimeKeyframes = (content: HTMLDivElement) => [
   {
@@ -30,7 +31,7 @@ const closingAnimeKeyframes = (content: HTMLDivElement) => [
     height: 0,
     opacity: 0
   }
-]
+];
 
 const openingAnimeKeyframes = (content: HTMLDivElement) => [
   {
@@ -41,39 +42,39 @@ const openingAnimeKeyframes = (content: HTMLDivElement) => [
     height: content.offsetHeight + "px",
     opacity: 1
   }
-]
+];
 
 const AppsAndSites = ({ url, title, text, technologies }: Props) => {
-  const refContent = useRef<HTMLDivElement>(null)
+  const refContent = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const detailsElement = refContent.current?.parentNode as HTMLDialogElement
+    const detailsElement = refContent.current?.parentNode as HTMLDialogElement;
 
     if (detailsElement.dataset.animeStatus === "running") {
-      return
+      return;
     }
 
     if (detailsElement.open) {
-      detailsElement.dataset.animeStatus = "running"
+      detailsElement.dataset.animeStatus = "running";
 
       refContent.current!.animate(closingAnimeKeyframes(refContent.current!), animeTiming).onfinish = () => {
-        detailsElement.removeAttribute("open")
-        detailsElement.dataset.animeStatus = ""
-      }
+        detailsElement.removeAttribute("open");
+        detailsElement.dataset.animeStatus = "";
+      };
     } else {
-      detailsElement.setAttribute("open", "true")
+      detailsElement.setAttribute("open", "true");
 
-      const openAnimation = refContent.current?.animate(openingAnimeKeyframes(refContent.current), animeTiming)
+      const openAnimation = refContent.current?.animate(openingAnimeKeyframes(refContent.current), animeTiming);
 
-      detailsElement.dataset.animeStatus = "running"
+      detailsElement.dataset.animeStatus = "running";
 
       openAnimation!.onfinish = () => {
-        detailsElement.dataset.animeStatus = ""
-      }
+        detailsElement.dataset.animeStatus = "";
+      };
     }
-  }
+  };
 
   return (
     <details className={Styles.details}>
@@ -115,7 +116,7 @@ const AppsAndSites = ({ url, title, text, technologies }: Props) => {
         </ul>
       </div>
     </details>
-  )
-}
+  );
+};
 
-export default AppsAndSites
+export default AppsAndSites;
