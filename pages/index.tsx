@@ -1,26 +1,24 @@
-import { useEffect } from "react"
-import Head from "next/head"
-import Header from './components/Header'
-import Container from "./components/container"
-import PageLink from "./components/PageLink"
-import AppsAndSites from "./components/AppsAndSites"
-import Contributes from "./components/Contributions"
-import Card from "./components/Card"
-import LinkButton from "./components/LinkButton"
-import Footer from "./components/Footer"
-import elementIntersectionObserver from "../lib/elementIntersectionObserver"
-import Styles from "./styles/style.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { config } from "@fortawesome/fontawesome-svg-core"
+import { useEffect } from "react";
+import Head from "next/head";
+import Header from "./components/Header";
+import Container from "./components/container";
+import PageLink from "./components/PageLink";
+import AppsAndSites from "./components/AppsAndSites";
+import Contributes from "./components/Contributions";
+import Card from "./components/Card";
+import LinkButton from "./components/LinkButton";
+import Footer from "./components/Footer";
+import elementIntersectionObserver from "../lib/elementIntersectionObserver";
+import Styles from "./styles/style.module.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
-config.autoAddCss = false
+config.autoAddCss = false;
 
 const Home = () => {
   useEffect(() => {
-    elementIntersectionObserver()
-  }, [])
+    elementIntersectionObserver();
+  }, []);
 
   return (
 
@@ -134,7 +132,7 @@ const Home = () => {
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

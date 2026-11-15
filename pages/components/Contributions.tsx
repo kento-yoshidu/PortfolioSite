@@ -1,29 +1,29 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import { useQuery, gql } from "@apollo/client"
+import { useQuery, gql } from "@apollo/client";
 
-import Styles from "../styles/contributions.module.css"
+import Styles from "../styles/contributions.module.css";
 
 const green = [
   "0, 85, 0",
   "0, 120, 0",
   "0, 155, 0",
   "0, 190, 0"
-]
+];
 
 const orange = [
   "198, 71, 0",
   "228, 102, 22",
   "245, 132, 35",
   "255, 160, 51"
-]
+];
 
 const blue = [
   "0, 53, 98",
   "0, 80, 123",
   "0, 103, 193",
   "0, 129, 241"
-]
+];
 
 const Query = gql`
   query getContribution {
@@ -41,7 +41,7 @@ const Query = gql`
       }
     }
   }
-`
+`;
 
 type Week = {
   contributionDays: Day[]
@@ -53,13 +53,13 @@ type Day = {
 }
 
 const Contributions = () => {
-  const [theme, setTheme] = useState(green)
-  const { data, loading, error } = useQuery(Query)
+  const [theme, setTheme] = useState(green);
+  const { data, loading, error } = useQuery(Query);
 
   if (loading) {
     return (
       <p className={Styles.loadingMessage}>Loading...</p>
-    )
+    );
   }
 
   if (error) {
@@ -68,11 +68,11 @@ const Contributions = () => {
         <h3 className={Styles.errorMessage}>Error has occurred...🤔</h3>
         <p className={Styles.errorText}>データ取得でエラーが発生しました。<br />GitHubのコントリビューション数を取得して表示する予定でした。<br />申し訳ありませんが、しばらく待ってからアクセスして下さい。</p>
       </div>
-    )
+    );
   }
 
-  const { weeks } = data.user.contributionsCollection.contributionCalendar
-  const { totalContributions } = data.user.contributionsCollection.contributionCalendar
+  const { weeks } = data.user.contributionsCollection.contributionCalendar;
+  const { totalContributions } = data.user.contributionsCollection.contributionCalendar;
 
   return (
     <>
@@ -94,7 +94,7 @@ const Contributions = () => {
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
                       </div>
-                    )
+                    );
                   } else if (day.contributionCount >= 8) {
                     return (
                       <div className={`${Styles.box}`} style={{ "--color": theme[1] } as React.CSSProperties}>
@@ -102,7 +102,7 @@ const Contributions = () => {
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
                       </div>
-                    )
+                    );
                   } else if (day.contributionCount >= 4) {
                     return (
                       <div className={`${Styles.box}`} style={{ "--color": theme[2] } as React.CSSProperties}>
@@ -110,7 +110,7 @@ const Contributions = () => {
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
                       </div>
-                    )
+                    );
                   } else if (day.contributionCount >= 1) {
                     return (
                       <div className={`${Styles.box}`} style={{ "--color": theme[3] } as React.CSSProperties}>
@@ -118,7 +118,7 @@ const Contributions = () => {
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
                       </div>
-                    )
+                    );
                   } else {
                     return (
                       <div className={`${Styles.box} ${Styles.none}`}>
@@ -126,7 +126,7 @@ const Contributions = () => {
                           <p>{day.contributionCount} contributions on {day.date}</p>
                         </div>
                       </div>
-                    )
+                    );
                   }
                 })()}
               </>
@@ -155,7 +155,7 @@ const Contributions = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Contributions
+export default Contributions;

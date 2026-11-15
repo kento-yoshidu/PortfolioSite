@@ -1,31 +1,32 @@
-import Styles from "../styles/pagelink.module.css"
+import Styles from "../styles/pagelink.module.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCode } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import {
-  config,
-} from "@fortawesome/fontawesome-svg-core"
-config.autoAddCss = false
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 type Props = {
-  url: string
-  title: string
-  text: string
+  url: string;
+  title: string;
+  text: string;
+};
+
+function PageLink ({ url, title, text }: Props) {
+  return (
+    <a
+      className={Styles.link}
+      href={url}
+    >
+      <h3 className={Styles.title}>{title}</h3>
+
+      <FontAwesomeIcon icon={faCode} className={Styles.icon}/>
+
+      <p className={Styles.text}>{text}</p>
+    </a>
+  );
 }
 
-const PageLink = ({ url, title, text }: Props) => (
-  <a
-    className={Styles.link}
-    href={url}
-  >
-    <h3 className={Styles.title}>{title}</h3>
-
-    <FontAwesomeIcon icon={faCode} className={Styles.icon}/>
-
-    <p className={Styles.text}>{text}</p>
-  </a>
-)
-
-export default PageLink
+export default PageLink;
