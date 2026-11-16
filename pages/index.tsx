@@ -54,13 +54,11 @@ const Home = () => {
       <section className={`${Styles.section} inter`}>
         <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
 
-        <p className={Styles.message}>作りこんだものから簡単なものまで、色々なアプリケーションやサイトです。</p>
-
         <AppsAndSites
           url="https://blog.toriwatari.work/page/1/"
           title="鳥に生まれることができなかった人へ"
           text="Gatsbyで作ったブログ"
-          technologies={["Gatsby", "TypeScript"]}
+          technologies={["Gatsby"]}
         />
 
         <AppsAndSites
@@ -74,14 +72,21 @@ const Home = () => {
           url="https://cp-tracker.toriwatari.work/"
           title="CP Tracker"
           text="競技プログラミング精進記録用サイト"
-          technologies={["Next.js", "TypeSccript", "Rust", "Actix Web"]}
+          technologies={["React", "Rust"]}
         />
 
         <AppsAndSites
-          url="https://github.com/kento-yoshidu/toy_ufdb_v0"
-          title="UFO-DB v0"
+          url="https://github.com/kento-yoshidu/ufodb_v0"
+          title="UFODB"
           text="Union Findをコアロジックにしたデータベース"
           technologies={["Rust"]}
+        />
+
+        <AppsAndSites
+          url="https://tadoru.toriwatari.work/"
+          title="Tadoru"
+          text="オリジナル問題集アプリ。いつか本格リリースしたい。絶賛開発中"
+          technologies={["React", "Rust"]}
         />
 
         <LinkButton path="summary#apps" text="more" />
