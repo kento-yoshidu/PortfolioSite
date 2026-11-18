@@ -1,5 +1,35 @@
 # Next.js → React + Vite + TanStack Router 移行計画
 
+## 実施結果（2026-11-18、ブランチ `feature/vite-tanstack-router`）
+
+移行は完了。以下の「目的」以降は計画時の記録で、実際の構成は `CLAUDE.md` を参照。
+
+### 計画からの変更点
+
+| 項目 | 計画 | 実際 | 理由 |
+|---|---|---|---|
+| 進め方 | Next.js と Vite を並行稼働させて段階的に移行 | 作業ブランチで一括移行 | 並行稼働のための仮対応（shim 等）が複雑になるため |
+| Vite 設定ファイル | `vite.config.ts` | `vite.config.mts` | `"type": "module"` なしで ESM として読ませるため |
+| ESLint 設定ファイル | `eslint.config.js` | `eslint.config.mjs`（ESLint 10） | 同上 |
+| React | 18 のまま | **19** に更新 | TanStack Router の `head` / `<HeadContent />` が `<title>` を `<head>` に出すには React 19 の hoisting が必要（18 では `<body>` 内に出てタブ名が切り替わらない） |
+| Apollo Client | 変更なし | 3.7 → **3.14** | 3.7 は `__DEV__` グローバルをビルドツールが定義する前提で、Vite では `ReferenceError` になる |
+| Font Awesome | 変更なし | `@fortawesome/react-fontawesome` 0.2.0 → **0.2.6** | 0.2.0 は `defaultProps` に依存しており、React 19 で `className.split` が落ちる |
+| `pages/api/ac.ts` | 未決 | 削除 | 呼び出し元がなく機能も未完成のため |
+| 未使用依存 | 後片付けで削除 | `graphiql` 系は React 19 と peer 衝突するため先に削除、`styled-components` も削除 | |
+| Storybook | Vite 版へ移行 | 移行前に削除済み | 使っていないため |
+
+### 本番切り替え時に Amplify コンソールで必要な作業
+
+- 環境変数 `VITE_GITHUB_API` を追加（値は旧 `NEXT_PUBLIC_GITHUB_API` と同じ）
+- 書き換えとリダイレクトに SPA 用ルールを追加（JSON では `\.` を `\\.` とエスケープする）
+- プラットフォームが「Web Compute」なら「Web」（静的）に変更
+
+### 残課題
+
+- Apollo Client の非推奨警告（`new ApolloClient({ uri, headers })` → `HttpLink` を使う書き方へ）
+- メインチャンクが 500kB 超（gzip 160kB）でビルド時に警告
+- `src/routes/summary.tsx` で `id="task"` が重複（「資格・認定」と「やりたいこと」）
+
 ## 目的
 
 このサイトは Next.js 固有の機能（SSR/SSG、`next/image`、`next/font` など）をほとんど使っていない。
@@ -20,7 +50,6 @@
 | `next.config.js` | `reactStrictMode` のみ | 削除（`<StrictMode>` で代替） |
 | `next-env.d.ts` | Next.js 型定義 | 削除し `src/vite-env.d.ts` を追加 |
 | `.eslintrc.json` | `next/core-web-vitals` | Flat Config で `typescript-eslint` + `eslint-plugin-react-hooks` 等に置き換え |
-| `.storybook/main.ts` | `@storybook/nextjs` | `@storybook/react-vite` |
 | `amplify.yml` | `baseDirectory: .next` | `baseDirectory: dist` |
 
 `getStaticProps` / `getServerSideProps` / `next/image` / `next/font` は未使用。
@@ -45,7 +74,6 @@ src/
   lib/                     # 旧 lib/
   apollo-client.ts
 public/
-stories/
 ```
 
 `pages/` は Next.js 固有の命名なので廃止し、`src/` 配下に集約する。
@@ -68,7 +96,7 @@ stories/
   - `build`: `tsc -b && vite build`
   - `preview`: `vite preview`
   - `lint`: `eslint .`
-- `tsconfig.json` を Vite 向けに更新（`moduleResolution: "bundler"`、`jsx: "react-jsx"`、`types: ["vite/client"]`、`include: ["src", "stories"]`）
+- `tsconfig.json` を Vite 向けに更新（`moduleResolution: "bundler"`、`jsx: "react-jsx"`、`types: ["vite/client"]`、`include: ["src"]`）
 
 ### 2. ファイル移動とルート作成
 
@@ -97,15 +125,12 @@ stories/
 
 ### 5. Storybook
 
-- `@storybook/nextjs` を外し `@storybook/react-vite` を導入
-- 現状 7.0 RC なので、この機会に最新安定版へ更新する（`npx storybook@latest upgrade`）
-- `stories/*.stories.tsx` の import パスを `src/components/` に修正
-- `.storybook/preview.ts` で `global.css` を読み込む必要があるか確認
+- 削除済み（2026-11-17）。対応不要
 
 ### 6. ESLint
 
 - `eslint-config-next` を外す
-- Flat Config（`eslint.config.js`）で `@eslint/js`、`typescript-eslint`、`eslint-plugin-react-hooks`、`eslint-plugin-react-refresh`、`eslint-plugin-storybook` を設定
+- Flat Config（`eslint.config.js`）で `@eslint/js`、`typescript-eslint`、`eslint-plugin-react-hooks`、`eslint-plugin-react-refresh` を設定
 - **セミコロン必須**にする
   - ESLint 本体の `semi` ルールは v8.53 で非推奨になっているため、`@stylistic/eslint-plugin` を使う
   - `"@stylistic/semi": ["error", "always"]`
@@ -119,13 +144,11 @@ stories/
     import reactHooks from "eslint-plugin-react-hooks";
     import reactRefresh from "eslint-plugin-react-refresh";
     import stylistic from "@stylistic/eslint-plugin";
-    import storybook from "eslint-plugin-storybook";
 
     export default tseslint.config(
-      { ignores: ["dist", "storybook-static", "src/routeTree.gen.ts", "**/*.module.css.d.ts"] },
+      { ignores: ["dist", "src/routeTree.gen.ts", "**/*.module.css.d.ts"] },
       js.configs.recommended,
       ...tseslint.configs.recommended,
-      ...storybook.configs["flat/recommended"],
       {
         files: ["**/*.{ts,tsx}"],
         plugins: {
@@ -143,7 +166,7 @@ stories/
     );
     ```
 
-- 既存コードはほぼ全ファイルがセミコロンなし（セミコロンありは `pages/api/ac.ts` と `stories/appsAndSites.stories.tsx` のみ）。導入直後に `npx eslint . --fix` で一括修正する
+- 既存コードはほぼ全ファイルがセミコロンなし（セミコロンありは `pages/api/ac.ts` のみ）。導入直後に `npx eslint . --fix` で一括修正する
   - 差分が大きくなるので、**ファイル移動や機能変更とは別コミット**にする（レビューと `git blame` を追いやすくするため）
   - 一括修正のコミットは `.git-blame-ignore-revs` に登録しておくとよい
 - 生成ファイル（`routeTree.gen.ts`、`*.module.css.d.ts`）は lint 対象から外す
@@ -161,7 +184,7 @@ stories/
 
 ### 8. 後片付け
 
-- 削除: `next`, `eslint-config-next`, `@storybook/nextjs`, `next.config.js`, `next-env.d.ts`, `pages/`, `.next/`
+- 削除: `next`, `eslint-config-next`, `next.config.js`, `next-env.d.ts`, `pages/`, `.next/`
 - 未使用依存の整理（コード中で参照なし）: `styled-components`, `@types/styled-components`, `graphiql`, `@graphiql/toolkit`
 - `public/vercel.svg` が未使用なら削除
 - `.gitignore` に `dist` を追加、`.next` を削除
@@ -178,7 +201,7 @@ stories/
 - [ ] スクロールで `.inter` / `.card` の表示アニメーションが発火する（`IntersectionObserver` が `useEffect` で正しく登録されること。ルート遷移後に再登録されるかも確認）
 - [ ] GitHub コントリビューションが取得・表示される
 - [ ] 各ページの `<title>` が正しい
-- [ ] `npm run build` / `npm run lint` / `npm run build-storybook` が通る
+- [ ] `npm run build` / `npm run lint` が通る
 - [ ] セミコロンを抜いた行で `npm run lint` がエラーになる（ルールが効いていることの確認）
 - [ ] Amplify のプレビューデプロイで上記を確認
 
@@ -199,4 +222,3 @@ stories/
 
 - TanStack Router: https://tanstack.com/router/latest/docs/framework/react/quick-start
 - Vite 環境変数: https://vite.dev/guide/env-and-mode
-- Storybook (React + Vite): https://storybook.js.org/docs/get-started/frameworks/react-vite
