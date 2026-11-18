@@ -1,18 +1,20 @@
-import Link from "next/link";
-import Head from "next/head";
-import Footer from "./components/Footer";
-import styles from "./styles/summary.module.css";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import Footer from "../components/Footer";
+import styles from "../styles/summary.module.css";
 
-const Sitemap = () => {
+export const Route = createFileRoute("/summary")({
+  head: () => ({
+    meta: [{ title: "Site Summary | Kento Yoshizu Portfolio Site" }],
+  }),
+  component: Sitemap,
+});
+
+function Sitemap() {
   return (
     <>
       <div className={styles.wrapper}>
-        <Head>
-          <title>Site Summary | Kento Yoshizu Portfolio Site</title>
-        </Head>
-
         <section className={styles.section}>
-          <Link href="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
+          <Link to="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
 
           <h1 className={styles.pageTitle}>✨ Site Summary</h1>
 
@@ -177,12 +179,10 @@ const Sitemap = () => {
           </table>
         </section>
 
-        <Link href="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
+        <Link to="/" style={{ display: "block", marginBottom: "20px" }}>← Home</Link>
       </div>
 
       <Footer />
     </>
   );
-};
-
-export default Sitemap;
+}

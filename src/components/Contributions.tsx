@@ -45,12 +45,12 @@ const Query = gql`
 
 type Week = {
   contributionDays: Day[]
-}
+};
 
 type Day = {
   contributionCount: number
   date: string
-}
+};
 
 const Contributions = () => {
   const [theme, setTheme] = useState(green);

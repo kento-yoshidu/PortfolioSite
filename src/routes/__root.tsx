@@ -1,5 +1,19 @@
-import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Outlet, createRootRoute } from "@tanstack/react-router";
+
+import "../css/global.css";
 
 export const Route = createRootRoute({
-  component: () => <Outlet />,
+  head: () => ({
+    meta: [{ title: "Kento Yoshizu Portfolio Site" }],
+  }),
+  component: RootComponent,
 });
+
+function RootComponent() {
+  return (
+    <>
+      <HeadContent />
+      <Outlet />
+    </>
+  );
+}

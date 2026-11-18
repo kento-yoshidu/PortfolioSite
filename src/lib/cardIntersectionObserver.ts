@@ -1,4 +1,4 @@
-import Styles from "../pages/styles/card.module.css";
+import Styles from "../styles/card.module.css";
 
 const cardIntersectionObserver = () => {
   const options: IntersectionObserverInit = {

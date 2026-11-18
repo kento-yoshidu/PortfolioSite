@@ -1,16 +1,17 @@
-import Link from "next/link";
+import { Link, type LinkProps } from "@tanstack/react-router";
 
 import Styles from "../styles/linkButton.module.css";
 
 type Props = {
-  path: string;
+  to: LinkProps["to"];
+  hash?: string;
   text: string;
 };
 
-const LinkButton = ({ path, text }: Props) => {
+const LinkButton = ({ to, hash, text }: Props) => {
   return (
     <div className={Styles.wrapper}>
-      <Link href={path ?? ""} className={Styles.button}>
+      <Link to={to} hash={hash} className={Styles.button}>
         {text}
       </Link>
     </div>
