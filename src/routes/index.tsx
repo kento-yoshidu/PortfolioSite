@@ -1,5 +1,140 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import Header from "../components/Header";
+import Container from "../components/container";
+import AppsAndSites from "../components/AppsAndSites";
+import Contributes from "../components/Contributions";
+import Card from "../components/Card";
+import LinkButton from "../components/LinkButton";
+import Footer from "../components/Footer";
+import elementIntersectionObserver from "../lib/elementIntersectionObserver";
+import Styles from "../styles/style.module.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 export const Route = createFileRoute("/")({
-  component: () => <h1>Hello</h1>,
+  component: Home,
 });
+
+function Home() {
+  useEffect(() => {
+    elementIntersectionObserver();
+  }, []);
+
+  return (
+    <>
+
+      <Header />
+
+      {/*
+      <section
+        className={`${Styles.section} ${Styles.sec1} inter`}
+        id="sec1"
+      >
+        <h2 className={Styles.sectionTitle}>Sample Pages</h2>
+
+        <p className={Styles.message}>HTMLとCSSの学習でサンプルWebサイトを作成しました。</p>
+        <p className={Styles.message}>デザインセンスがないので書籍を参考にしたものが多いですが、<b>アクセシビリティ</b>を向上させたり、<b>Tailwind CSS</b>を使用したりの工夫をしています。</p>
+
+        <div className={Styles.linkWrapper}>
+          <PageLink
+            url="https://sample1.toriwatari.work/"
+            title="Sample1"
+            text="サンプルページ1(作成中)"
+          />
+        </div>
+
+        <LinkButton to="/summary" hash="sample" text="more" />
+      </section>
+      */}
+
+      <section className={`${Styles.section} inter`}>
+        <h2 className={Styles.sectionTitle}>Apps & Sites</h2>
+
+        <AppsAndSites
+          url="https://blog.toriwatari.work/page/1/"
+          title="鳥に生まれることができなかった人へ"
+          text="Gatsbyで作ったブログ"
+          technologies={["Gatsby"]}
+        />
+
+        <AppsAndSites
+          url="https://github.com/kento-yoshidu/Rust_algorithm"
+          title="Rust_algorithm(GitHub)"
+          text="Rustで様々なアルゴリズムの実装"
+          technologies={["Rust"]}
+        />
+
+        <AppsAndSites
+          url="https://cp-tracker.toriwatari.work/"
+          title="CP Tracker"
+          text="競技プログラミング精進記録用サイト"
+          technologies={["React", "Rust"]}
+        />
+
+        <AppsAndSites
+          url="https://github.com/kento-yoshidu/ufodb_v0"
+          title="UFODB"
+          text="Union Findをコアロジックにしたデータベース"
+          technologies={["Rust"]}
+        />
+
+        <AppsAndSites
+          url="https://tadoru.toriwatari.work/"
+          title="Tadoru"
+          text="オリジナル問題集アプリ。いつか本格リリースしたい。絶賛開発中"
+          technologies={["React", "Rust"]}
+        />
+
+        <LinkButton to="/summary" hash="apps" text="more" />
+      </section>
+
+      <section className={`${Styles.section} inter`}>
+        <h2 className={Styles.sectionTitle}>GitHub Contributions</h2>
+
+        <Contributes />
+      </section>
+
+      <section
+        className={`${Styles.section} ${Styles.sec4}`}
+      >
+        <Container>
+          <div className="inter">
+            <h2 className={Styles.sectionTitle}>やりたいこと</h2>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "30px",
+                flexWrap: "wrap",
+                margin: "0 auto"
+              }}
+            >
+              <Card
+                color="#ffee00"
+                num={50}
+                text="UFO-DB v0を完成させる"
+                completedTasks={["コアロジック実装", "コマンド実装", "DB分割機能", "HTML出力機能"]}
+                incompleteTasks={["ストレージ実装", "TCP接続", "ユーザー管理", "configファイル対応"]}
+              />
+
+              <Card
+                color="#339909"
+                num={11}
+                text="放送大学を卒業する"
+                incompleteTasks={["13/124単位"]}
+              />
+            </div>
+
+            <LinkButton to="/summary" hash="task" text="more" />
+          </div>
+        </Container>
+      </section>
+
+      <Footer />
+    </>
+  );
+}

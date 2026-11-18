@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import cardIntersectionObserver from "../../lib/cardIntersectionObserver";
+import cardIntersectionObserver from "../lib/cardIntersectionObserver";
 import Styles from "../styles/card.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

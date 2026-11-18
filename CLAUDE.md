@@ -4,36 +4,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Kento Yoshizu's personal portfolio site: a Next.js 13 (Pages Router) + TypeScript site styled with CSS Modules, using Apollo Client/GraphQL to pull GitHub contribution data.
+Kento Yoshizu's personal portfolio site: a React 19 + TypeScript single-page app built with Vite, routed with TanStack Router (file-based routes), styled with CSS Modules, and using Apollo Client/GraphQL to pull GitHub contribution data. Deployed as a static site on AWS Amplify.
 
 ## Commands
 
 ```
-npm run dev             # Start Next.js dev server
-npm run build            # Production build (also what CI runs on PRs to main)
-npm run start             # Serve the production build
-npm run lint              # next lint (eslint-config-next + semi/quotes rules); also runs during next build
+npm run dev       # Start Vite dev server (http://localhost:5173)
+npm run build     # tsc type-check, then vite build → dist/ (also what CI and Amplify run)
+npm run preview   # Serve the built dist/ locally
+npm run lint      # ESLint (flat config: eslint.config.mjs)
 ```
 
-There is no test runner configured (no Jest/RTL despite aspirations mentioned in [pages/summary.tsx](pages/summary.tsx)) — do not assume `npm test` exists.
+There is no test runner configured (no Jest/RTL/Vitest despite aspirations mentioned in [src/routes/summary.tsx](src/routes/summary.tsx)) — do not assume `npm test` exists.
 
-CSS Modules type declarations (`*.module.css.d.ts` files under [pages/styles/](pages/styles/)) are generated with `typed-css-modules` (config in [typed-css-modules.config.ts](typed-css-modules.config.ts)) but there is no npm script wired up for it; run via `npx tcm pages/styles` if a `.css.d.ts` needs regenerating after editing a `.module.css` file.
+Lint rules enforce semicolons and double quotes (`@stylistic/semi`, `@stylistic/quotes`, `@stylistic/jsx-quotes`); `npx eslint . --fix` fixes them.
+
+CSS Modules type declarations (`*.module.css.d.ts` files under [src/styles/](src/styles/)) are generated with `typed-css-modules` (config in [typed-css-modules.config.ts](typed-css-modules.config.ts)) but there is no npm script wired up for it; run via `npx tcm src/styles` if a `.css.d.ts` needs regenerating after editing a `.module.css` file.
+
+Node version is pinned in [.nvmrc](.nvmrc) (used by CI) and [amplify.yml](amplify.yml); `package.json` `engines` requires `>=22.12`.
 
 CI ([.github/workflows/build.yml](.github/workflows/build.yml)) runs `npm ci && npm run build` on pull requests targeting `main`.
 
 ## Environment variables
 
-- `NEXT_PUBLIC_GITHUB_API` — GitHub GraphQL API token, used as a bearer token in [apollo-client.ts](apollo-client.ts) to fetch contribution data.
-- `ATCODER_PROBLEMS_API` — base URL for the AtCoder Problems API, used in the [pages/api/ac.ts](pages/api/ac.ts) serverless route.
+- `VITE_GITHUB_API` — GitHub GraphQL API token, used as a bearer token in [src/apollo-client.ts](src/apollo-client.ts) to fetch contribution data. Typed in [src/vite-env.d.ts](src/vite-env.d.ts).
 
-No `.env.example` exists; these must be set locally (e.g. `.env.local`) to run GitHub contributions or AtCoder features.
+Vite inlines `VITE_*` variables into the client bundle at build time, so the token is public in the shipped JS (same as before the migration) and must also be set in the Amplify console's environment variables for production builds. No `.env.example` exists; set it locally in `.env` / `.env.local`.
 
 ## Architecture
 
-- **Single-page app structure**: [pages/index.tsx](pages/index.tsx) is the main page, composed of section components imported from [pages/components/](pages/components/) (Header, AppsAndSites, Contributions, Card, LinkButton, Footer, etc.). [pages/summary.tsx](pages/summary.tsx) is a secondary "site summary" page linked to via anchors (e.g. `summary#sample`) from the home page's `LinkButton`s.
-- **Styling**: plain CSS files ([pages/css/global.css](pages/css/global.css), reset.css) are imported globally in [pages/_app.tsx](pages/_app.tsx); component-level styles use CSS Modules under [pages/styles/](pages/styles/), imported as `Styles` and referenced via `Styles.xxx`. Dynamic per-instance values (colors, computed percentages) are passed through inline `style` using CSS custom properties (e.g. `{ "--color": color } as React.CSSProperties}`) and consumed in the `.module.css` file.
-- **Scroll-triggered reveal animations**: [lib/elementIntersectionObserver.ts](lib/elementIntersectionObserver.ts) and [lib/cardIntersectionObserver.ts](lib/cardIntersectionObserver.ts) both use `IntersectionObserver` to add a `show` class (or module-scoped equivalent) when elements enter the viewport. They're invoked from `useEffect` in the top-level page/component (e.g. [pages/index.tsx](pages/index.tsx) and [pages/components/Card.tsx](pages/components/Card.tsx)) and target elements by a shared class name (`inter`, or the module's `.card` class) rather than refs — new sections that need the reveal effect must add that class name rather than being wired up individually.
-- **Data fetching, two different patterns**:
-  - GitHub contributions ([pages/components/Contributions.tsx](pages/components/Contributions.tsx)) go straight from the browser to the GitHub GraphQL API via Apollo Client (`apollo-client.ts`), configured globally in `_app.tsx` via `ApolloProvider`.
-  - AtCoder AC counts ([pages/components/ac.tsx](pages/components/ac.tsx), currently unused/WIP marked "工事中") go through a Next.js API route ([pages/api/ac.ts](pages/api/ac.ts)) that proxies to the AtCoder Problems API server-side (keeping `ATCODER_PROBLEMS_API` off the client) and reshapes the result into a date→count map.
-- Commented-out JSX (e.g. extra `<Card>` blocks in `index.tsx`, the AtCoder heatmap section) represents planned/paused features — check with the user before deleting rather than assuming it's dead code.
+- **Entry & routing**: [index.html](index.html) loads [src/main.tsx](src/main.tsx), which wraps TanStack Router's `RouterProvider` in Apollo's `ApolloProvider`. Routes are files under [src/routes/](src/routes/); the `@tanstack/router-plugin` Vite plugin (see [vite.config.mts](vite.config.mts)) generates [src/routeTree.gen.ts](src/routeTree.gen.ts) on dev/build — never edit it by hand, and keep it committed.
+  - [src/routes/__root.tsx](src/routes/__root.tsx): imports global CSS, sets the default `<title>`, renders `<HeadContent />` + `<Outlet />`.
+  - [src/routes/index.tsx](src/routes/index.tsx): home page, composed of section components from [src/components/](src/components/) (Header, AppsAndSites, Contributions, Card, LinkButton, Footer, etc.).
+  - [src/routes/summary.tsx](src/routes/summary.tsx): secondary "site summary" page, linked from the home page's `LinkButton`s via `to="/summary"` + `hash` (e.g. `hash="apps"`).
+- **Page titles**: set per route with the route's `head` option. This relies on React 19 hoisting `<title>` into `<head>`; do not downgrade React below 19 without replacing this.
+- **Styling**: plain CSS ([src/css/global.css](src/css/global.css), which `@import`s reset.css) is imported once in `__root.tsx`; component-level styles use CSS Modules under [src/styles/](src/styles/), imported as `Styles` and referenced via `Styles.xxx`. Dynamic per-instance values (colors, computed percentages) are passed through inline `style` using CSS custom properties (e.g. `{ "--color": color } as React.CSSProperties}`) and consumed in the `.module.css` file.
+- **Scroll-triggered reveal animations**: [src/lib/elementIntersectionObserver.ts](src/lib/elementIntersectionObserver.ts) and [src/lib/cardIntersectionObserver.ts](src/lib/cardIntersectionObserver.ts) both use `IntersectionObserver` to add a `show` class (or module-scoped equivalent) when elements enter the viewport. They're invoked from `useEffect` in the top-level page/component (e.g. [src/routes/index.tsx](src/routes/index.tsx) and [src/components/Card.tsx](src/components/Card.tsx)) and target elements by a shared class name (`inter`, or the module's `.card` class) rather than refs — new sections that need the reveal effect must add that class name rather than being wired up individually.
+- **Data fetching**: GitHub contributions ([src/components/Contributions.tsx](src/components/Contributions.tsx)) go straight from the browser to the GitHub GraphQL API via Apollo Client ([src/apollo-client.ts](src/apollo-client.ts)). There is no backend; the former AtCoder API route was removed during the Next.js → Vite migration.
+- **Deployment**: Amplify builds with [amplify.yml](amplify.yml) and serves `dist/` as a static SPA. A rewrite rule in the Amplify console sends non-file paths to `/index.html` so deep links like `/summary` work on reload.
+- Commented-out JSX (e.g. the "Sample Pages" section in `src/routes/index.tsx`) represents planned/paused features — check with the user before deleting rather than assuming it's dead code. (Its `PageLink` import was removed to satisfy lint; re-add it when uncommenting.)

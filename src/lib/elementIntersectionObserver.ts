@@ -1,5 +1,3 @@
-import Styles from "../pages/styles/card.module.css";
-
 const elementIntersectionObserver = () => {
   const options: IntersectionObserverInit = {
     root: null,
