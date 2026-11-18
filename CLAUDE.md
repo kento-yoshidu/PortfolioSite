@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Kento Yoshizu's personal portfolio site: a Next.js 13 (Pages Router) + TypeScript site styled with CSS Modules, using Apollo Client/GraphQL to pull GitHub contribution data, and documented in Storybook.
+Kento Yoshizu's personal portfolio site: a Next.js 13 (Pages Router) + TypeScript site styled with CSS Modules, using Apollo Client/GraphQL to pull GitHub contribution data.
 
 ## Commands
 
@@ -12,9 +12,7 @@ Kento Yoshizu's personal portfolio site: a Next.js 13 (Pages Router) + TypeScrip
 npm run dev             # Start Next.js dev server
 npm run build            # Production build (also what CI runs on PRs to main)
 npm run start             # Serve the production build
-npm run lint              # next lint (eslint-config-next + storybook plugin)
-npm run sb                # Storybook dev server on port 6006
-npm run build-storybook   # Static Storybook build
+npm run lint              # next lint (eslint-config-next + semi/quotes rules); also runs during next build
 ```
 
 There is no test runner configured (no Jest/RTL despite aspirations mentioned in [pages/summary.tsx](pages/summary.tsx)) — do not assume `npm test` exists.
@@ -38,5 +36,4 @@ No `.env.example` exists; these must be set locally (e.g. `.env.local`) to run G
 - **Data fetching, two different patterns**:
   - GitHub contributions ([pages/components/Contributions.tsx](pages/components/Contributions.tsx)) go straight from the browser to the GitHub GraphQL API via Apollo Client (`apollo-client.ts`), configured globally in `_app.tsx` via `ApolloProvider`.
   - AtCoder AC counts ([pages/components/ac.tsx](pages/components/ac.tsx), currently unused/WIP marked "工事中") go through a Next.js API route ([pages/api/ac.ts](pages/api/ac.ts)) that proxies to the AtCoder Problems API server-side (keeping `ATCODER_PROBLEMS_API` off the client) and reshapes the result into a date→count map.
-- **Storybook**: stories live in [stories/](stories/) and import components directly from `pages/components/`; Storybook is configured via `@storybook/nextjs` ([.storybook/main.ts](.storybook/main.ts)) so Next-specific features (CSS Modules, etc.) work inside stories.
 - Commented-out JSX (e.g. extra `<Card>` blocks in `index.tsx`, the AtCoder heatmap section) represents planned/paused features — check with the user before deleting rather than assuming it's dead code.

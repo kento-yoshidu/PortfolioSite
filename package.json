@@ -8,9 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build-storybook": "storybook build",
-    "sb": "storybook dev -p 6006"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.0.0",
@@ -28,25 +26,14 @@
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@storybook/addon-essentials": "^7.0.0-rc.8",
-    "@storybook/addon-interactions": "^7.0.0-rc.8",
-    "@storybook/addon-links": "^7.0.0-rc.8",
-    "@storybook/blocks": "^7.0.0-rc.8",
-    "@storybook/nextjs": "^7.0.0-rc.8",
-    "@storybook/react": "^7.0.0-rc.8",
-    "@storybook/testing-library": "^0.0.14-next.1",
     "@tanstack/router-plugin": "^1.169.0",
     "@types/node": "^22.20.5",
     "@types/react": "18.0.25",
     "@types/react-dom": "^18.0.9",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^5.2.0",
-    "babel-loader": "^8.3.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
-    "eslint-plugin-storybook": "^0.6.11",
-    "storybook": "^7.0.0-rc.8",
     "typed-css-modules": "^0.7.2",
     "typescript": "^5.9.3",
     "vite": "^7.3.8"
