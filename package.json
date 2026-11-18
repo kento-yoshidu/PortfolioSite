@@ -6,6 +6,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "dev:vite": "vite",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

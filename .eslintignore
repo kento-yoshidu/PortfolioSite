@@ -1,0 +1,5 @@
+# TanStack Router が自動生成するファイル
+src/routeTree.gen.ts
+
+# Vite のビルド成果物
+/dist
