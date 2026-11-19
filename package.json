@@ -1,6 +1,7 @@
 {
   "name": "kentoyoshizu",
   "version": "1.0.0",
+  "packageManager": "pnpm@12.21.0",
   "engines": {
     "node": ">=22.12"
   },
