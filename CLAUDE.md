@@ -8,22 +8,29 @@ Kento Yoshizu's personal portfolio site: a React 19 + TypeScript single-page app
 
 ## Commands
 
+The package manager is **pnpm 12**, pinned via `packageManager` in [package.json](package.json) (lockfile: `pnpm-lock.yaml`). Do not use `npm install` / `npm ci` — they would create a `package-lock.json` and bypass the pnpm lockfile.
+
 ```
-npm run dev       # Start Vite dev server (http://localhost:5173)
-npm run build     # tsc type-check, then vite build → dist/ (also what CI and Amplify run)
-npm run preview   # Serve the built dist/ locally
-npm run lint      # ESLint (flat config: eslint.config.mjs)
+pnpm install      # Install dependencies (CI/Amplify use --frozen-lockfile)
+pnpm dev          # Start Vite dev server (http://localhost:5173)
+pnpm build        # tsc type-check, then vite build → dist/ (also what CI and Amplify run)
+pnpm preview      # Serve the built dist/ locally
+pnpm lint         # ESLint (flat config: eslint.config.mjs)
 ```
 
-There is no test runner configured (no Jest/RTL/Vitest despite aspirations mentioned in [src/routes/summary.tsx](src/routes/summary.tsx)) — do not assume `npm test` exists.
+pnpm 12 refuses packages published less than ~24h ago (`minimumReleaseAge`). If `pnpm install` fails with `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION`, the lockfile references a too-new version: wait a day, or regenerate with `pnpm clean --lockfile && pnpm install`.
 
-Lint rules enforce semicolons and double quotes (`@stylistic/semi`, `@stylistic/quotes`, `@stylistic/jsx-quotes`); `npx eslint . --fix` fixes them.
+When bumping pnpm, update both `packageManager` in `package.json` and the `npm install -g pnpm@…` line in [amplify.yml](amplify.yml).
 
-CSS Modules type declarations (`*.module.css.d.ts` files under [src/styles/](src/styles/)) are generated with `typed-css-modules` (config in [typed-css-modules.config.ts](typed-css-modules.config.ts)) but there is no npm script wired up for it; run via `npx tcm src/styles` if a `.css.d.ts` needs regenerating after editing a `.module.css` file.
+There is no test runner configured (no Jest/RTL/Vitest despite aspirations mentioned in [src/routes/summary.tsx](src/routes/summary.tsx)) — do not assume a `test` script exists.
+
+Lint rules enforce semicolons and double quotes (`@stylistic/semi`, `@stylistic/quotes`, `@stylistic/jsx-quotes`); `pnpm exec eslint . --fix` fixes them.
+
+CSS Modules type declarations (`*.module.css.d.ts` files under [src/styles/](src/styles/)) are generated with `typed-css-modules` (config in [typed-css-modules.config.ts](typed-css-modules.config.ts)) but there is no package script wired up for it; run via `pnpm exec tcm src/styles` if a `.css.d.ts` needs regenerating after editing a `.module.css` file.
 
 Node version is pinned in [.nvmrc](.nvmrc) (used by CI) and [amplify.yml](amplify.yml); `package.json` `engines` requires `>=22.12`.
 
-CI ([.github/workflows/build.yml](.github/workflows/build.yml)) runs `npm ci && npm run build` on pull requests targeting `main`.
+CI ([.github/workflows/build.yml](.github/workflows/build.yml)) runs `pnpm install --frozen-lockfile && pnpm build` on pull requests targeting `main` (pnpm is installed by `pnpm/action-setup`, which reads `packageManager`).
 
 ## Environment variables
 
