@@ -33,3 +33,6 @@ yarn-error.log*
 
 # TanStack Router プラグインの一時ファイル
 /.tanstack
+
+# pnpm のストア（Amplify のビルドでプロジェクト内に置く）
+/.pnpm-store
